@@ -662,7 +662,7 @@ button {
     padding: 2.5rem;
     border: 1px solid #ffd1e6;
     position: relative;
-    background-image: linear-gradient(to bottom right, rgba(222, 219, 219, 0.92), rgba(233, 202, 202, 0.85));
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.92), rgba(246, 161, 161, 0.85));
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -682,7 +682,7 @@ button {
     background-image: url('/img/gallery/025.webp');
     background-size: cover;
     background-position: center;
-    opacity: 0.30;
+    opacity: 0.25;
     z-index: -1;
 }
 
@@ -1272,3 +1272,4 @@ button {
     white-space: nowrap;
     border-width: 0;
 }
+
