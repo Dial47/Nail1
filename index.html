@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="logo">
                     <a href="#" class="logo-link">
-                        <img src="/img/logo_white.webp" alt="AgelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/160x80/ff3385/ffffff?text=AgelNails'">
+                        <img src="/img/logo_black.webp" alt="AgelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/160x80/ff3385/ffffff?text=AgelNails'">
                     </a>
                 </div>
                 <div class="desktop-menu">
@@ -224,73 +224,47 @@
             </div>
         </section>
 
-        <!-- Booking Section with Calendly -->
+        <!-- Booking Section with Calendly - SIMPLIFICADO -->
         <section id="booking" class="booking-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Reserva tu Cita</h2>
                     <p class="section-description">Agenda fácilmente tu próxima visita en nuestro salón.</p>
                 </div>
-                <div class="booking-container animate-on-scroll">
-                    <div class="booking-info">
-                        <h2 class="booking-title">Reserva Tu Cita</h2>
-                        <p class="booking-description">Estamos ansiosos por recibirte en nuestro salón. Reserva tu cita ahora y déjanos transformar tus uñas.</p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Calle Principal 123, Ciudad</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+34 600 123 456</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>info@agelnails.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Lun-Sáb: 9:00 - 20:00</span>
-                            </div>
+                
+                <!-- Tarjeta de reserva simplificada -->
+                <div class="calendly-card animate-on-scroll">
+                    <!-- Service selection for Calendly -->
+                    <div class="service-selection">
+                        <h3>Selecciona un servicio para reservar:</h3>
+                        <div class="service-buttons">
+                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicura-regular">
+                                Manicura Regular
+                            </button>
+                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicure-regular">
+                                Manicura Semipermanente
+                            </button>
+                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/extensiones-acrilicas">
+                                Extensiones Acrílicas
+                            </button>
+                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/pedicura-spa">
+                                Pedicura Spa
+                            </button>
+                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/disenos-artisticos">
+                                Diseños Artísticos
+                            </button>
+                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/tratamientos-reparadores">
+                                Tratamientos Reparadores
+                            </button>
                         </div>
-                        <!-- Decorative circles -->
-                        <div class="decorative-circle circle-1"></div>
-                        <div class="decorative-circle circle-2"></div>
-                        <div class="decorative-circle circle-3"></div>
                     </div>
-                    <div class="booking-form-container">
-                        <!-- Service selection for Calendly -->
-                        <div class="service-selection">
-                            <h3>Selecciona un servicio para reservar:</h3>
-                            <div class="service-buttons">
-                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicura-regular">
-                                    Manicura Regular
-                                </button>
-                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicure-regular">
-                                    Manicura Semipermanente
-                                </button>
-                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/extensiones-acrilicas">
-                                    Extensiones Acrílicas
-                                </button>
-                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/pedicura-spa">
-                                    Pedicura Spa
-                                </button>
-                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/disenos-artisticos">
-                                    Diseños Artísticos
-                                </button>
-                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/tratamientos-reparadores">
-                                    Tratamientos Reparadores
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Calendly inline widget -->
-                        <div id="calendly-container" class="calendly-inline-widget">
-                            <!-- Placeholder mientras se carga Calendly -->
-                            <div class="calendly-placeholder">
-                                <img src="https://placehold.co/600x400/ff3385/ffffff?text=Selecciona+un+servicio" alt="Selecciona un servicio" class="placeholder-image">
-                                <p>Por favor, selecciona un servicio para ver la disponibilidad</p>
-                            </div>
+                    
+                    <!-- Calendly inline widget -->
+                    <div id="calendly-container" class="calendly-inline-widget">
+                        <!-- Placeholder mientras se carga Calendly -->
+                        <div class="calendly-placeholder">
+                            <img src="https://placehold.co/600x400/ff3385/ffffff?text=Selecciona+un+servicio" alt="Selecciona un servicio" class="placeholder-image">
+                            <p>Por favor, selecciona un servicio para ver la disponibilidad</p>
                         </div>
                     </div>
                 </div>
