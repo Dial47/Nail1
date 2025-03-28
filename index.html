@@ -7,6 +7,8 @@
     <meta name="description" content="AgelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas.">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Calendly widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     <main>
@@ -18,7 +20,6 @@
                         <img src="https://via.placeholder.com/160x80" alt="AgelNails Logo" class="logo-image">
                     </a>
                 </div>
-                <div></div>
                 <div class="desktop-menu">
                     <ul class="menu-list">
                         <li><a href="#home" class="menu-link">Inicio</a></li>
@@ -103,7 +104,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Manicura Regular</h3>
                             <p class="service-description">Tratamiento básico que incluye limado, cuidado de cutículas y esmaltado con color a elección.</p>
-                            <a href="#booking?service=manicura-regular" class="service-button">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="manicura-regular">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -113,7 +114,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Manicura Semipermanente</h3>
                             <p class="service-description">Esmaltado que dura hasta 3 semanas sin perder brillo ni color. Incluye tratamiento completo de uñas.</p>
-                            <a href="#booking?service=manicura-semipermanente" class="service-button">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="manicura-semipermanente">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -123,7 +124,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Extensiones Acrílicas</h3>
                             <p class="service-description">Extensiones duraderas que permiten alargar y fortalecer tus uñas naturales con acabado perfecto.</p>
-                            <a href="#booking?service=extensiones-acrilicas" class="service-button">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="extensiones-acrilicas">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -133,7 +134,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Pedicura Spa</h3>
                             <p class="service-description">Tratamiento completo para pies que incluye exfoliación, masaje, hidratación y esmaltado.</p>
-                            <a href="#booking?service=pedicura-spa" class="service-button">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="pedicura-spa">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -143,7 +144,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Diseños Artísticos</h3>
                             <p class="service-description">Desde diseños minimalistas hasta elaboradas obras de arte en tus uñas. Personaliza tu estilo.</p>
-                            <a href="#booking?service=disenos-artisticos" class="service-button">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="disenos-artisticos">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -153,7 +154,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Tratamientos Reparadores</h3>
                             <p class="service-description">Soluciones para uñas dañadas o quebradizas. Devuelve la salud y fortaleza a tus uñas.</p>
-                            <a href="#booking?service=tratamientos-reparadores" class="service-button">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="tratamientos-reparadores">Reservar</a>
                         </div>
                     </div>
                 </div>
@@ -223,7 +224,7 @@
             </div>
         </section>
 
-        <!-- Booking Section -->
+        <!-- Booking Section with Calendly -->
         <section id="booking" class="booking-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -258,53 +259,33 @@
                         <div class="decorative-circle circle-3"></div>
                     </div>
                     <div class="booking-form-container">
-                        <form id="booking-form" class="booking-form">
-                            <div class="form-group">
-                                <label for="name">Nombre Completo</label>
-                                <input type="text" id="name" name="name" required>
+                        <!-- Calendly inline widget -->
+                        <div id="calendly-container" class="calendly-inline-widget"></div>
+                        
+                        <!-- Service selection for Calendly -->
+                        <div class="service-selection">
+                            <h3>Selecciona un servicio para reservar:</h3>
+                            <div class="service-buttons">
+                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicura-regular">
+                                    Manicura Regular
+                                </button>
+                                <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicure-regular">
+                                    Manicura Semipermanente
+                                </button>
+                                <button class="calendly-service-button" data-url="https://calendly.com/tu-usuario/extensiones-acrilicas">
+                                    Extensiones Acrílicas
+                                </button>
+                                <button class="calendly-service-button" data-url="https://calendly.com/tu-usuario/pedicura-spa">
+                                    Pedicura Spa
+                                </button>
+                                <button class="calendly-service-button" data-url="https://calendly.com/tu-usuario/disenos-artisticos">
+                                    Diseños Artísticos
+                                </button>
+                                <button class="calendly-service-button" data-url="https://calendly.com/tu-usuario/tratamientos-reparadores">
+                                    Tratamientos Reparadores
+                                </button>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="service">Servicio</label>
-                                <select id="service" name="service" required>
-                                    <option value="" disabled selected>Selecciona un servicio</option>
-                                    <option value="manicura-regular">Manicura Regular</option>
-                                    <option value="manicura-semipermanente">Manicura Semipermanente</option>
-                                    <option value="extensiones-acrilicas">Extensiones Acrílicas</option>
-                                    <option value="pedicura-spa">Pedicura Spa</option>
-                                    <option value="disenos-artisticos">Diseños Artísticos</option>
-                                    <option value="tratamientos-reparadores">Tratamientos Reparadores</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="date">Fecha</label>
-                                <input type="date" id="date" name="date" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="time">Hora</label>
-                                <input type="time" id="time" name="time" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="notes">Notas Adicionales</label>
-                                <textarea id="notes" name="notes" rows="4"></textarea>
-                            </div>
-                            <div id="form-status" class="form-status hidden"></div>
-                            <button type="submit" class="submit-button">
-                                <span class="button-text">Reservar Cita</span>
-                                <span class="spinner hidden"></span>
-                            </button>
-                            <div class="calendar-notice">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Al reservar, se añadirá la cita a tu Google Calendar</span>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -477,7 +458,9 @@
     </main>
 
     <!-- Scripts -->
-    <script src="/js/calendar-integration.js"></script>
     <script src="/js/main.js"></script>
+    <!-- Calendly widget JS -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="/js/calendly-integration.js"></script>
 </body>
 </html>

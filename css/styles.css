@@ -1232,3 +1232,60 @@ img {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+/* Estilos para la integración con Calendly */
+.calendly-inline-widget {
+    min-width: 320px;
+    height: 650px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.service-selection {
+    margin-top: 2rem;
+}
+
+.service-selection h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gray-700);
+}
+
+.service-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.calendly-service-button {
+    background-color: var(--white);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.calendly-service-button:hover,
+.calendly-service-button.active {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive styles for Calendly */
+@media (max-width: 767px) {
+    .service-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendly-inline-widget {
+        height: 600px;
+    }
+}
