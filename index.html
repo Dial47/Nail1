@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgelNails - Salón de Uñas Profesional</title>
+    <meta name="description" content="AgelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="#" class="logo-link">
+                        <img src="https://via.placeholder.com/160x80" alt="AgelNails Logo" class="logo-image">
+                    </a>
+                </div>
+                <div></div>
+                <div class="desktop-menu">
+                    <ul class="menu-list">
+                        <li><a href="#home" class="menu-link">Inicio</a></li>
+                        <li><a href="#services" class="menu-link">Servicios</a></li>
+                        <li><a href="#gallery" class="menu-link">Galería</a></li>
+                        <li><a href="#booking" class="menu-link">Reservar</a></li>
+                        <li><a href="#testimonials" class="menu-link">Testimonios</a></li>
+                        <li><a href="#contact" class="menu-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <button class="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu">
+            <button class="close-menu-button" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="mobile-menu-list">
+                <li><a href="#home" class="mobile-menu-link">Inicio</a></li>
+                <li><a href="#services" class="mobile-menu-link">Servicios</a></li>
+                <li><a href="#gallery" class="mobile-menu-link">Galería</a></li>
+                <li><a href="#booking" class="mobile-menu-link">Reservar</a></li>
+                <li><a href="#testimonials" class="mobile-menu-link">Testimonios</a></li>
+                <li><a href="#contact" class="mobile-menu-link">Contacto</a></li>
+            </ul>
+            <a href="#booking" class="mobile-cta-button">Reservar Cita</a>
+        </div>
+        <div class="mobile-menu-backdrop"></div>
+
+        <!-- Hero Section with Carousel -->
+        <section id="home" class="hero-section">
+            <div class="carousel">
+                <div class="carousel-slides">
+                    <div class="carousel-slide active">
+                        <img src="https://via.placeholder.com/1200x600" alt="AgelNails manicura profesional" class="carousel-image">
+                        <div class="carousel-overlay"></div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://via.placeholder.com/1200x600" alt="Diseños exclusivos en uñas" class="carousel-image">
+                        <div class="carousel-overlay"></div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://via.placeholder.com/1200x600" alt="Tratamientos especiales para uñas" class="carousel-image">
+                        <div class="carousel-overlay"></div>
+                    </div>
+                </div>
+                <button class="carousel-button prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-button next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Transforma tus manos en <span class="hero-highlight">Obras de Arte</span></h1>
+                <p class="hero-description">En AgelNails, combinamos creatividad, talento y los mejores productos para brindarte uñas perfectas que reflejen tu personalidad.</p>
+                <a href="#booking" class="cta-button pulse">Reserva tu Cita Ahora</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title"><i class="fas fa-spa"></i> Nuestros Servicios</h2>
+                    <p class="section-description">Ofrecemos una amplia variedad de servicios profesionales para tus manos y pies.</p>
+                </div>
+                <div class="services-grid" id="services-grid">
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="https://via.placeholder.com/300x200" alt="Manicura Regular" class="service-image">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Manicura Regular</h3>
+                            <p class="service-description">Tratamiento básico que incluye limado, cuidado de cutículas y esmaltado con color a elección.</p>
+                            <a href="#booking?service=manicura-regular" class="service-button">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="https://via.placeholder.com/300x200" alt="Manicura Semipermanente" class="service-image">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Manicura Semipermanente</h3>
+                            <p class="service-description">Esmaltado que dura hasta 3 semanas sin perder brillo ni color. Incluye tratamiento completo de uñas.</p>
+                            <a href="#booking?service=manicura-semipermanente" class="service-button">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="https://via.placeholder.com/300x200" alt="Extensiones Acrílicas" class="service-image">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Extensiones Acrílicas</h3>
+                            <p class="service-description">Extensiones duraderas que permiten alargar y fortalecer tus uñas naturales con acabado perfecto.</p>
+                            <a href="#booking?service=extensiones-acrilicas" class="service-button">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="https://via.placeholder.com/300x200" alt="Pedicura Spa" class="service-image">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Pedicura Spa</h3>
+                            <p class="service-description">Tratamiento completo para pies que incluye exfoliación, masaje, hidratación y esmaltado.</p>
+                            <a href="#booking?service=pedicura-spa" class="service-button">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="https://via.placeholder.com/300x200" alt="Diseños Artísticos" class="service-image">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Diseños Artísticos</h3>
+                            <p class="service-description">Desde diseños minimalistas hasta elaboradas obras de arte en tus uñas. Personaliza tu estilo.</p>
+                            <a href="#booking?service=disenos-artisticos" class="service-button">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="https://via.placeholder.com/300x200" alt="Tratamientos Reparadores" class="service-image">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Tratamientos Reparadores</h3>
+                            <p class="service-description">Soluciones para uñas dañadas o quebradizas. Devuelve la salud y fortaleza a tus uñas.</p>
+                            <a href="#booking?service=tratamientos-reparadores" class="service-button">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta animate-on-scroll">
+                    <a href="#booking" class="cta-button">Ver Todos los Servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title"><i class="fas fa-images"></i> Nuestra Galería</h2>
+                    <p class="section-description">Explora algunos de nuestros trabajos recientes y diseños exclusivos.</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="Diseño Floral" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Diseño Floral</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="Efecto Mármol" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Efecto Mármol</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="French Moderna" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">French Moderna</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="Estilo Geométrico" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Estilo Geométrico</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="Arte Abstracto" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Arte Abstracto</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="Glamour y Brillo" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Glamour y Brillo</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="Estilo Minimalista" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Estilo Minimalista</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://via.placeholder.com/300x400" alt="Efecto Ombré" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Efecto Ombré</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="booking-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Reserva tu Cita</h2>
+                    <p class="section-description">Agenda fácilmente tu próxima visita en nuestro salón.</p>
+                </div>
+                <div class="booking-container animate-on-scroll">
+                    <div class="booking-info">
+                        <h2 class="booking-title">Reserva Tu Cita</h2>
+                        <p class="booking-description">Estamos ansiosos por recibirte en nuestro salón. Reserva tu cita ahora y déjanos transformar tus uñas.</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Calle Principal 123, Ciudad</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+34 600 123 456</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@agelnails.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Lun-Sáb: 9:00 - 20:00</span>
+                            </div>
+                        </div>
+                        <!-- Decorative circles -->
+                        <div class="decorative-circle circle-1"></div>
+                        <div class="decorative-circle circle-2"></div>
+                        <div class="decorative-circle circle-3"></div>
+                    </div>
+                    <div class="booking-form-container">
+                        <form id="booking-form" class="booking-form">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Servicio</label>
+                                <select id="service" name="service" required>
+                                    <option value="" disabled selected>Selecciona un servicio</option>
+                                    <option value="manicura-regular">Manicura Regular</option>
+                                    <option value="manicura-semipermanente">Manicura Semipermanente</option>
+                                    <option value="extensiones-acrilicas">Extensiones Acrílicas</option>
+                                    <option value="pedicura-spa">Pedicura Spa</option>
+                                    <option value="disenos-artisticos">Diseños Artísticos</option>
+                                    <option value="tratamientos-reparadores">Tratamientos Reparadores</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Fecha</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Hora</label>
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Notas Adicionales</label>
+                                <textarea id="notes" name="notes" rows="4"></textarea>
+                            </div>
+                            <div id="form-status" class="form-status hidden"></div>
+                            <button type="submit" class="submit-button">
+                                <span class="button-text">Reservar Cita</span>
+                                <span class="spinner hidden"></span>
+                            </button>
+                            <div class="calendar-notice">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Al reservar, se añadirá la cita a tu Google Calendar</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title"><i class="fas fa-quote-right"></i> Clientes Satisfechos</h2>
+                    <p class="section-description">Descubre lo que nuestros clientes dicen sobre su experiencia con AgelNails.</p>
+                </div>
+                <div class="testimonial-slider animate-on-scroll">
+                    <div class="testimonial-slides">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-image-container">
+                                        <img src="https://via.placeholder.com/70x70" alt="María García" class="testimonial-image">
+                                    </div>
+                                    <div class="testimonial-info">
+                                        <h3 class="testimonial-name">María García</h3>
+                                        <div class="testimonial-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">Increíble experiencia en AgelNails. El personal es muy profesional y atento. Mis uñas quedaron perfectas y el diseño duró muchísimo. Definitivamente volveré.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-image-container">
+                                        <img src="https://via.placeholder.com/70x70" alt="Laura Martínez" class="testimonial-image">
+                                    </div>
+                                    <div class="testimonial-info">
+                                        <h3 class="testimonial-name">Laura Martínez</h3>
+                                        <div class="testimonial-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">He visitado muchos salones de uñas, pero AgelNails es sin duda el mejor. La calidad de sus materiales y la atención al detalle en cada diseño es impresionante. ¡Lo recomiendo al 100%!</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-image-container">
+                                        <img src="https://via.placeholder.com/70x70" alt="Carmen Rodríguez" class="testimonial-image">
+                                    </div>
+                                    <div class="testimonial-info">
+                                        <h3 class="testimonial-name">Carmen Rodríguez</h3>
+                                        <div class="testimonial-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">Ambiente acogedor, personal muy amable y resultados espectaculares. Siempre salgo muy contenta con mis uñas y recibo muchos cumplidos. La durabilidad es excelente.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="testimonial-button prev" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-button next" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="testimonial-indicators">
+                        <button class="indicator active" data-slide="0" aria-label="Go to testimonial 1"></button>
+                        <button class="indicator" data-slide="1" aria-label="Go to testimonial 2"></button>
+                        <button class="indicator" data-slide="2" aria-label="Go to testimonial 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title animate-on-scroll">¡Tu Belleza Es Nuestra Prioridad!</h2>
+                    <p class="cta-description animate-on-scroll">Reserva ahora y obtén un 15% de descuento en tu primer servicio.</p>
+                    <a href="#booking" class="cta-button white animate-on-scroll">Reserva Tu Cita</a>
+                </div>
+                <!-- Decorative bubbles -->
+                <div class="decorative-circle circle-1"></div>
+                <div class="decorative-circle circle-2"></div>
+                <div class="decorative-circle circle-3"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <a href="#" class="footer-logo">
+                            <img src="https://via.placeholder.com/140x70" alt="AgelNails Logo" class="footer-logo-image">
+                        </a>
+                        <p class="footer-description">Transformamos tus manos en obras de arte con los mejores productos y técnicas del mercado.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="#home" class="footer-link">Inicio</a></li>
+                            <li><a href="#services" class="footer-link">Servicios</a></li>
+                            <li><a href="#gallery" class="footer-link">Galería</a></li>
+                            <li><a href="#booking" class="footer-link">Reservar</a></li>
+                            <li><a href="#testimonials" class="footer-link">Testimonios</a></li>
+                            <li><a href="#contact" class="footer-link">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Contacto</h3>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Calle Principal 123, Ciudad</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+34 600 123 456</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@agelnails.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Horarios</h3>
+                        <ul class="hours-list">
+                            <li class="hours-item">
+                                Lunes - Viernes: <span class="hours-value">9:00 - 20:00</span>
+                            </li>
+                            <li class="hours-item">
+                                Sábado: <span class="hours-value">9:00 - 18:00</span>
+                            </li>
+                            <li class="hours-item">
+                                Domingo: <span class="hours-value">Cerrado</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; <span id="current-year"></span> AgelNails. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="/js/calendar-integration.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
