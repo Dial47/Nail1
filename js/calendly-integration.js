@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Esperar a que Calendly se cargue completamente
     function waitForCalendly(callback) {
-        if (window.Calendly) {
+        if (typeof Calendly !== 'undefined') {
             callback();
         } else {
             setTimeout(function() {
@@ -23,20 +23,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Función para cargar el widget de Calendly con una URL específica
     function loadCalendlyWidget(url) {
-        // Limpiar el contenedor
-        calendlyContainer.innerHTML = '';
+        // Mostrar un mensaje de carga
+        calendlyContainer.innerHTML = '<div class="calendly-placeholder"><img src="https://placehold.co/600x400/ff3385/ffffff?text=Cargando..." alt="Cargando..." class="placeholder-image"><p>Cargando calendario, por favor espera...</p></div>';
         
         // Configurar el widget de Calendly
         calendlyContainer.style.minHeight = calendlyHeight;
         
         // Cargar el widget de Calendly cuando esté disponible
         waitForCalendly(function() {
-            Calendly.initInlineWidget({
-                url: url,
-                parentElement: calendlyContainer,
-                prefill: {},
-                utm: {}
-            });
+            try {
+                window.Calendly.initInlineWidget({
+                    url: url,
+                    parentElement: calendlyContainer,
+                    prefill: {},
+                    utm: {}
+                });
+            } catch (error) {
+                console.error('Error al inicializar Calendly:', error);
+                calendlyContainer.innerHTML = '<div class="calendly-placeholder"><img src="https://placehold.co/600x400/ff3385/ffffff?text=Error" alt="Error" class="placeholder-image"><p>Hubo un problema al cargar el calendario. Por favor, intenta de nuevo más tarde.</p></div>';
+            }
         });
     }
     
@@ -53,6 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Añadir clase activa al botón seleccionado
             this.classList.add('active');
+            
+            // Añadir efecto de pulsación
+            this.classList.add('glow');
+            setTimeout(() => {
+                this.classList.remove('glow');
+            }, 1000);
             
             // Cargar el widget de Calendly con la URL del servicio seleccionado
             loadCalendlyWidget(this.dataset.url);
@@ -96,16 +107,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (calendlyScript) {
         // Si el script ya está en la página, esperar a que se cargue
         if (calendlyScript.getAttribute('async') !== null) {
-            calendlyScript.onload = loadDefaultCalendly;
+            calendlyScript.onload = function() {
+                // Pequeña pausa para asegurar que Calendly esté completamente cargado
+                setTimeout(loadDefaultCalendly, 500);
+            };
         } else {
-            loadDefaultCalendly();
+            // Pequeña pausa para asegurar que Calendly esté completamente cargado
+            setTimeout(loadDefaultCalendly, 500);
         }
     } else {
         // Si el script no está en la página, añadirlo
         const script = document.createElement('script');
         script.src = 'https://assets.calendly.com/assets/external/widget.js';
         script.async = true;
-        script.onload = loadDefaultCalendly;
+        script.onload = function() {
+            // Pequeña pausa para asegurar que Calendly esté completamente cargado
+            setTimeout(loadDefaultCalendly, 500);
+        };
         document.head.appendChild(script);
     }
+    
+    // Seleccionar el primer botón por defecto después de un breve retraso
+    setTimeout(() => {
+        if (serviceButtons.length > 0) {
+            serviceButtons[0].click();
+        }
+    }, 1000);
 });

@@ -71,24 +71,26 @@ document.addEventListener('DOMContentLoaded', function() {
         startCarouselInterval();
     }
 
-    prevButton.addEventListener('click', () => {
-        prevSlide();
-        resetCarouselInterval();
-    });
-
-    nextButton.addEventListener('click', () => {
-        nextSlide();
-        resetCarouselInterval();
-    });
-
-    carouselIndicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showSlide(index);
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+            prevSlide();
             resetCarouselInterval();
         });
-    });
 
-    startCarouselInterval();
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            resetCarouselInterval();
+        });
+
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                resetCarouselInterval();
+            });
+        });
+
+        startCarouselInterval();
+    }
 
     // Testimonial Slider
     const testimonialSlides = document.querySelectorAll('.testimonial-slide');
@@ -132,24 +134,26 @@ document.addEventListener('DOMContentLoaded', function() {
         startTestimonialInterval();
     }
 
-    testimonialPrevButton.addEventListener('click', () => {
-        prevTestimonial();
-        resetTestimonialInterval();
-    });
-
-    testimonialNextButton.addEventListener('click', () => {
-        nextTestimonial();
-        resetTestimonialInterval();
-    });
-
-    testimonialIndicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showTestimonial(index);
+    if (testimonialPrevButton && testimonialNextButton) {
+        testimonialPrevButton.addEventListener('click', () => {
+            prevTestimonial();
             resetTestimonialInterval();
         });
-    });
 
-    startTestimonialInterval();
+        testimonialNextButton.addEventListener('click', () => {
+            nextTestimonial();
+            resetTestimonialInterval();
+        });
+
+        testimonialIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showTestimonial(index);
+                resetTestimonialInterval();
+            });
+        });
+
+        startTestimonialInterval();
+    }
 
     // Scroll Animations
     function animateOnScroll() {
@@ -211,4 +215,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar animaciones al cargar la página
     document.querySelector('.hero-content').classList.add('animate-fade-in');
+    
+    // Añadir fallbacks para imágenes
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            if (!this.hasAttribute('data-error-handled')) {
+                this.setAttribute('data-error-handled', 'true');
+                
+                // Determinar el tipo de imagen y establecer un placeholder adecuado
+                const width = this.width || 300;
+                const height = this.height || 200;
+                const alt = this.alt || 'Imagen';
+                
+                this.src = `https://placehold.co/${width}x${height}/ff3385/ffffff?text=${encodeURIComponent(alt)}`;
+            }
+        });
+    });
 });
