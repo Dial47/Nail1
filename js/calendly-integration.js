@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const calendlyUser = 'badiego47'; // Cambia esto por tu nombre de usuario de Calendly
     
     // Altura del widget de Calendly
-    const calendlyHeight = '650px';
+    const calendlyHeight = '700px';
     
     // Esperar a que Calendly se cargue completamente
     function waitForCalendly(callback) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para cargar el widget de Calendly con una URL específica
     function loadCalendlyWidget(url) {
         // Mostrar un mensaje de carga
-        calendlyContainer.innerHTML = '<div class="calendly-placeholder"><img src="https://placehold.co/600x400/ff3385/ffffff?text=Cargando..." alt="Cargando..." class="placeholder-image"><p>Cargando calendario, por favor espera...</p></div>';
+        //calendlyContainer.innerHTML = '<div class="calendly-placeholder"><img src="https://placehold.co/600x400/ff3385/ffffff?text=Cargando..." alt="Cargando..." class="placeholder-image"><p>Cargando calendario, por favor espera...</p></div>';
         
         // Configurar el widget de Calendly
         calendlyContainer.style.minHeight = calendlyHeight;
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Cargar el widget de Calendly cuando esté disponible
         waitForCalendly(function() {
             try {
-                window.Calendly.initInlineWidget({
+                Calendly.initInlineWidget({
                     url: url,
                     parentElement: calendlyContainer,
                     prefill: {},
@@ -54,7 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
     serviceButtons.forEach(button => {
         button.addEventListener('click', function() {
             // Remover clase activa de todos los botones
-            serviceButtons.forEach(btn => btn.classList.remove('active'));
+            serviceButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('glow');
+            });
             
             // Añadir clase activa al botón seleccionado
             this.classList.add('active');
@@ -109,11 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (calendlyScript.getAttribute('async') !== null) {
             calendlyScript.onload = function() {
                 // Pequeña pausa para asegurar que Calendly esté completamente cargado
-                setTimeout(loadDefaultCalendly, 500);
+                setTimeout(loadDefaultCalendly, 300);
             };
         } else {
             // Pequeña pausa para asegurar que Calendly esté completamente cargado
-            setTimeout(loadDefaultCalendly, 500);
+            setTimeout(loadDefaultCalendly, 300);
         }
     } else {
         // Si el script no está en la página, añadirlo
@@ -122,15 +125,32 @@ document.addEventListener('DOMContentLoaded', function() {
         script.async = true;
         script.onload = function() {
             // Pequeña pausa para asegurar que Calendly esté completamente cargado
-            setTimeout(loadDefaultCalendly, 500);
+            setTimeout(loadDefaultCalendly, 300);
         };
         document.head.appendChild(script);
     }
+    
+    // Añadir efectos de hover a los botones de servicio
+    serviceButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 7px 14px rgba(255, 51, 133, 0.2)';
+            }
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            }
+        });
+    });
     
     // Seleccionar el primer botón por defecto después de un breve retraso
     setTimeout(() => {
         if (serviceButtons.length > 0) {
             serviceButtons[0].click();
         }
-    }, 1000);
+    }, 800);
 });
