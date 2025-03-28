@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Altura del widget de Calendly
     const calendlyHeight = '650px';
     
+    // Esperar a que Calendly se cargue completamente
+    function waitForCalendly(callback) {
+        if (window.Calendly) {
+            callback();
+        } else {
+            setTimeout(function() {
+                waitForCalendly(callback);
+            }, 100);
+        }
+    }
+    
     // Función para cargar el widget de Calendly con una URL específica
     function loadCalendlyWidget(url) {
         // Limpiar el contenedor
@@ -18,12 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Configurar el widget de Calendly
         calendlyContainer.style.minHeight = calendlyHeight;
         
-        // Cargar el widget de Calendly
-        Calendly.initInlineWidget({
-            url: url,
-            parentElement: calendlyContainer,
-            prefill: {},
-            utm: {}
+        // Cargar el widget de Calendly cuando esté disponible
+        waitForCalendly(function() {
+            Calendly.initInlineWidget({
+                url: url,
+                parentElement: calendlyContainer,
+                prefill: {},
+                utm: {}
+            });
         });
     }
     
@@ -77,6 +90,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Cargar el widget por defecto al cargar la página
-    loadDefaultCalendly();
+    // Inicializar Calendly cuando el script esté cargado
+    const calendlyScript = document.querySelector('script[src*="calendly.com/assets/external/widget.js"]');
+    
+    if (calendlyScript) {
+        // Si el script ya está en la página, esperar a que se cargue
+        if (calendlyScript.getAttribute('async') !== null) {
+            calendlyScript.onload = loadDefaultCalendly;
+        } else {
+            loadDefaultCalendly();
+        }
+    } else {
+        // Si el script no está en la página, añadirlo
+        const script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.async = true;
+        script.onload = loadDefaultCalendly;
+        document.head.appendChild(script);
+    }
 });
