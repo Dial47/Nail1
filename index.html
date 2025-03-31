@@ -6,15 +6,19 @@
     <title>AgelNails - Salón de Uñas Profesional</title>
     <meta name="description" content="AgelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas.">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/additional-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Calendly widget CSS -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <!-- Precargar imágenes críticas -->
+    <link rel="preload" href="/img/logo_white.webp" as="image">
+    <link rel="preload" href="/img/gallery/g001.webp" as="image">
 </head>
 <body>
     <main>
-        <!-- Navbar -->
-        <nav class="navbar">
+        <!-- Navbar - Rediseñada -->
+        <nav class="navbar" id="main-navbar">
             <div class="container">
                 <div class="logo">
                     <a href="#" class="logo-link">
@@ -23,7 +27,7 @@
                 </div>
                 <div class="desktop-menu">
                     <ul class="menu-list">
-                        <li><a href="/index.html" class="menu-link">Inicio</a></li>
+                        <li><a href="/index.html" class="menu-link active">Inicio</a></li>
                         <li><a href="/servicios.html" class="menu-link">Servicios</a></li>
                         <li><a href="/galeria.html" class="menu-link">Galería</a></li>
                         <li><a href="/reservas.html" class="menu-link">Reservar</a></li>
@@ -39,20 +43,22 @@
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu">
-            <button class="close-menu-button" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-            <ul class="mobile-menu-list">
-                <li><a href="/index.html" class="mobile-menu-link">Inicio</a></li>
-                <li><a href="/servicios.html" class="mobile-menu-link">Servicios</a></li>
-                <li><a href="/galeria.html" class="mobile-menu-link">Galería</a></li>
-                <li><a href="/reservas.html" class="mobile-menu-link">Reservar</a></li>
-                <li><a href="#testimonials" class="mobile-menu-link">Testimonios</a></li>
-                <li><a href="/contacto.html" class="mobile-menu-link">Contacto</a></li>
-            </ul>
-            <a href="#booking" class="mobile-cta-button">Reservar Cita</a>
-        </div>
-        <div class="mobile-menu-backdrop"></div>
+    <button class="close-menu-button" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+    </button>
+    <ul class="mobile-menu-list">
+        <li><a href="/index.html" class="mobile-menu-link">Inicio</a></li>
+        <li><a href="/servicios.html" class="mobile-menu-link">Servicios</a></li>
+        <li><a href="/galeria.html" class="mobile-menu-link">Galería</a></li>
+        <li><a href="/reservas.html" class="mobile-menu-link">Reservar</a></li>
+        <li><a href="#testimonials" class="mobile-menu-link">Testimonios</a></li>
+        <li><a href="/contacto.html" class="mobile-menu-link">Contacto</a></li>
+    </ul>
+    <a href="#booking" class="mobile-cta-button">
+        <i class="fas fa-calendar-check"></i> Reservar Cita
+    </a>
+</div>
+<div class="mobile-menu-backdrop"></div>
 
         <!-- Hero Section with Carousel -->
         <section id="home" class="hero-section">
@@ -86,7 +92,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">Transforma tus manos en <span class="hero-highlight">Obras de Arte</span></h1>
                 <p class="hero-description">En AgelNails, combinamos creatividad, talento y los mejores productos para brindarte uñas perfectas que reflejen tu personalidad.</p>
-                <a href="#booking" class="cta-button pulse">Reserva tu Cita Ahora</a>
+                <a href="#booking" class="cta-button pulse highlight-effect">Reserva tu Cita Ahora</a>
             </div>
         </section>
 
@@ -100,67 +106,67 @@
                 <div class="services-grid" id="services-grid">
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="https://placehold.co/300x200/ff3385/ffffff?text=Manicura+Regular" alt="Manicura Regular" class="service-image">
+                            <img src="/img/gallery/g028.webp" alt="Manicura Regular" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Manicura Regular</h3>
                             <p class="service-description">Tratamiento básico que incluye limado, cuidado de cutículas y esmaltado con color a elección.</p>
-                            <a href="#booking" class="service-button service-booking-link" data-service="manicura-regular">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="manicura-regular">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="https://placehold.co/300x200/8b5cf6/ffffff?text=Manicura+Semipermanente" alt="Manicura Semipermanente" class="service-image">
+                            <img src="/img/gallery/g027.webp" alt="Manicura Semipermanente" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Manicura Semipermanente</h3>
                             <p class="service-description">Esmaltado que dura hasta 3 semanas sin perder brillo ni color. Incluye tratamiento completo de uñas.</p>
-                            <a href="#booking" class="service-button service-booking-link" data-service="manicura-semipermanente">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="manicura-semipermanente">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="https://placehold.co/300x200/c026d3/ffffff?text=Extensiones+Acrílicas" alt="Extensiones Acrílicas" class="service-image">
+                            <img src="/img/gallery/g026.webp" alt="Extensiones Acrílicas" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Extensiones Acrílicas</h3>
                             <p class="service-description">Extensiones duraderas que permiten alargar y fortalecer tus uñas naturales con acabado perfecto.</p>
-                            <a href="#booking" class="service-button service-booking-link" data-service="extensiones-acrilicas">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="extensiones-acrilicas">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="https://placehold.co/300x200/e11d48/ffffff?text=Pedicura+Spa" alt="Pedicura Spa" class="service-image">
+                            <img src="/img/gallery/g024.webp" alt="Pedicura Spa" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Pedicura Spa</h3>
                             <p class="service-description">Tratamiento completo para pies que incluye exfoliación, masaje, hidratación y esmaltado.</p>
-                            <a href="#booking" class="service-button service-booking-link" data-service="pedicura-spa">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="pedicura-spa">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="https://placehold.co/300x200/7e22ce/ffffff?text=Diseños+Artísticos" alt="Diseños Artísticos" class="service-image">
+                            <img src="/img/gallery/g023.webp" alt="Diseños Artísticos" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Diseños Artísticos</h3>
                             <p class="service-description">Desde diseños minimalistas hasta elaboradas obras de arte en tus uñas. Personaliza tu estilo.</p>
-                            <a href="#booking" class="service-button service-booking-link" data-service="disenos-artisticos">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="disenos-artisticos">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="https://placehold.co/300x200/be185d/ffffff?text=Tratamientos+Reparadores" alt="Tratamientos Reparadores" class="service-image">
+                            <img src="/img/gallery/g022.webp" alt="Tratamientos Reparadores" class="service-image">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Tratamientos Reparadores</h3>
                             <p class="service-description">Soluciones para uñas dañadas o quebradizas. Devuelve la salud y fortaleza a tus uñas.</p>
-                            <a href="#booking" class="service-button service-booking-link" data-service="tratamientos-reparadores">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="tratamientos-reparadores">Reservar</a>
                         </div>
                     </div>
                 </div>
                 <div class="section-cta animate-on-scroll">
-                    <a href="#booking" class="cta-button">Ver Todos los Servicios</a>
+                    <a href="#booking" class="cta-button highlight-effect">Ver Todos los Servicios</a>
                 </div>
             </div>
         </section>
@@ -174,49 +180,49 @@
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/ff3385/ffffff?text=Diseño+Floral" alt="Diseño Floral" class="gallery-image">
+                        <img src="/img/gallery/g010.webp" alt="Diseño Floral" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Diseño Floral</h3>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/8b5cf6/ffffff?text=Efecto+Mármol" alt="Efecto Mármol" class="gallery-image">
+                        <img src="/img/gallery/g011.webp" alt="Efecto Mármol" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Efecto Mármol</h3>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/c026d3/ffffff?text=French+Moderna" alt="French Moderna" class="gallery-image">
+                        <img src="/img/gallery/g012.webp" alt="French Moderna" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">French Moderna</h3>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/e11d48/ffffff?text=Estilo+Geométrico" alt="Estilo Geométrico" class="gallery-image">
+                        <img src="/img/gallery/g013.webp" alt="Estilo Geométrico" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Estilo Geométrico</h3>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/7e22ce/ffffff?text=Arte+Abstracto" alt="Arte Abstracto" class="gallery-image">
+                        <img src="/img/gallery/g014.webp" alt="Arte Abstracto" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Arte Abstracto</h3>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/be185d/ffffff?text=Glamour+y+Brillo" alt="Glamour y Brillo" class="gallery-image">
+                        <img src="/img/gallery/g015.webp" alt="Glamour y Brillo" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Glamour y Brillo</h3>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/db2777/ffffff?text=Estilo+Minimalista" alt="Estilo Minimalista" class="gallery-image">
+                        <img src="/img/gallery/g016.webp" alt="Estilo Minimalista" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Estilo Minimalista</h3>
                         </div>
                     </div>
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://placehold.co/300x400/9333ea/ffffff?text=Efecto+Ombré" alt="Efecto Ombré" class="gallery-image">
+                        <img src="/img/gallery/g017.webp" alt="Efecto Ombré" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Efecto Ombré</h3>
                         </div>
@@ -225,7 +231,7 @@
             </div>
         </section>
 
-        <!-- Booking Section with Calendly - SIMPLIFICADO -->
+        <!-- Booking Section with Calendly - MEJORADO -->
         <section id="booking" class="booking-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -233,7 +239,7 @@
                     <p class="section-description">Agenda fácilmente tu próxima visita en nuestro salón.</p>
                 </div>
                 
-                <!-- Tarjeta de reserva simplificada -->
+                <!-- Tarjeta de reserva mejorada -->
                 <div class="calendly-card animate-on-scroll">
                     <!-- Service selection for Calendly -->
                     <div class="service-selection">
@@ -245,7 +251,7 @@
                             <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicure-regular">
                                 Manicura Semipermanente
                             </button>
-                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/extensiones-acrilicas">
+                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicura-regular-clone">
                                 Extensiones Acrílicas
                             </button>
                             <button class="calendly-service-button" data-url="https://calendly.com/badiego47/pedicura-spa">
@@ -359,7 +365,7 @@
                 <div class="cta-content">
                     <h2 class="cta-title animate-on-scroll">¡Tu Belleza Es Nuestra Prioridad!</h2>
                     <p class="cta-description animate-on-scroll">Reserva ahora y obtén un 15% de descuento en tu primer servicio.</p>
-                    <a href="#booking" class="cta-button white animate-on-scroll">Reserva Tu Cita</a>
+                    <a href="#booking" class="cta-button white animate-on-scroll highlight-effect">Reserva Tu Cita</a>
                 </div>
                 <!-- Decorative bubbles -->
                 <div class="decorative-circle circle-1"></div>
@@ -408,7 +414,7 @@
                             </li>
                             <li class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <span>info@agelnails.com</span>
+                                <span><a href="mailto:info@agelnails.com">info@agelnails.com</a></span>
                             </li>
                         </ul>
                     </div>
@@ -436,10 +442,22 @@
 
     <!-- Scripts -->
     <script src="/js/main.js"></script>
-    <script src="/js/gallery.js"></script>
-    <script src="/js/services.js"></script>
-    <!-- Calendly widget JS -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="/js/calendly-integration.js"></script>
+    
+    <!-- Script para detectar scroll y cambiar la navbar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('main-navbar');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
