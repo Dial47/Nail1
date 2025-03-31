@@ -1,0 +1,595 @@
+/* Estilos inspirados en SuperWow para AgelNails */
+:root {
+  --primary: #ff0099; /* Rosa más vibrante y llamativo */
+  --primary-light: #ff80b3;
+  --primary-dark: #cc0055;
+  --secondary: #8b5cf6;
+  --secondary-light: #a78bfa;
+  --secondary-dark: #7c3aed;
+  --accent: #c026d3;
+  --white: #ffffff;
+  --black: #000000;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --pink-bg: #ffd6e7; /* Fondo rosa claro como SuperWow */
+  --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Fuente Montserrat para todo el sitio */
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  color: var(--gray-800);
+  background-color: var(--white);
+}
+
+/* Navbar estilo SuperWow - COLORES MÁS LLAMATIVOS */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #ff0099, #ff66cc); /* Gradiente más llamativo */
+  z-index: 1000;
+  padding: 0.8rem 0;
+  box-shadow: 0 4px 15px rgba(255, 0, 153, 0.3); /* Sombra más visible */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.navbar.scrolled {
+  padding: 0.5rem 0;
+  background: linear-gradient(90deg, #ff0099, #ff33cc); /* Gradiente más intenso al hacer scroll */
+  box-shadow: 0 4px 20px rgba(255, 0, 153, 0.4);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo estilo SuperWow */
+.logo-image {
+  max-height: 60px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Brillo alrededor del logo */
+}
+
+.navbar.scrolled .logo-image {
+  max-height: 50px;
+}
+
+/* Menú estilo SuperWow */
+.menu-list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.menu-link {
+  position: relative;
+  color: var(--white); /* Texto blanco para mejor contraste */
+  font-weight: 600; /* Más negrita */
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto para mejor legibilidad */
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.menu-link:hover::after,
+.menu-link.active::after {
+  width: 80%;
+}
+
+.menu-link:hover {
+  color: var(--white);
+  transform: translateY(-3px); /* Elevación al pasar el cursor */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.menu-link.active {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Botón de búsqueda estilo SuperWow */
+.search-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-button:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section estilo SuperWow - CARRUSEL MEJORADO */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  overflow: hidden;
+  background-color: var(--pink-bg);
+}
+
+/* Carrusel mejorado */
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.carousel-slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Transición más suave */
+  transform: scale(1.05); /* Escala inicial para efecto de zoom */
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1); /* Escala normal cuando está activo */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
+}
+
+/* Botones de carrusel más llamativos */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 0, 153, 0.7); /* Fondo rosa más visible */
+  color: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:hover {
+  background-color: var(--primary);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-button.prev {
+  left: 1.5rem;
+}
+
+.carousel-button.next {
+  right: 1.5rem;
+}
+
+/* Indicadores de carrusel más llamativos */
+.carousel-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.carousel-indicators .indicator {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.carousel-indicators .indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.carousel-indicators .indicator.active {
+  background-color: var(--primary);
+  border-color: var(--white);
+  transform: scale(1.2);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 1.5rem;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+}
+
+.hero-content.animate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.hero-title {
+  font-size: 3rem; /* Título más grande */
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para mejor legibilidad */
+}
+
+.hero-highlight {
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.2rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+}
+
+/* Botones estilo SuperWow */
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 0, 153, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 0, 153, 0.5);
+}
+
+/* Sección de sedes estilo SuperWow */
+.locations-section {
+  padding: 5rem 0;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.section-title-large {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.location-card {
+  padding: 0.5rem;
+}
+
+.location-button {
+  display: block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.location-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(230, 0, 126, 0.3);
+}
+
+.heart-icon {
+  margin-right: 0.5rem;
+  color: var(--white);
+}
+
+/* Secciones con fondo alternado */
+.services-section {
+  background-color: var(--white);
+}
+
+.gallery-section {
+  background-color: var(--pink-bg);
+}
+
+.booking-section {
+  background-color: var(--white);
+}
+
+.testimonials-section {
+  background-color: var(--pink-bg);
+}
+
+/* Títulos de sección estilo SuperWow */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tarjetas de servicio estilo SuperWow */
+.service-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: var(--white);
+}
+
+.service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 30px rgba(255, 0, 153, 0.2);
+}
+
+.service-button {
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+}
+
+.service-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 0, 153, 0.3);
+}
+
+/* Galería estilo SuperWow */
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(255, 0, 153, 0.2);
+}
+
+/* Calendly estilo SuperWow */
+.calendly-card {
+  background-color: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  border: 1px solid #ffd1e6;
+}
+
+.calendly-service-button {
+  background-color: var(--white);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 30px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.calendly-service-button:hover,
+.calendly-service-button.active {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 0, 153, 0.2);
+}
+
+/* CTA Section estilo SuperWow */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary), #ff66cc);
+  padding: 5rem 0;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Footer estilo SuperWow */
+.footer {
+  background-color: var(--gray-900);
+  padding: 4rem 0 2rem;
+}
+
+/* WhatsApp Button estilo SuperWow */
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+  z-index: 900;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Animaciones adicionales */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 153, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 0, 153, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 153, 0);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Efectos de hover mejorados */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(255, 0, 153, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title-large {
+    font-size: 1.5rem;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

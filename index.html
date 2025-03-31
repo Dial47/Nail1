@@ -6,23 +6,26 @@
     <title>AgelNails - Salón de Uñas Profesional</title>
     <meta name="description" content="AgelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas.">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/superwow-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Calendly widget CSS -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- Precargar imágenes críticas -->
-    <link rel="preload" href="/img/logo_white.webp" as="image">
+    <link rel="preload" href="/img/logo_black.webp" as="image">
     <link rel="preload" href="/img/gallery/g001.webp" as="image">
 </head>
 <body>
     <main>
-        <!-- Navbar - Rediseñada -->
+        <!-- Navbar - Estilo SuperWow -->
         <nav class="navbar" id="main-navbar">
             <div class="container">
                 <div class="logo">
                     <a href="#" class="logo-link">
-                        <img src="/img/logo_white.webp" alt="AgelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/200x100/ff3385/ffffff?text=AgelNails'">
+                        <img src="/img/logo_black.webp" alt="AgelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/200x100/ff0099/ffffff?text=AgelNails'">
                     </a>
                 </div>
                 <div class="desktop-menu">
@@ -35,6 +38,9 @@
                         <li><a href="/contacto.html" class="menu-link">Contacto</a></li>
                     </ul>
                 </div>
+                <button class="search-button" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
                 <button class="mobile-menu-button" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -43,37 +49,37 @@
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu">
-    <button class="close-menu-button" aria-label="Close menu">
-        <i class="fas fa-times"></i>
-    </button>
-    <ul class="mobile-menu-list">
-        <li><a href="/index.html" class="mobile-menu-link">Inicio</a></li>
-        <li><a href="/servicios.html" class="mobile-menu-link">Servicios</a></li>
-        <li><a href="/galeria.html" class="mobile-menu-link">Galería</a></li>
-        <li><a href="/reservas.html" class="mobile-menu-link">Reservar</a></li>
-        <li><a href="#testimonials" class="mobile-menu-link">Testimonios</a></li>
-        <li><a href="/contacto.html" class="mobile-menu-link">Contacto</a></li>
-    </ul>
-    <a href="#booking" class="mobile-cta-button">
-        <i class="fas fa-calendar-check"></i> Reservar Cita
-    </a>
-</div>
-<div class="mobile-menu-backdrop"></div>
+            <button class="close-menu-button" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="mobile-menu-list">
+                <li><a href="/index.html" class="mobile-menu-link">Inicio</a></li>
+                <li><a href="/servicios.html" class="mobile-menu-link">Servicios</a></li>
+                <li><a href="/galeria.html" class="mobile-menu-link">Galería</a></li>
+                <li><a href="/reservas.html" class="mobile-menu-link">Reservar</a></li>
+                <li><a href="#testimonials" class="mobile-menu-link">Testimonios</a></li>
+                <li><a href="/contacto.html" class="mobile-menu-link">Contacto</a></li>
+            </ul>
+            <a href="#booking" class="mobile-cta-button">
+                <i class="fas fa-calendar-check"></i> Reservar Cita
+            </a>
+        </div>
+        <div class="mobile-menu-backdrop"></div>
 
-        <!-- Hero Section with Carousel -->
+        <!-- Hero Section with Carousel - Estilo SuperWow -->
         <section id="home" class="hero-section">
             <div class="carousel">
                 <div class="carousel-slides">
                     <div class="carousel-slide active">
-                        <img src="/img/gallery/g001.webp" alt="AgelNails manicura profesional" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/ff3385/ffffff?text=Manicura+Profesional'">
+                        <img src="/img/gallery/g001.webp" alt="AgelNails manicura profesional" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/ffd6e7/ff0099?text=Manicura+Profesional'">
                         <div class="carousel-overlay"></div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="/img/gallery/g002.webp" alt="Diseños exclusivos en uñas" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/8b5cf6/ffffff?text=Diseños+Exclusivos'">
+                        <img src="/img/gallery/g002.webp" alt="Diseños exclusivos en uñas" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/ffd6e7/ff0099?text=Diseños+Exclusivos'">
                         <div class="carousel-overlay"></div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="/img/gallery/g003.webp" alt="Tratamientos especiales para uñas" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/c026d3/ffffff?text=Tratamientos+Especiales'">
+                        <img src="/img/gallery/g003.webp" alt="Tratamientos especiales para uñas" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/ffd6e7/ff0099?text=Tratamientos+Especiales'">
                         <div class="carousel-overlay"></div>
                     </div>
                 </div>
@@ -90,17 +96,65 @@
                 </div>
             </div>
             <div class="hero-content">
-                <h1 class="hero-title">Transforma tus manos en <span class="hero-highlight">Obras de Arte</span></h1>
+                <h1 class="hero-title">Un brillo que nos hace <span class="hero-highlight">INVENCIBLES</span></h1>
                 <p class="hero-description">En AgelNails, combinamos creatividad, talento y los mejores productos para brindarte uñas perfectas que reflejen tu personalidad.</p>
-                <a href="#booking" class="cta-button pulse highlight-effect">Reserva tu Cita Ahora</a>
+                <a href="#booking" class="cta-button">Reserva tu Cita Ahora</a>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Sedes Section - Estilo SuperWow -->
+        <section id="locations" class="locations-section">
+            <div class="container">
+                <h2 class="section-title-large">RESERVA EN NUESTRAS SEDES AGELNAILS A NIVEL NACIONAL</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <a href="#" class="location-button">
+                            <i class="fas fa-heart heart-icon"></i> BOGOTÁ
+                        </a>
+                    </div>
+                    <div class="location-card">
+                        <a href="#" class="location-button">
+                            <i class="fas fa-heart heart-icon"></i> MEDELLÍN
+                        </a>
+                    </div>
+                    <div class="location-card">
+                        <a href="#" class="location-button">
+                            <i class="fas fa-heart heart-icon"></i> CALI
+                        </a>
+                    </div>
+                    <div class="location-card">
+                        <a href="#" class="location-button">
+                            <i class="fas fa-heart heart-icon"></i> BARRANQUILLA
+                        </a>
+                    </div>
+                    <div class="location-card">
+                        <a href="#" class="location-button">
+                            <i class="fas fa-heart heart-icon"></i> CARTAGENA
+                        </a>
+                    </div>
+                    <div class="location-card">
+                        <a href="#" class="location-button">
+                            <i class="fas fa-heart heart-icon"></i> BUCARAMANGA
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Buscador de sedes -->
+                <div class="location-search animate-on-scroll" style="margin-top: 3rem; text-align: center;">
+                    <div style="display: inline-flex; align-items: center; max-width: 600px; width: 100%; background-color: #f5f5f5; border-radius: 30px; padding: 0.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                        <i class="fas fa-map-marker-alt" style="color: var(--primary); margin: 0 1rem; font-size: 1.2rem;"></i>
+                        <input type="text" placeholder="¿Ya tienes una sede favorita? Búscala aquí" style="flex: 1; border: none; background: transparent; padding: 0.75rem 0; font-family: inherit; font-size: 0.9rem;">
+                        <button class="cta-button" style="margin: 0 0.5rem; padding: 0.5rem 1.5rem;">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section - Estilo SuperWow -->
         <section id="services" class="services-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <h2 class="section-title"><i class="fas fa-spa"></i> Nuestros Servicios</h2>
+                    <h2 class="section-title"><i class="fas fa-spa"></i> NUESTROS SERVICIOS</h2>
                     <p class="section-description">Ofrecemos una amplia variedad de servicios profesionales para tus manos y pies.</p>
                 </div>
                 <div class="services-grid" id="services-grid">
@@ -111,7 +165,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Manicura Regular</h3>
                             <p class="service-description">Tratamiento básico que incluye limado, cuidado de cutículas y esmaltado con color a elección.</p>
-                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="manicura-regular">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="manicura-regular">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -121,7 +175,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Manicura Semipermanente</h3>
                             <p class="service-description">Esmaltado que dura hasta 3 semanas sin perder brillo ni color. Incluye tratamiento completo de uñas.</p>
-                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="manicura-semipermanente">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="manicura-semipermanente">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -131,7 +185,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Extensiones Acrílicas</h3>
                             <p class="service-description">Extensiones duraderas que permiten alargar y fortalecer tus uñas naturales con acabado perfecto.</p>
-                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="extensiones-acrilicas">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="extensiones-acrilicas">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -141,7 +195,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Pedicura Spa</h3>
                             <p class="service-description">Tratamiento completo para pies que incluye exfoliación, masaje, hidratación y esmaltado.</p>
-                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="pedicura-spa">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="pedicura-spa">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -151,7 +205,7 @@
                         <div class="service-content">
                             <h3 class="service-title">Diseños Artísticos</h3>
                             <p class="service-description">Desde diseños minimalistas hasta elaboradas obras de arte en tus uñas. Personaliza tu estilo.</p>
-                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="disenos-artisticos">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="disenos-artisticos">Reservar</a>
                         </div>
                     </div>
                     <div class="service-card service-card-animate">
@@ -161,21 +215,21 @@
                         <div class="service-content">
                             <h3 class="service-title">Tratamientos Reparadores</h3>
                             <p class="service-description">Soluciones para uñas dañadas o quebradizas. Devuelve la salud y fortaleza a tus uñas.</p>
-                            <a href="#booking" class="service-button service-booking-link highlight-effect" data-service="tratamientos-reparadores">Reservar</a>
+                            <a href="#booking" class="service-button service-booking-link" data-service="tratamientos-reparadores">Reservar</a>
                         </div>
                     </div>
                 </div>
                 <div class="section-cta animate-on-scroll">
-                    <a href="#booking" class="cta-button highlight-effect">Ver Todos los Servicios</a>
+                    <a href="#booking" class="cta-button">Ver Todos los Servicios</a>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section -->
+        <!-- Gallery Section - Estilo SuperWow -->
         <section id="gallery" class="gallery-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <h2 class="section-title"><i class="fas fa-images"></i> Nuestra Galería</h2>
+                    <h2 class="section-title"><i class="fas fa-images"></i> NUESTRA GALERÍA</h2>
                     <p class="section-description">Explora algunos de nuestros trabajos recientes y diseños exclusivos.</p>
                 </div>
                 <div class="gallery-grid">
@@ -231,11 +285,11 @@
             </div>
         </section>
 
-        <!-- Booking Section with Calendly - MEJORADO -->
+        <!-- Booking Section - Estilo SuperWow -->
         <section id="booking" class="booking-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Reserva tu Cita</h2>
+                    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> RESERVA TU CITA</h2>
                     <p class="section-description">Agenda fácilmente tu próxima visita en nuestro salón.</p>
                 </div>
                 
@@ -274,11 +328,11 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section - Estilo SuperWow -->
         <section id="testimonials" class="testimonials-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <h2 class="section-title"><i class="fas fa-quote-right"></i> Clientes Satisfechos</h2>
+                    <h2 class="section-title"><i class="fas fa-quote-right"></i> CLIENTES SATISFECHOS</h2>
                     <p class="section-description">Descubre lo que nuestros clientes dicen sobre su experiencia con AgelNails.</p>
                 </div>
                 <div class="testimonial-slider animate-on-scroll">
@@ -287,7 +341,7 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-header">
                                     <div class="testimonial-image-container">
-                                        <img src="https://placehold.co/70x70/ff3385/ffffff?text=MG" alt="María García" class="testimonial-image">
+                                        <img src="https://placehold.co/70x70/ff0099/ffffff?text=MG" alt="María García" class="testimonial-image">
                                     </div>
                                     <div class="testimonial-info">
                                         <h3 class="testimonial-name">María García</h3>
@@ -307,7 +361,7 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-header">
                                     <div class="testimonial-image-container">
-                                        <img src="https://placehold.co/70x70/8b5cf6/ffffff?text=LM" alt="Laura Martínez" class="testimonial-image">
+                                        <img src="https://placehold.co/70x70/ff0099/ffffff?text=LM" alt="Laura Martínez" class="testimonial-image">
                                     </div>
                                     <div class="testimonial-info">
                                         <h3 class="testimonial-name">Laura Martínez</h3>
@@ -327,7 +381,7 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-header">
                                     <div class="testimonial-image-container">
-                                        <img src="https://placehold.co/70x70/c026d3/ffffff?text=CR" alt="Carmen Rodríguez" class="testimonial-image">
+                                        <img src="https://placehold.co/70x70/ff0099/ffffff?text=CR" alt="Carmen Rodríguez" class="testimonial-image">
                                     </div>
                                     <div class="testimonial-info">
                                         <h3 class="testimonial-name">Carmen Rodríguez</h3>
@@ -359,28 +413,26 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- CTA Section - Estilo SuperWow -->
         <section id="contact" class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2 class="cta-title animate-on-scroll">¡Tu Belleza Es Nuestra Prioridad!</h2>
-                    <p class="cta-description animate-on-scroll">Reserva ahora y obtén un 15% de descuento en tu primer servicio.</p>
-                    <a href="#booking" class="cta-button white animate-on-scroll highlight-effect">Reserva Tu Cita</a>
+                    <h2 class="cta-title animate-on-scroll">¡TE REGALAMOS 1 BRILLO GLASEADO!</h2>
+                    <p class="cta-description animate-on-scroll">Por compras superiores a $90.000 en servicios o productos.</p>
+                    <div class="cta-button-container animate-on-scroll">
+                        <a href="#booking" class="cta-button white">Reserva Tu Cita</a>
+                    </div>
                 </div>
-                <!-- Decorative bubbles -->
-                <div class="decorative-circle circle-1"></div>
-                <div class="decorative-circle circle-2"></div>
-                <div class="decorative-circle circle-3"></div>
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- Footer - Estilo SuperWow -->
         <footer class="footer">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-column">
                         <a href="#" class="footer-logo">
-                            <img src="/img/logo_white.webp" alt="AgelNails Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/140x70/ff3385/ffffff?text=AgelNails'">
+                            <img src="/img/logo_white.webp" alt="AgelNails Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/140x70/ff0099/ffffff?text=AgelNails'">
                         </a>
                         <p class="footer-description">Transformamos tus manos en obras de arte con los mejores productos y técnicas del mercado.</p>
                         <div class="social-links">
@@ -394,6 +446,7 @@
                         <h3 class="footer-title">Enlaces Rápidos</h3>
                         <ul class="footer-links">
                             <li><a href="#home" class="footer-link">Inicio</a></li>
+                            <li><a href="#locations" class="footer-link">Sedes</a></li>
                             <li><a href="#services" class="footer-link">Servicios</a></li>
                             <li><a href="#gallery" class="footer-link">Galería</a></li>
                             <li><a href="#booking" class="footer-link">Reservar</a></li>
@@ -438,26 +491,17 @@
                 </div>
             </div>
         </footer>
+
+        <!-- WhatsApp Button - Estilo SuperWow -->
+        <a href="https://wa.me/34600123456" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </main>
 
     <!-- Scripts -->
     <script src="/js/main.js"></script>
     <script src="/js/calendly-integration.js"></script>
-    
-    <!-- Script para detectar scroll y cambiar la navbar -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.getElementById('main-navbar');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-        });
-    </script>
+    <script src="/js/animations.js"></script>
 </body>
 </html>
 
