@@ -1,0 +1,168 @@
+/* Estilos para el video de fondo en el carrusel */
+
+/* Slide con video de fondo */
+.video-background-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Contenedor del video de fondo */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Estilos para el video */
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Overlay para mejorar la legibilidad del texto */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 2;
+}
+
+/* Botón para activar/desactivar sonido */
+.video-sound-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 0, 153, 0.7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.video-sound-toggle:hover {
+  background-color: rgba(255, 0, 153, 1);
+  transform: scale(1.1);
+}
+
+/* Contenido sobre el video */
+.video-slide-content {
+  position: absolute;
+  bottom: 80px;
+  left: 50px;
+  z-index: 3;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: 60%;
+}
+
+.video-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.video-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Animación para el botón de sonido */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 153, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 153, 0);
+  }
+}
+
+.video-sound-toggle {
+  animation: pulse 2s infinite;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .video-slide-content {
+    bottom: 60px;
+    left: 30px;
+    max-width: 80%;
+  }
+  
+  .video-title {
+    font-size: 1.8rem;
+  }
+  
+  .video-description {
+    font-size: 1rem;
+  }
+  
+  .video-sound-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-slide-content {
+    bottom: 40px;
+    left: 20px;
+    max-width: 90%;
+  }
+  
+  .video-title {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .video-description {
+    font-size: 0.9rem;
+  }
+  
+  .video-sound-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Fallback para dispositivos que no soportan autoplay */
+.no-autoplay .video-background video {
+  display: none;
+}
+
+.no-autoplay .video-background {
+  background-image: url('/img/gallery/video-thumbnail.webp');
+  background-size: cover;
+  background-position: center;
+}

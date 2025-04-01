@@ -1,4 +1,4 @@
-/* Nuevos estilos para las transiciones de la galería */
+/* Estilos optimizados para las transiciones de la galería */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -13,11 +13,10 @@
   overflow: hidden;
   box-shadow: var(--box-shadow);
   position: relative;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Transición más lenta */
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
   background-color: var(--white);
-  /* Eliminar height fijo para evitar desorden */
-  aspect-ratio: 1 / 1; /* Mantener proporción cuadrada */
+  aspect-ratio: 1 / 1;
 }
 
 .gallery-item::before {
@@ -29,7 +28,7 @@
   height: 100%;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
   opacity: 0;
-  transition: opacity 0.8s ease; /* Transición más lenta */
+  transition: opacity 0.8s ease;
   z-index: 1;
 }
 
@@ -38,7 +37,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1); /* Transición más lenta */
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: scale(1.02);
 }
 
 .gallery-overlay {
@@ -51,7 +51,7 @@
   color: var(--white);
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Transición más lenta */
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 2;
 }
 
@@ -77,17 +77,17 @@
 
 /* Hover effects - más suaves */
 .gallery-item:hover {
-  transform: translateY(-5px) scale(1.02); /* Efecto más sutil */
+  transform: translateY(-5px) scale(1.02);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
   z-index: 10;
 }
 
 .gallery-item:hover::before {
-  opacity: 0.15; /* Menos opacidad */
+  opacity: 0.15;
 }
 
 .gallery-item:hover .gallery-image {
-  transform: scale(1.05); /* Zoom más sutil */
+  transform: scale(1.05);
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -108,7 +108,7 @@
   z-index: 1100;
   border-radius: 20px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  aspect-ratio: auto; /* Permitir cualquier proporción en vista expandida */
+  aspect-ratio: auto;
 }
 
 .gallery-item.expanded .gallery-image {
@@ -133,7 +133,7 @@
   z-index: 1050;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.8s ease, visibility 0.8s ease; /* Transición más lenta */
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 .gallery-backdrop.active {
@@ -155,7 +155,7 @@
   justify-content: center;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.5s ease; /* Transición más lenta */
+  transition: all 0.5s ease;
   z-index: 1200;
   opacity: 0;
   visibility: hidden;
@@ -169,17 +169,6 @@
 .gallery-close-button.active {
   opacity: 1;
   visibility: visible;
-}
-
-/* Masonry layout for gallery - simplificado para evitar desorden */
-@media (min-width: 768px) {
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  /* Eliminar los spans que pueden causar desorden */
 }
 
 /* Gallery navigation buttons */
@@ -197,7 +186,7 @@
   justify-content: center;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: all 0.5s ease; /* Transición más lenta */
+  transition: all 0.5s ease;
   z-index: 1200;
   opacity: 0;
   visibility: hidden;
@@ -220,7 +209,7 @@
   visibility: visible;
 }
 
-/* Animation for gallery items - más lenta */
+/* Animation for gallery items */
 @keyframes fadeInScale {
   from {
     opacity: 0;
@@ -233,7 +222,7 @@
 }
 
 .gallery-item {
-  animation: fadeInScale 1s ease forwards; /* Animación más lenta */
+  animation: fadeInScale 1s ease forwards;
   opacity: 0;
 }
 
@@ -262,7 +251,6 @@
   animation-delay: 0.8s;
 }
 
-/* Mejoras para adaptabilidad de imágenes */
 /* Ajustes responsive */
 @media (max-width: 767px) {
   .gallery-grid {
@@ -299,23 +287,16 @@
   }
 }
 
-/* Efecto de zoom suave al cargar */
-.gallery-image {
-  transform: scale(1.02); /* Escala inicial más sutil */
-  transition: transform 2s ease-out; /* Transición más lenta */
-}
-
-.gallery-item.loaded .gallery-image {
-  transform: scale(1);
-}
-
 /* Efecto de enfoque progresivo */
 .gallery-image.blur-load {
-  filter: blur(5px); /* Menos desenfoque */
-  transition: filter 1.5s ease-out; /* Transición más lenta */
+  filter: blur(5px);
+  transition: filter 1.5s ease-out;
 }
 
 .gallery-image.blur-load.loaded {
   filter: blur(0);
 }
 
+.gallery-item.loaded .gallery-image {
+  transform: scale(1);
+}

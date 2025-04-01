@@ -1,4 +1,4 @@
-/* Estilos para la navegación móvil tipo app */
+/* Estilos optimizados para la navegación móvil tipo app */
 .mobile-nav-bar {
   display: none;
   position: fixed;
@@ -70,27 +70,6 @@
 
 .mobile-nav-item.active .mobile-nav-icon {
   transform: translateY(-3px);
-}
-
-/* Iconos dinámicos */
-.mobile-nav-item .mobile-nav-icon {
-  position: relative;
-}
-
-/* Efecto de pulso para el icono activo */
-@keyframes iconPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.mobile-nav-item.active .mobile-nav-icon {
   animation: iconPulse 1.5s infinite;
 }
 
@@ -106,6 +85,19 @@
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   z-index: -1;
+}
+
+/* Efecto de pulso para el icono activo */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Efecto de rebote al hacer clic */
@@ -127,49 +119,6 @@
 
 .mobile-nav-item.clicked .mobile-nav-icon {
   animation: iconBounce 0.8s;
-}
-
-/* Ajuste para el botón de WhatsApp cuando está activa la navegación móvil */
-@media (max-width: 767px) {
-  .mobile-nav-bar {
-    display: block;
-  }
-
-  .whatsapp-button {
-    bottom: 80px;
-  }
-
-  /* Ocultar el botón de menú móvil original */
-  .mobile-menu-button {
-    display: none !important;
-  }
-
-  /* Ajustar el padding del footer para dar espacio a la barra de navegación */
-  .footer {
-    padding-bottom: 80px;
-  }
-
-  /* Ocultar el menú móvil original */
-  .mobile-menu,
-  .mobile-menu-backdrop {
-    display: none !important;
-  }
-
-  /* Mostrar solo iconos en pantallas muy pequeñas */
-  @media (max-width: 360px) {
-    .mobile-nav-text {
-      display: none;
-    }
-
-    .mobile-nav-icon {
-      font-size: 1.6rem;
-      margin-bottom: 0;
-    }
-
-    .mobile-nav-item {
-      padding: 12px 0;
-    }
-  }
 }
 
 /* Animación para la barra de navegación móvil */
@@ -199,30 +148,24 @@
   animation: pulse 1.5s infinite;
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 6px rgba(255, 51, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 51, 102, 0);
-  }
-}
-
-/* Estilo para la navegación de escritorio en modo móvil */
 @media (max-width: 767px) {
-  .navbar .container {
-    justify-content: center;
+  .mobile-nav-bar {
+    display: block;
   }
 
-  .desktop-menu {
-    display: none;
-  }
+  /* Mostrar solo iconos en pantallas muy pequeñas */
+  @media (max-width: 360px) {
+    .mobile-nav-text {
+      display: none;
+    }
 
-  .logo-image {
-    max-height: 50px;
+    .mobile-nav-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0;
+    }
+
+    .mobile-nav-item {
+      padding: 12px 0;
+    }
   }
 }
-

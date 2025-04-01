@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgelNails - Salón de Uñas Profesional</title>
-    <meta name="description" content="AgelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas.">
+    <title>AngelNails - Salón de Uñas Profesional</title>
+    <meta name="description" content="AngelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas.">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/superwow-style.css">
+    <link rel="stylesheet" href="/css/carousel-styles.css">
     <link rel="stylesheet" href="/css/mobile-nav.css">
     <link rel="stylesheet" href="/css/gallery-transitions.css">
-    <link rel="stylesheet" href="/css/carousel-styles.css">
+    <link rel="stylesheet" href="/css/calendly-responsive.css">
+    <link rel="stylesheet" href="/css/responsive-fixes.css">
+    <link rel="stylesheet" href="/css/video-background.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts - Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Calendly widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- Precargar imágenes críticas -->
@@ -27,37 +27,74 @@
         animation: none !important;
       }
       
-      /* Estabilizar la galería */
-      .gallery-grid {
-        min-height: 600px; /* Altura mínima para evitar saltos */
-      }
-      
-      /* Asegurar que las imágenes se carguen correctamente */
-      .gallery-image {
+      /* Estilos para lazy loading */
+      .lazy-image {
         opacity: 0;
         transition: opacity 0.5s ease;
       }
       
-      .gallery-item.loaded .gallery-image {
+      .lazy-loaded {
         opacity: 1;
       }
       
-      /* Eliminar líneas blancas en el carrusel */
-      .carousel {
-        line-height: 0;
-        font-size: 0;
+      /* Estilos para animaciones específicas */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
       
-      .carousel-slide {
-        line-height: 0;
-        font-size: 0;
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
       }
       
-      .carousel-image {
-        display: block;
-        margin: 0;
-        padding: 0;
-        border: none;
+      @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-30px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(30px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      .fade-in {
+        animation: fadeIn 0.8s ease forwards;
+      }
+      
+      .scale-in {
+        animation: scaleIn 0.8s ease forwards;
+      }
+      
+      .slide-in-left {
+        animation: slideInLeft 0.8s ease forwards;
+      }
+      
+      .slide-in-right {
+        animation: slideInRight 0.8s ease forwards;
+      }
+      
+      /* Animaciones para secciones específicas */
+      .cta-title, .cta-description, .cta-button-container {
+        opacity: 0;
+      }
+      
+      .testimonial-title, .testimonial-description, .testimonial-slider {
+        opacity: 0;
+      }
+      
+      /* Decorative circles for CTA section */
+      .decorative-circle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        z-index: 0;
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
       }
     </style>
 </head>
@@ -68,7 +105,7 @@
             <div class="container">
                 <div class="logo">
                     <a href="#" class="logo-link">
-                        <img src="/img/logo_black.webp" alt="AgelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/200x100/ff0099/ffffff?text=AgelNails'">
+                        <img src="/img/logo_black.webp" alt="AngelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/200x100/ff0099/ffffff?text=AngelNails'">
                     </a>
                 </div>
                 <div class="desktop-menu">
@@ -87,7 +124,7 @@
             </div>
         </nav>
 
-        <!-- Mobile Menu Overlay (original) -->
+        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu">
             <button class="close-menu-button" aria-label="Close menu">
                 <i class="fas fa-times"></i>
@@ -106,7 +143,7 @@
         </div>
         <div class="mobile-menu-backdrop"></div>
         
-        <!-- Nueva barra de navegación móvil tipo app -->
+        <!-- Barra de navegación móvil tipo app -->
         <nav class="mobile-nav-bar">
             <div class="mobile-nav-container">
                 <a href="#home" class="mobile-nav-item active">
@@ -133,43 +170,68 @@
             </div>
         </nav>
 
-        <!-- Hero Section with Carousel - Estilo SuperWow -->
-        <section id="home" class="hero-section">
-            <div class="carousel">
-                <div class="carousel-slides">
-                    <div class="carousel-slide">
-                        <img src="/img/gallery/g001.webp" alt="AgelNails manicura profesional" class="carousel-image">
-                        <div class="carousel-overlay"></div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/img/gallery/g002.webp" alt="Diseños exclusivos en uñas" class="carousel-image">
-                        <div class="carousel-overlay"></div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/img/gallery/g003.webp" alt="Tratamientos especiales para uñas" class="carousel-image">
-                        <div class="carousel-overlay"></div>
-                    </div>
+<!-- Hero Section with Carousel and Background Video -->
+<section id="home" class="hero-section">
+    <div class="carousel">
+        <div class="carousel-slides">
+            <!-- Slide con Video de Fondo -->
+            <div class="carousel-slide video-background-slide">
+                <!-- Video de fondo -->
+                <div class="video-background">
+                    <video id="background-video" autoplay muted loop playsinline poster="/img/gallery/video-thumbnail.webp">
+                        <source src="/img/gallery/VID-20250317-WA0004.mp4" type="video/mp4">
+                    </video>
+                    <!-- Overlay con gradiente para mejorar la legibilidad del texto -->
+                    <div class="video-overlay"></div>
+                    
+                    <!-- Botón para activar/desactivar sonido -->
+                    <button class="video-sound-toggle" aria-label="Activar/Desactivar sonido">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
                 </div>
-                <button class="carousel-button prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-button next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="carousel-indicators">
-                    <button class="indicator" data-slide="0" aria-label="Go to slide 1"></button>
-                    <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
-                    <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                
+                <!-- Contenido sobre el video -->
+                <div class="video-slide-content">
+                    <h2 class="video-title">Descubre la Magia de AngelNails</h2>
+                    <p class="video-description">Mira cómo transformamos tus uñas en obras de arte</p>
                 </div>
             </div>
-            <div class="hero-content">
-                <h1 class="hero-title">Un brillo que nos hace <span class="hero-highlight">INVENCIBLES</span></h1>
-                <p class="hero-description">En AgelNails, combinamos creatividad, talento y los mejores productos para brindarte uñas perfectas que reflejen tu personalidad.</p>
-                <a href="#booking" class="cta-button">Reserva tu Cita Ahora</a>
+            
+            <!-- Slides de imágenes existentes -->
+            <div class="carousel-slide">
+                <img src="/img/gallery/g001.webp" alt="AngelNails manicura profesional" class="carousel-image">
+                <div class="carousel-overlay"></div>
             </div>
-        </section>
+            <div class="carousel-slide">
+                <img src="/img/gallery/g002.webp" alt="Diseños exclusivos en uñas" class="carousel-image">
+                <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/img/gallery/g003.webp" alt="Tratamientos especiales para uñas" class="carousel-image">
+                <div class="carousel-overlay"></div>
+            </div>
+        </div>
+        <button class="carousel-button prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-button next" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="carousel-indicators">
+            <button class="indicator" data-slide="0" aria-label="Go to slide 1"></button>
+            <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+            <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+            <button class="indicator" data-slide="3" aria-label="Go to slide 4"></button>
+        </div>
+    </div>
+    <div class="hero-content">
+        <h1 class="hero-title">Un brillo que nos hace <span class="hero-highlight">INVENCIBLES</span></h1>
+        <p class="hero-description">En AngelNails, combinamos creatividad, talento y los mejores productos para brindarte uñas perfectas que reflejen tu personalidad.</p>
+        <a href="#booking" class="cta-button">Reserva tu Cita Ahora</a>
+    </div>
+</section>
 
-        <!-- Services Section - Estilo SuperWow -->
+        <!-- Services Section -->
         <section id="services" class="services-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -179,7 +241,7 @@
                 <div class="services-grid" id="services-grid">
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="/img/gallery/g028.webp" alt="Manicura Regular" class="service-image">
+                            <img src="/img/gallery/g028.webp" alt="Manicura Regular" class="service-image" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Manicura Regular</h3>
@@ -189,7 +251,7 @@
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="/img/gallery/g027.webp" alt="Manicura Semipermanente" class="service-image">
+                            <img src="/img/gallery/g027.webp" alt="Manicura Semipermanente" class="service-image" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Manicura Semipermanente</h3>
@@ -199,7 +261,7 @@
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="/img/gallery/g026.webp" alt="Extensiones Acrílicas" class="service-image">
+                            <img src="/img/gallery/g026.webp" alt="Extensiones Acrílicas" class="service-image" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Extensiones Acrílicas</h3>
@@ -209,7 +271,7 @@
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="/img/gallery/g024.webp" alt="Pedicura Spa" class="service-image">
+                            <img src="/img/gallery/g024.webp" alt="Pedicura Spa" class="service-image" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Pedicura Spa</h3>
@@ -219,7 +281,7 @@
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="/img/gallery/g023.webp" alt="Diseños Artísticos" class="service-image">
+                            <img src="/img/gallery/g023.webp" alt="Diseños Artísticos" class="service-image" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Diseños Artísticos</h3>
@@ -229,7 +291,7 @@
                     </div>
                     <div class="service-card service-card-animate">
                         <div class="service-image-container">
-                            <img src="/img/gallery/g022.webp" alt="Tratamientos Reparadores" class="service-image">
+                            <img src="/img/gallery/g022.webp" alt="Tratamientos Reparadores" class="service-image" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3 class="service-title">Tratamientos Reparadores</h3>
@@ -244,7 +306,7 @@
             </div>
         </section>
 
-        <!-- Gallery Section - Estilo SuperWow -->
+        <!-- Gallery Section -->
         <section id="gallery" class="gallery-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -253,49 +315,49 @@
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="/img/gallery/g010.webp" alt="Diseño Floral" class="gallery-image">
+                        <img data-src="/img/gallery/g010.webp" alt="Diseño Floral" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Diseño Floral</h3>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/img/gallery/g011.webp" alt="Efecto Mármol" class="gallery-image">
+                        <img data-src="/img/gallery/g011.webp" alt="Efecto Mármol" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Efecto Mármol</h3>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/img/gallery/g012.webp" alt="French Moderna" class="gallery-image">
+                        <img data-src="/img/gallery/g012.webp" alt="French Moderna" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">French Moderna</h3>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/img/gallery/g013.webp" alt="Estilo Geométrico" class="gallery-image">
+                        <img data-src="/img/gallery/g013.webp" alt="Estilo Geométrico" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Estilo Geométrico</h3>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/img/gallery/g014.webp" alt="Arte Abstracto" class="gallery-image">
+                        <img data-src="/img/gallery/g014.webp" alt="Arte Abstracto" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Arte Abstracto</h3>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/img/gallery/g015.webp" alt="Glamour y Brillo" class="gallery-image">
+                        <img data-src="/img/gallery/g015.webp" alt="Glamour y Brillo" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Glamour y Brillo</h3>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/img/gallery/g016.webp" alt="Estilo Minimalista" class="gallery-image">
+                        <img data-src="/img/gallery/g016.webp" alt="Estilo Minimalista" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Estilo Minimalista</h3>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/img/gallery/g017.webp" alt="Efecto Ombré" class="gallery-image">
+                        <img data-src="/img/gallery/g017.webp" alt="Efecto Ombré" class="gallery-image lazy-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Efecto Ombré</h3>
                         </div>
@@ -304,55 +366,58 @@
             </div>
         </section>
 
-        <!-- Booking Section - Estilo SuperWow -->
-        <section id="booking" class="booking-section">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> RESERVA TU CITA</h2>
-                    <p class="section-description">Agenda fácilmente tu próxima visita en nuestro salón.</p>
-                </div>
-                
-                <!-- Tarjeta de reserva mejorada -->
-                <div class="calendly-card animate-on-scroll">
-                    <!-- Service selection for Calendly -->
-                    <div class="service-selection">
-                        <h3>Selecciona un servicio para reservar:</h3>
-                        <div class="service-buttons">
-                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicura-regular">
-                                Manicura Regular
-                            </button>
-                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicure-regular">
-                                Manicura Semipermanente
-                            </button>
-                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/manicura-regular-clone">
-                                Extensiones Acrílicas
-                            </button>
-                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/pedicura-spa">
-                                Pedicura Spa
-                            </button>
-                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/disenos-artisticos">
-                                Diseños Artísticos
-                            </button>
-                            <button class="calendly-service-button" data-url="https://calendly.com/badiego47/tratamientos-reparadores">
-                                Tratamientos Reparadores
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Calendly inline widget -->
-                    <div id="calendly-container" class="calendly-inline-widget">
-                        <!-- El contenido se cargará dinámicamente con Calendly -->
-                    </div>
+<!-- Booking Section -->
+<section id="booking" class="booking-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> RESERVA TU CITA</h2>
+            <p class="section-description">Agenda fácilmente tu próxima visita en nuestro salón.</p>
+        </div>
+        
+        <!-- Tarjeta de reserva mejorada -->
+        <div class="calendly-card animate-on-scroll">
+            <!-- Service selection for Calendly -->
+            <div class="service-selection">
+                <h3>Selecciona un servicio para reservar:</h3>
+                <div class="service-buttons">
+                    <button class="calendly-service-button" data-service="manicura-regular" data-url="https://calendly.com/angelnails326/30min">
+                        Manicura Regular
+                    </button>
+                    <button class="calendly-service-button" data-service="manicura-semipermanente" data-url="https://calendly.com/angelnails326/manicura-regular-clon">
+                        Manicura Semipermanente
+                    </button>
+                    <button class="calendly-service-button" data-service="extensiones-acrilicas" data-url="https://calendly.com/angelnails326/manicura-semipermanente-clon">
+                        Extensiones Acrílicas
+                    </button>
+                    <button class="calendly-service-button" data-service="pedicura-spa" data-url="https://calendly.com/badiego47/pedicura-spa">
+                        Pedicura Spa
+                    </button>
+                    <button class="calendly-service-button" data-service="disenos-artisticos" data-url="https://calendly.com/badiego47/disenos-artisticos">
+                        Diseños Artísticos
+                    </button>
+                    <button class="calendly-service-button" data-service="tratamientos-reparadores" data-url="https://calendly.com/badiego47/tratamientos-reparadores">
+                        Tratamientos Reparadores
+                    </button>
                 </div>
             </div>
-        </section>
+            
+            <!-- Calendly inline widget -->
+            <div id="calendly-container" class="calendly-inline-widget">
+                <!-- El contenido se cargará dinámicamente con Calendly -->
+                <div class="calendly-loading">
+                    <i class="fas fa-spinner fa-spin"></i> Cargando calendario...
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- Testimonials Section - Estilo SuperWow -->
+        <!-- Testimonials Section -->
         <section id="testimonials" class="testimonials-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <h2 class="section-title"><i class="fas fa-quote-right"></i> CLIENTES SATISFECHOS</h2>
-                    <p class="section-description">Descubre lo que nuestros clientes dicen sobre su experiencia con AgelNails.</p>
+                    <h2 class="section-title testimonial-title"><i class="fas fa-quote-left"></i> CLIENTES SATISFECHOS</h2>
+                    <p class="section-description testimonial-description">Descubre lo que nuestros clientes dicen sobre su experiencia con AngelNails.</p>
                 </div>
                 <div class="testimonial-slider animate-on-scroll">
                     <div class="testimonial-slides">
@@ -373,7 +438,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="testimonial-text">Increíble experiencia en AgelNails. El personal es muy profesional y atento. Mis uñas quedaron perfectas y el diseño duró muchísimo. Definitivamente volveré.</p>
+                                <p class="testimonial-text">Increíble experiencia en AngelNails. El personal es muy profesional y atento. Mis uñas quedaron perfectas y el diseño duró muchísimo. Definitivamente volveré.</p>
                             </div>
                         </div>
                         <div class="testimonial-slide">
@@ -393,7 +458,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="testimonial-text">He visitado muchos salones de uñas, pero AgelNails es sin duda el mejor. La calidad de sus materiales y la atención al detalle en cada diseño es impresionante. ¡Lo recomiendo al 100%!</p>
+                                <p class="testimonial-text">He visitado muchos salones de uñas, pero AngelNails es sin duda el mejor. La calidad de sus materiales y la atención al detalle en cada diseño es impresionante. ¡Lo recomiendo al 100%!</p>
                             </div>
                         </div>
                         <div class="testimonial-slide">
@@ -432,7 +497,7 @@
             </div>
         </section>
 
-        <!-- CTA Section - Estilo SuperWow -->
+        <!-- CTA Section -->
         <section id="contact" class="cta-section">
             <div class="container">
                 <div class="cta-content">
@@ -445,13 +510,13 @@
             </div>
         </section>
 
-        <!-- Footer - Estilo SuperWow -->
+        <!-- Footer -->
         <footer class="footer">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-column">
                         <a href="#" class="footer-logo">
-                            <img src="/img/logo_white.webp" alt="AgelNails Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/140x70/ff0099/ffffff?text=AgelNails'">
+                            <img src="/img/logo_white.webp" alt="AngelNails Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/140x70/ff0099/ffffff?text=AngelNails'">
                         </a>
                         <p class="footer-description">Transformamos tus manos en obras de arte con los mejores productos y técnicas del mercado.</p>
                         <div class="social-links">
@@ -485,7 +550,7 @@
                             </li>
                             <li class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <span><a href="mailto:info@agelnails.com">info@agelnails.com</a></span>
+                                <span><a href="mailto:info@angelnails.com">info@angelnails.com</a></span>
                             </li>
                         </ul>
                     </div>
@@ -505,26 +570,29 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p class="copyright">&copy; <span id="current-year"></span> AgelNails. Todos los derechos reservados.</p>
+                    <p class="copyright">&copy; <span id="current-year"></span> AngelNails. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
 
-        <!-- WhatsApp Button - Estilo SuperWow -->
-        <a href="https://wa.me/34600123456" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/3017982897" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </main>
 
     <!-- Scripts -->
     <script src="/js/main.js"></script>
-    <script src="/js/calendly-integration.js"></script>
-    <script src="/js/animations.js"></script>
-    <script src="/js/gallery.js"></script>
     <script src="/js/carousel.js"></script>
-    <!-- Añadir script para iconos dinámicos en la navegación móvil -->
+    <script src="/js/video-background.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/image-loader.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/animations-enhanced.js"></script>
+    <script src="/js/calendly-direct.js"></script>
+    
+    <!-- Script para la navegación móvil tipo app -->
     <script>
-        // Script para la navegación móvil tipo app
         document.addEventListener('DOMContentLoaded', function() {
             const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
             const sections = document.querySelectorAll('section');
@@ -569,10 +637,12 @@
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
                     
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                     
                     // Activar el elemento de navegación
                     mobileNavItems.forEach(navItem => {
@@ -581,38 +651,7 @@
                     this.classList.add('active');
                 });
             });
-            
-            // Añadir efectos dinámicos a los iconos
-            function addIconEffects() {
-                // Efecto de brillo aleatorio para el icono activo
-                const activeIcon = document.querySelector('.mobile-nav-item.active .mobile-nav-icon');
-                if (activeIcon) {
-                    setInterval(() => {
-                        activeIcon.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
-                        setTimeout(() => {
-                            activeIcon.style.textShadow = 'none';
-                        }, 300);
-                    }, 3000);
-                }
-                
-                // Añadir efecto de rotación suave al icono de galería
-                const galleryIcon = document.querySelector('.mobile-nav-item[href="#gallery"] .mobile-nav-icon');
-                if (galleryIcon) {
-                    galleryIcon.addEventListener('mouseover', () => {
-                        galleryIcon.style.transition = 'transform 0.5s ease';
-                        galleryIcon.style.transform = 'rotate(30deg)';
-                    });
-                    
-                    galleryIcon.addEventListener('mouseout', () => {
-                        galleryIcon.style.transform = 'rotate(0)';
-                    });
-                }
-            }
-            
-            // Iniciar efectos después de cargar la página
-            setTimeout(addIconEffects, 1000);
         });
     </script>
 </body>
 </html>
-
