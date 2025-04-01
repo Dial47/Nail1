@@ -7,6 +7,9 @@
     <meta name="description" content="AgelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas.">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/superwow-style.css">
+    <link rel="stylesheet" href="/css/mobile-nav.css">
+    <link rel="stylesheet" href="/css/gallery-transitions.css">
+    <link rel="stylesheet" href="/css/carousel-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts - Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,6 +20,46 @@
     <!-- Precargar imágenes críticas -->
     <link rel="preload" href="/img/logo_black.webp" as="image">
     <link rel="preload" href="/img/gallery/g001.webp" as="image">
+    <!-- Añadir estilos para prevenir animaciones durante el redimensionamiento -->
+    <style>
+      .resize-animation-stopper * {
+        transition: none !important;
+        animation: none !important;
+      }
+      
+      /* Estabilizar la galería */
+      .gallery-grid {
+        min-height: 600px; /* Altura mínima para evitar saltos */
+      }
+      
+      /* Asegurar que las imágenes se carguen correctamente */
+      .gallery-image {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      .gallery-item.loaded .gallery-image {
+        opacity: 1;
+      }
+      
+      /* Eliminar líneas blancas en el carrusel */
+      .carousel {
+        line-height: 0;
+        font-size: 0;
+      }
+      
+      .carousel-slide {
+        line-height: 0;
+        font-size: 0;
+      }
+      
+      .carousel-image {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+    </style>
 </head>
 <body>
     <main>
@@ -38,16 +81,13 @@
                         <li><a href="/contacto.html" class="menu-link">Contacto</a></li>
                     </ul>
                 </div>
-                <button class="search-button" aria-label="Buscar">
-                    <i class="fas fa-search"></i>
-                </button>
                 <button class="mobile-menu-button" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </nav>
 
-        <!-- Mobile Menu Overlay -->
+        <!-- Mobile Menu Overlay (original) -->
         <div class="mobile-menu">
             <button class="close-menu-button" aria-label="Close menu">
                 <i class="fas fa-times"></i>
@@ -65,21 +105,48 @@
             </a>
         </div>
         <div class="mobile-menu-backdrop"></div>
+        
+        <!-- Nueva barra de navegación móvil tipo app -->
+        <nav class="mobile-nav-bar">
+            <div class="mobile-nav-container">
+                <a href="#home" class="mobile-nav-item active">
+                    <i class="fas fa-home mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Inicio</span>
+                </a>
+                <a href="#services" class="mobile-nav-item">
+                    <i class="fas fa-spa mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Servicios</span>
+                </a>
+                <a href="#gallery" class="mobile-nav-item">
+                    <i class="fas fa-images mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Galería</span>
+                </a>
+                <a href="#booking" class="mobile-nav-item">
+                    <i class="fas fa-calendar-check mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Reservar</span>
+                    <span class="notification-indicator"></span>
+                </a>
+                <a href="#contact" class="mobile-nav-item">
+                    <i class="fas fa-phone mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Contacto</span>
+                </a>
+            </div>
+        </nav>
 
         <!-- Hero Section with Carousel - Estilo SuperWow -->
         <section id="home" class="hero-section">
             <div class="carousel">
                 <div class="carousel-slides">
-                    <div class="carousel-slide active">
-                        <img src="/img/gallery/g001.webp" alt="AgelNails manicura profesional" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/ffd6e7/ff0099?text=Manicura+Profesional'">
+                    <div class="carousel-slide">
+                        <img src="/img/gallery/g001.webp" alt="AgelNails manicura profesional" class="carousel-image">
                         <div class="carousel-overlay"></div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="/img/gallery/g002.webp" alt="Diseños exclusivos en uñas" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/ffd6e7/ff0099?text=Diseños+Exclusivos'">
+                        <img src="/img/gallery/g002.webp" alt="Diseños exclusivos en uñas" class="carousel-image">
                         <div class="carousel-overlay"></div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="/img/gallery/g003.webp" alt="Tratamientos especiales para uñas" class="carousel-image" onerror="this.src='https://placehold.co/1200x600/ffd6e7/ff0099?text=Tratamientos+Especiales'">
+                        <img src="/img/gallery/g003.webp" alt="Tratamientos especiales para uñas" class="carousel-image">
                         <div class="carousel-overlay"></div>
                     </div>
                 </div>
@@ -90,7 +157,7 @@
                     <i class="fas fa-chevron-right"></i>
                 </button>
                 <div class="carousel-indicators">
-                    <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="indicator" data-slide="0" aria-label="Go to slide 1"></button>
                     <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
                     <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
                 </div>
@@ -99,54 +166,6 @@
                 <h1 class="hero-title">Un brillo que nos hace <span class="hero-highlight">INVENCIBLES</span></h1>
                 <p class="hero-description">En AgelNails, combinamos creatividad, talento y los mejores productos para brindarte uñas perfectas que reflejen tu personalidad.</p>
                 <a href="#booking" class="cta-button">Reserva tu Cita Ahora</a>
-            </div>
-        </section>
-
-        <!-- Sedes Section - Estilo SuperWow -->
-        <section id="locations" class="locations-section">
-            <div class="container">
-                <h2 class="section-title-large">RESERVA EN NUESTRAS SEDES AGELNAILS A NIVEL NACIONAL</h2>
-                <div class="locations-grid">
-                    <div class="location-card">
-                        <a href="#" class="location-button">
-                            <i class="fas fa-heart heart-icon"></i> BOGOTÁ
-                        </a>
-                    </div>
-                    <div class="location-card">
-                        <a href="#" class="location-button">
-                            <i class="fas fa-heart heart-icon"></i> MEDELLÍN
-                        </a>
-                    </div>
-                    <div class="location-card">
-                        <a href="#" class="location-button">
-                            <i class="fas fa-heart heart-icon"></i> CALI
-                        </a>
-                    </div>
-                    <div class="location-card">
-                        <a href="#" class="location-button">
-                            <i class="fas fa-heart heart-icon"></i> BARRANQUILLA
-                        </a>
-                    </div>
-                    <div class="location-card">
-                        <a href="#" class="location-button">
-                            <i class="fas fa-heart heart-icon"></i> CARTAGENA
-                        </a>
-                    </div>
-                    <div class="location-card">
-                        <a href="#" class="location-button">
-                            <i class="fas fa-heart heart-icon"></i> BUCARAMANGA
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Buscador de sedes -->
-                <div class="location-search animate-on-scroll" style="margin-top: 3rem; text-align: center;">
-                    <div style="display: inline-flex; align-items: center; max-width: 600px; width: 100%; background-color: #f5f5f5; border-radius: 30px; padding: 0.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                        <i class="fas fa-map-marker-alt" style="color: var(--primary); margin: 0 1rem; font-size: 1.2rem;"></i>
-                        <input type="text" placeholder="¿Ya tienes una sede favorita? Búscala aquí" style="flex: 1; border: none; background: transparent; padding: 0.75rem 0; font-family: inherit; font-size: 0.9rem;">
-                        <button class="cta-button" style="margin: 0 0.5rem; padding: 0.5rem 1.5rem;">Buscar</button>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -233,49 +252,49 @@
                     <p class="section-description">Explora algunos de nuestros trabajos recientes y diseños exclusivos.</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g010.webp" alt="Diseño Floral" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Diseño Floral</h3>
                         </div>
                     </div>
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g011.webp" alt="Efecto Mármol" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Efecto Mármol</h3>
                         </div>
                     </div>
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g012.webp" alt="French Moderna" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">French Moderna</h3>
                         </div>
                     </div>
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g013.webp" alt="Estilo Geométrico" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Estilo Geométrico</h3>
                         </div>
                     </div>
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g014.webp" alt="Arte Abstracto" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Arte Abstracto</h3>
                         </div>
                     </div>
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g015.webp" alt="Glamour y Brillo" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Glamour y Brillo</h3>
                         </div>
                     </div>
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g016.webp" alt="Estilo Minimalista" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Estilo Minimalista</h3>
                         </div>
                     </div>
-                    <div class="gallery-item animate-on-scroll">
+                    <div class="gallery-item">
                         <img src="/img/gallery/g017.webp" alt="Efecto Ombré" class="gallery-image">
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Efecto Ombré</h3>
@@ -446,7 +465,6 @@
                         <h3 class="footer-title">Enlaces Rápidos</h3>
                         <ul class="footer-links">
                             <li><a href="#home" class="footer-link">Inicio</a></li>
-                            <li><a href="#locations" class="footer-link">Sedes</a></li>
                             <li><a href="#services" class="footer-link">Servicios</a></li>
                             <li><a href="#gallery" class="footer-link">Galería</a></li>
                             <li><a href="#booking" class="footer-link">Reservar</a></li>
@@ -502,6 +520,99 @@
     <script src="/js/main.js"></script>
     <script src="/js/calendly-integration.js"></script>
     <script src="/js/animations.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/carousel.js"></script>
+    <!-- Añadir script para iconos dinámicos en la navegación móvil -->
+    <script>
+        // Script para la navegación móvil tipo app
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            const sections = document.querySelectorAll('section');
+            
+            // Activar el elemento de navegación correspondiente al hacer scroll
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                mobileNavItems.forEach(item => {
+                    item.classList.remove('active');
+                    const href = item.getAttribute('href').substring(1);
+                    if (href === current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Navegación suave al hacer clic en los elementos
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Añadir efecto de clic
+                    mobileNavItems.forEach(navItem => {
+                        navItem.classList.remove('clicked');
+                    });
+                    this.classList.add('clicked');
+                    
+                    // Después de un tiempo, quitar la clase clicked
+                    setTimeout(() => {
+                        this.classList.remove('clicked');
+                    }, 800);
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Activar el elemento de navegación
+                    mobileNavItems.forEach(navItem => {
+                        navItem.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+            
+            // Añadir efectos dinámicos a los iconos
+            function addIconEffects() {
+                // Efecto de brillo aleatorio para el icono activo
+                const activeIcon = document.querySelector('.mobile-nav-item.active .mobile-nav-icon');
+                if (activeIcon) {
+                    setInterval(() => {
+                        activeIcon.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
+                        setTimeout(() => {
+                            activeIcon.style.textShadow = 'none';
+                        }, 300);
+                    }, 3000);
+                }
+                
+                // Añadir efecto de rotación suave al icono de galería
+                const galleryIcon = document.querySelector('.mobile-nav-item[href="#gallery"] .mobile-nav-icon');
+                if (galleryIcon) {
+                    galleryIcon.addEventListener('mouseover', () => {
+                        galleryIcon.style.transition = 'transform 0.5s ease';
+                        galleryIcon.style.transform = 'rotate(30deg)';
+                    });
+                    
+                    galleryIcon.addEventListener('mouseout', () => {
+                        galleryIcon.style.transform = 'rotate(0)';
+                    });
+                }
+            }
+            
+            // Iniciar efectos después de cargar la página
+            setTimeout(addIconEffects, 1000);
+        });
+    </script>
 </body>
 </html>
 

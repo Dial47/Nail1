@@ -37,9 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = ""
   }
 
-  mobileMenuButton.addEventListener("click", openMobileMenu)
-  closeMenuButton.addEventListener("click", closeMobileMenu)
-  mobileMenuBackdrop.addEventListener("click", closeMobileMenu)
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener("click", openMobileMenu)
+  }
+
+  if (closeMenuButton) {
+    closeMenuButton.addEventListener("click", closeMobileMenu)
+  }
+
+  if (mobileMenuBackdrop) {
+    mobileMenuBackdrop.addEventListener("click", closeMobileMenu)
+  }
 
   mobileMenuLinks.forEach((link) => {
     link.addEventListener("click", closeMobileMenu)

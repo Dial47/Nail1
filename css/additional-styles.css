@@ -77,8 +77,16 @@
 
 /* Mejoras para Calendly */
 .calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
   transition: all 0.5s ease;
   position: relative;
+}
+
+.calendly-responsive {
+  width: 100% !important;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 .calendly-inline-widget.loaded {
@@ -90,7 +98,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 100%;
+  min-height: 400px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0.75rem;
   padding: 2rem;
@@ -276,6 +285,38 @@
 }
 
 /* Mejoras para dispositivos móviles */
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    height: 600px;
+  }
+
+  .calendly-card {
+    padding: 1rem;
+  }
+
+  .service-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .calendly-service-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendly-inline-widget {
+    height: 500px;
+  }
+
+  .service-selection h3 {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 767px) {
   .service-buttons {
     flex-direction: column;

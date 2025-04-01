@@ -1,91 +1,207 @@
-// Carousel functionality for the hero section
+// Funcionalidad simplificada para el carrusel
+document.addEventListener("DOMContentLoaded", () => {
+  initCarousel()
+})
 
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    
-    if (!slides.length) return;
-    
-    let currentIndex = 0;
-    let interval;
-    
-    // Function to show a specific slide
-    function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => {
-            slide.classList.remove('active');
-        });
-        
-        // Remove active class from all dots
-        dots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        
-        // Show the selected slide and dot
-        slides[index].classList.add('active');
-        if (dots[index]) {
-            dots[index].classList.add('active');
+function initCarousel() {
+  const carouselSlides = document.querySelectorAll(".carousel-slide")
+  const carouselIndicators = document.querySelectorAll(".carousel-indicators .indicator")
+  const prevButton = document.querySelector(".carousel-button.prev")
+  const nextButton = document.querySelector(".carousel-button.next")
+
+  if (carouselSlides.length === 0) return
+
+  let currentSlide = 0
+  let isAnimating = false
+  let autoplayInterval
+
+  // Inicializar el carrusel
+  function initializeCarousel() {
+    // Ocultar todas las diapositivas excepto la primera
+    carouselSlides.forEach((slide, index) => {
+      if (index === 0) {
+        slide.classList.add("active")
+      } else {
+        slide.classList.remove("active")
+      }
+    })
+
+    // Activar el primer indicador
+    if (carouselIndicators.length > 0) {
+      carouselIndicators[0].classList.add("active")
+    }
+
+    // Iniciar autoplay
+    startAutoplay()
+
+    // Configurar controles
+    setupControls()
+
+    // Configurar eventos táctiles
+    setupTouchEvents()
+  }
+
+  // Función para mostrar un slide específico
+  function showSlide(index) {
+    if (isAnimating) return
+    isAnimating = true
+
+    // Ocultar slide actual
+    carouselSlides[currentSlide].classList.remove("active")
+    if (carouselIndicators.length > 0) {
+      carouselIndicators[currentSlide].classList.remove("active")
+    }
+
+    // Mostrar nuevo slide
+    currentSlide = index
+    carouselSlides[currentSlide].classList.add("active")
+    if (carouselIndicators.length > 0) {
+      carouselIndicators[currentSlide].classList.add("active")
+    }
+
+    // Permitir nueva animación después de un tiempo
+    setTimeout(() => {
+      isAnimating = false
+    }, 1000)
+  }
+
+  // Función para ir al siguiente slide
+  function nextSlide() {
+    let newIndex = currentSlide + 1
+    if (newIndex >= carouselSlides.length) {
+      newIndex = 0
+    }
+    showSlide(newIndex)
+  }
+
+  // Función para ir al slide anterior
+  function prevSlide() {
+    let newIndex = currentSlide - 1
+    if (newIndex < 0) {
+      newIndex = carouselSlides.length - 1
+    }
+    showSlide(newIndex)
+  }
+
+  // Iniciar autoplay
+  function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, 5000)
+  }
+
+  // Detener autoplay
+  function stopAutoplay() {
+    clearInterval(autoplayInterval)
+  }
+
+  // Reiniciar autoplay
+  function resetAutoplay() {
+    stopAutoplay()
+    startAutoplay()
+  }
+
+  // Configurar controles
+  function setupControls() {
+    // Configurar botones de navegación
+    if (prevButton && nextButton) {
+      prevButton.addEventListener("click", (e) => {
+        e.preventDefault()
+        prevSlide()
+        resetAutoplay()
+      })
+
+      nextButton.addEventListener("click", (e) => {
+        e.preventDefault()
+        nextSlide()
+        resetAutoplay()
+      })
+    }
+
+    // Configurar indicadores
+    carouselIndicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", (e) => {
+        e.preventDefault()
+        if (currentSlide !== index) {
+          showSlide(index)
+          resetAutoplay()
         }
-        
-        // Update current index
-        currentIndex = index;
+      })
+    })
+
+    // Pausar autoplay al hacer hover en el carrusel
+    const carousel = document.querySelector(".carousel")
+    if (carousel) {
+      carousel.addEventListener("mouseenter", stopAutoplay)
+      carousel.addEventListener("mouseleave", startAutoplay)
     }
-    
-    // Function to show the next slide
-    function nextSlide() {
-        let newIndex = currentIndex + 1;
-        if (newIndex >= slides.length) {
-            newIndex = 0;
+  }
+
+  // Configurar eventos táctiles
+  function setupTouchEvents() {
+    const carousel = document.querySelector(".carousel")
+    let touchStartX = 0
+    let touchEndX = 0
+
+    carousel.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX
+      },
+      { passive: true },
+    )
+
+    carousel.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX
+        handleSwipe()
+      },
+      { passive: true },
+    )
+
+    function handleSwipe() {
+      const swipeThreshold = 50
+
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Deslizar a la izquierda (siguiente)
+        nextSlide()
+        resetAutoplay()
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Deslizar a la derecha (anterior)
+        prevSlide()
+        resetAutoplay()
+      }
+    }
+  }
+
+  // Optimizar imágenes para diferentes tamaños de pantalla
+  function optimizeImages() {
+    carouselSlides.forEach((slide) => {
+      const img = slide.querySelector(".carousel-image")
+      if (img) {
+        // Asegurar que la imagen cubra todo el espacio sin líneas blancas
+        img.style.width = "100%"
+        img.style.height = "100%"
+        img.style.objectFit = "cover"
+
+        // Centrar la imagen para diferentes tamaños de pantalla
+        if (window.innerWidth <= 768) {
+          // En móviles, centrar en el sujeto principal
+          img.style.objectPosition = "center center"
+        } else {
+          // En pantallas grandes, mostrar más contexto
+          img.style.objectPosition = "center center"
         }
-        showSlide(newIndex);
-    }
-    
-    // Function to show the previous slide
-    function prevSlide() {
-        let newIndex = currentIndex - 1;
-        if (newIndex < 0) {
-            newIndex = slides.length - 1;
-        }
-        showSlide(newIndex);
-    }
-    
-    // Set up event listeners for buttons
-    if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-            prevSlide();
-            resetInterval();
-        });
-    }
-    
-    if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            nextSlide();
-            resetInterval();
-        });
-    }
-    
-    // Set up event listeners for dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            showSlide(index);
-            resetInterval();
-        });
-    });
-    
-    // Function to start the automatic slideshow
-    function startInterval() {
-        interval = setInterval(nextSlide, 5000);
-    }
-    
-    // Function to reset the interval
-    function resetInterval() {
-        clearInterval(interval);
-        startInterval();
-    }
-    
-    // Initialize the carousel
-    showSlide(0);
-    startInterval();
-});
+      }
+    })
+  }
+
+  // Inicializar el carrusel
+  initializeCarousel()
+
+  // Optimizar imágenes
+  optimizeImages()
+
+  // Reoptimizar imágenes cuando cambia el tamaño de la ventana
+  window.addEventListener("resize", optimizeImages)
+}
+
