@@ -3,343 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - AgelNails</title>
-    <meta name="description" content="Descubre todos los servicios de manicura y pedicura que ofrecemos en AgelNails">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/additional-styles.css">
+    <title>Servicios - AngelNails</title>
+    <meta name="description" content="Descubre nuestra amplia gama de servicios profesionales para tus uñas. Manicura, pedicura, extensiones y diseños exclusivos.">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mobile-nav.css">
+    <link rel="stylesheet" href="/css/responsive-fixes.css">
+    <link rel="stylesheet" href="/css/superwow-style.css">
+    <link rel="stylesheet" href="/css/animations-style.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Precargar imágenes críticas -->
+    <link rel="preload" href="/img/logo_black.webp" as="image">
+    
+    <!-- Estilos para animaciones -->
+    <style>
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s, transform 1s;
+      }
+      
+      .animate-on-scroll.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .service-card-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      
+      .service-card-animate.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" class="logo-link">
-                    <img src="img/logo.png" alt="AgelNails Logo" class="logo-image">
+    <main>
+        <!-- Navbar - Estilo SuperWow -->
+        <nav class="navbar" id="main-navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/index.html" class="logo-link">
+                        <img src="/img/logo_black.webp" alt="AngelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/200x100/ff0099/ffffff?text=AngelNails'">
+                    </a>
+                </div>
+                <div class="desktop-menu">
+                    <ul class="menu-list">
+                        <li><a href="/index.html" class="menu-link">Inicio</a></li>
+                        <li><a href="/servicios.html" class="menu-link active">Servicios</a></li>
+                        <li><a href="/galeria.html" class="menu-link">Galería</a></li>
+                        <li><a href="/reservas.html" class="menu-link">Reservar</a></li>
+                        <li><a href="/index.html#testimonials" class="menu-link">Testimonios</a></li>
+                        <li><a href="/index.html#contact" class="menu-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <button class="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu">
+            <button class="close-menu-button" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="mobile-menu-list">
+                <li><a href="/index.html" class="mobile-menu-link">Inicio</a></li>
+                <li><a href="/servicios.html" class="mobile-menu-link">Servicios</a></li>
+                <li><a href="/galeria.html" class="mobile-menu-link">Galería</a></li>
+                <li><a href="/reservas.html" class="mobile-menu-link">Reservar</a></li>
+                <li><a href="/index.html#testimonials" class="mobile-menu-link">Testimonios</a></li>
+                <li><a href="/index.html#contact"  class="mobile-menu-link">Testimonios</a></li>
+                <li><a href="/index.html#contact" class="mobile-menu-link">Contacto</a></li>
+            </ul>
+            <a href="/reservas.html" class="mobile-cta-button">
+                <i class="fas fa-calendar-check"></i> Reservar Cita
+            </a>
+        </div>
+        <div class="mobile-menu-backdrop"></div>
+        
+        <!-- Barra de navegación móvil tipo app -->
+        <nav class="mobile-nav-bar">
+            <div class="mobile-nav-container">
+                <a href="/index.html" class="mobile-nav-item">
+                    <i class="fas fa-home mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Inicio</span>
+                </a>
+                <a href="/servicios.html" class="mobile-nav-item active">
+                    <i class="fas fa-spa mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Servicios</span>
+                </a>
+                <a href="/galeria.html" class="mobile-nav-item">
+                    <i class="fas fa-images mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Galería</span>
+                </a>
+                <a href="/reservas.html" class="mobile-nav-item">
+                    <i class="fas fa-calendar-check mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Reservar</span>
+                    <span class="notification-indicator"></span>
+                </a>
+                <a href="/index.html#contact" class="mobile-nav-item">
+                    <i class="fas fa-phone mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Contacto</span>
                 </a>
             </div>
-            <nav class="desktop-menu">
-                <ul class="menu-list">
-                    <li><a href="index.html" class="menu-link">Inicio</a></li>
-                    <li><a href="servicios.html" class="menu-link active">Servicios</a></li>
-                    <li><a href="galeria.html" class="menu-link">Galería</a></li>
-                    <li><a href="reservas.html" class="menu-link">Reservas</a></li>
-                    <li><a href="contacto.html" class="menu-link">Contacto</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+        </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <button class="close-menu-button">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="mobile-menu-list">
-            <li><a href="index.html" class="mobile-menu-link">Inicio</a></li>
-            <li><a href="servicios.html" class="mobile-menu-link">Servicios</a></li>
-            <li><a href="galeria.html" class="mobile-menu-link">Galería</a></li>
-            <li><a href="reservas.html" class="mobile-menu-link">Reservas</a></li>
-            <li><a href="contacto.html" class="mobile-menu-link">Contacto</a></li>
-        </ul>
-        <a href="reservas.html" class="mobile-cta-button">Reservar Cita</a>
-    </div>
-    <div class="mobile-menu-backdrop"></div>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Nuestros Servicios</h1>
-            <p>Descubre todos los tratamientos que ofrecemos para mantener tus uñas hermosas y saludables</p>
-        </div>
-    </section>
-
-    <!-- Services List -->
-    <section class="services-list section-padding">
-        <div class="container">
-            <!-- Service 1 -->
-            <div class="service-item animate-on-scroll">
-                <div class="service-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Uñas Acrílicas">
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title"><i class="fas fa-spa"></i> NUESTROS SERVICIOS</h2>
+                    <p class="section-description">Ofrecemos una amplia variedad de servicios profesionales para tus manos y pies.</p>
                 </div>
-                <div class="service-details">
-                    <h2>Uñas Acrílicas</h2>
-                    <p>Duraderas y perfectas para cualquier ocasión. Nuestras uñas acrílicas son aplicadas por profesionales con años de experiencia.</p>
-                    <p class="service-price">Desde $30</p>
-                    
-                    <div class="service-features">
-                        <h3>Incluye:</h3>
-                        <ul>
-                            <li>Duración aproximada: 3-4 semanas</li>
-                            <li>Incluye: Preparación de la uña, aplicación de acrílico, limado y pulido</li>
-                            <li>Opciones de diseño personalizadas disponibles</li>
-                            <li>Rellenos disponibles para mantenimiento</li>
+                <div class="services-grid" id="services-grid">
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="/img/gallery/g028.webp" alt="Manicura Regular" class="service-image" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Manicura Regular</h3>
+                            <p class="service-description">Tratamiento básico que incluye limado, cuidado de cutículas y esmaltado con color a elección.</p>
+                            <a href="/reservas.html" class="service-button service-booking-link" data-service="manicura-regular">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="/img/gallery/g027.webp" alt="Manicura Semipermanente" class="service-image" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Manicura Semipermanente</h3>
+                            <p class="service-description">Esmaltado que dura hasta 3 semanas sin perder brillo ni color. Incluye tratamiento completo de uñas.</p>
+                            <a href="/reservas.html" class="service-button service-booking-link" data-service="manicura-semipermanente">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="/img/gallery/g026.webp" alt="Extensiones Acrílicas" class="service-image" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Extensiones Acrílicas</h3>
+                            <p class="service-description">Extensiones duraderas que permiten alargar y fortalecer tus uñas naturales con acabado perfecto.</p>
+                            <a href="/reservas.html" class="service-button service-booking-link" data-service="extensiones-acrilicas">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="/img/gallery/g024.webp" alt="Pedicura Spa" class="service-image" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Pedicura Spa</h3>
+                            <p class="service-description">Tratamiento completo para pies que incluye exfoliación, masaje, hidratación y esmaltado.</p>
+                            <a href="/reservas.html" class="service-button service-booking-link" data-service="pedicura-spa">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="/img/gallery/g023.webp" alt="Diseños Artísticos" class="service-image" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Diseños Artísticos</h3>
+                            <p class="service-description">Desde diseños minimalistas hasta elaboradas obras de arte en tus uñas. Personaliza tu estilo.</p>
+                            <a href="/reservas.html" class="service-button service-booking-link" data-service="disenos-artisticos">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card service-card-animate">
+                        <div class="service-image-container">
+                            <img src="/img/gallery/g022.webp" alt="Tratamientos Reparadores" class="service-image" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Tratamientos Reparadores</h3>
+                            <p class="service-description">Soluciones para uñas dañadas o quebradizas. Devuelve la salud y fortaleza a tus uñas.</p>
+                            <a href="/reservas.html" class="service-button service-booking-link" data-service="tratamientos-reparadores">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta animate-on-scroll">
+                    <a href="/reservas.html" class="cta-button">Reserva Tu Cita Ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <a href="/index.html" class="footer-logo">
+                            <img src="/img/logo_white.webp" alt="AngelNails Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/140x70/ff0099/ffffff?text=AngelNails'">
+                        </a>
+                        <p class="footer-description">Transformamos tus manos en obras de arte con los mejores productos y técnicas del mercado.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="/index.html" class="footer-link">Inicio</a></li>
+                            <li><a href="/servicios.html" class="footer-link">Servicios</a></li>
+                            <li><a href="/galeria.html" class="footer-link">Galería</a></li>
+                            <li><a href="/reservas.html" class="footer-link">Reservar</a></li>
+                            <li><a href="/index.html#testimonials" class="footer-link">Testimonios</a></li>
+                            <li><a href="/index.html#contact" class="footer-link">Contacto</a></li>
                         </ul>
                     </div>
-                    
-                    <a href="reservas.html" class="cta-button service-booking-link" data-service="acrilicas">Reservar Cita</a>
-                </div>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="service-item reverse animate-on-scroll">
-                <div class="service-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Semipermanente">
-                </div>
-                <div class="service-details">
-                    <h2>Semipermanente</h2>
-                    <p>Brillo y color que dura semanas sin dañar tus uñas naturales. Ideal para quienes buscan un acabado profesional de larga duración.</p>
-                    <p class="service-price">Desde $25</p>
-                    
-                    <div class="service-features">
-                        <h3>Incluye:</h3>
-                        <ul>
-                            <li>Duración aproximada: 2-3 semanas</li>
-                            <li>Incluye: Preparación de la uña, aplicación de base, color y top coat</li>
-                            <li>Amplia gama de colores disponibles</li>
-                            <li>Remoción segura que no daña la uña natural</li>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Contacto</h3>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Calle Principal 123, Ciudad</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+34 600 123 456</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span><a href="/cdn-cgi/l/email-protection#e68f888089a6878881838a88878f8a95c885898b"><span class="__cf_email__" data-cfemail="0c65626a634c6d626b6960626d65607f226f6361">[email&#160;protected]</span></a></span>
+                            </li>
                         </ul>
                     </div>
-                    
-                    <a href="reservas.html" class="cta-button service-booking-link" data-service="semipermanente">Reservar Cita</a>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-item animate-on-scroll">
-                <div class="service-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Manicura Tradicional">
-                </div>
-                <div class="service-details">
-                    <h2>Manicura Tradicional</h2>
-                    <p>Cuidado clásico para tus manos con acabados perfectos. Nuestras manicuras tradicionales incluyen un tratamiento completo para manos y uñas.</p>
-                    <p class="service-price">Desde $20</p>
-                    
-                    <div class="service-features">
-                        <h3>Incluye:</h3>
-                        <ul>
-                            <li>Duración aproximada: 1 semana</li>
-                            <li>Incluye: Remojo, cutículas, limado, pulido y esmalte</li>
-                            <li>Tratamiento hidratante para manos</li>
-                            <li>Ideal para mantenimiento regular</li>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Horarios</h3>
+                        <ul class="hours-list">
+                            <li class="hours-item">
+                                Lunes - Viernes: <span class="hours-value">9:00 - 20:00</span>
+                            </li>
+                            <li class="hours-item">
+                                Sábado: <span class="hours-value">9:00 - 18:00</span>
+                            </li>
+                            <li class="hours-item">
+                                Domingo: <span class="hours-value">Cerrado</span>
+                            </li>
                         </ul>
                     </div>
-                    
-                    <a href="reservas.html" class="cta-button service-booking-link" data-service="tradicional">Reservar Cita</a>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; <span id="current-year"></span> AngelNails. Todos los derechos reservados.</p>
                 </div>
             </div>
+        </footer>
 
-            <!-- Service 4 -->
-            <div class="service-item reverse animate-on-scroll">
-                <div class="service-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Pedicura Completa">
-                </div>
-                <div class="service-details">
-                    <h2>Pedicura Completa</h2>
-                    <p>Dale a tus pies el cuidado que merecen con nuestra pedicura profesional. Incluye exfoliación, masaje y esmalte.</p>
-                    <p class="service-price">Desde $35</p>
-                    
-                    <div class="service-features">
-                        <h3>Incluye:</h3>
-                        <ul>
-                            <li>Duración del tratamiento: 45-60 minutos</li>
-                            <li>Incluye: Remojo, exfoliación, eliminación de callosidades, cutículas, limado y esmalte</li>
-                            <li>Masaje relajante para pies</li>
-                            <li>Tratamiento hidratante especial</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="reservas.html" class="cta-button service-booking-link" data-service="pedicura">Reservar Cita</a>
-                </div>
-            </div>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/3017982897" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </main>
 
-            <!-- Service 5 -->
-            <div class="service-item animate-on-scroll">
-                <div class="service-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Diseños Especiales">
-                </div>
-                <div class="service-details">
-                    <h2>Diseños Especiales</h2>
-                    <p>Expresa tu personalidad con diseños únicos creados por nuestros artistas. Desde diseños minimalistas hasta arte elaborado.</p>
-                    <p class="service-price">Desde $10 adicionales</p>
-                    
-                    <div class="service-features">
-                        <h3>Incluye:</h3>
-                        <ul>
-                            <li>Disponible como complemento a cualquier servicio</li>
-                            <li>Opciones: Pedrería, stickers, dibujos a mano, efectos especiales</li>
-                            <li>Diseños personalizados según tus preferencias</li>
-                            <li>Técnicas avanzadas como degradados, mármol, y más</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="reservas.html" class="cta-button service-booking-link" data-service="diseno">Reservar Cita</a>
-                </div>
-            </div>
-
-            <!-- Service 6 -->
-            <div class="service-item reverse animate-on-scroll">
-                <div class="service-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Reparación de Uñas">
-                </div>
-                <div class="service-details">
-                    <h2>Reparación de Uñas</h2>
-                    <p>Soluciones rápidas y efectivas para uñas dañadas o rotas. Restauramos tus uñas para que luzcan perfectas nuevamente.</p>
-                    <p class="service-price">Desde $15</p>
-                    
-                    <div class="service-features">
-                        <h3>Incluye:</h3>
-                        <ul>
-                            <li>Reparación individual o completa</li>
-                            <li>Técnicas especializadas según el tipo de daño</li>
-                            <li>Refuerzo para uñas débiles o quebradizas</li>
-                            <li>Consejos para el cuidado posterior</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="reservas.html" class="cta-button service-booking-link" data-service="reparacion">Reservar Cita</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQs Section -->
-    <section class="faqs-section section-padding bg-light">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2 class="section-title"><i class="fas fa-question-circle"></i> Preguntas Frecuentes</h2>
-                <p class="section-description">Respuestas a las dudas más comunes sobre nuestros servicios</p>
-            </div>
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/image-loader.js"></script>
+    
+    <!-- Script para animaciones de servicios -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const serviceCards = document.querySelectorAll(".service-card-animate");
             
-            <div class="accordion animate-on-scroll">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>¿Cuánto tiempo dura una sesión de manicura?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>El tiempo varía según el servicio. Una manicura tradicional toma aproximadamente 30-45 minutos, mientras que las uñas acrílicas pueden tomar entre 1-2 horas para una aplicación completa.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>¿Es necesario hacer cita previa?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Sí, recomendamos hacer cita previa para garantizar la disponibilidad. Puedes reservar a través de nuestra página web, por teléfono o WhatsApp.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>¿Qué debo hacer si se me rompe una uña?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Contáctanos lo antes posible para programar una reparación. Evita manipular la uña dañada para prevenir más daños o infecciones.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>¿Ofrecen servicios para eventos especiales?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Sí, ofrecemos paquetes especiales para novias, graduaciones y otros eventos. Contáctanos con anticipación para discutir tus necesidades específicas.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>¿Cómo debo cuidar mis uñas entre visitas?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Recomendamos usar guantes para tareas domésticas, aplicar aceite de cutícula diariamente, evitar usar las uñas como herramientas y mantenerlas hidratadas.</p>
-                    </div>
-                </div>
-            </div>
+            function animateOnScroll() {
+                serviceCards.forEach((card, index) => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (cardPosition < windowHeight - 100) {
+                        setTimeout(() => {
+                            card.classList.add("active");
+                        }, 150 * index);
+                    }
+                });
+            }
             
-            <div class="text-center mt-50 animate-on-scroll">
-                <p>¿Tienes más preguntas?</p>
-                <a href="contacto.html" class="cta-button white">Contáctanos</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <a href="index.html" class="logo-link">
-                        <img src="img/logo.png" alt="AgelNails Logo" class="footer-logo-image">
-                    </a>
-                    <p class="footer-description">Transformamos tus manos en obras de arte</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="footer-title">Enlaces Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html" class="footer-link">Inicio</a></li>
-                        <li><a href="servicios.html" class="footer-link">Servicios</a></li>
-                        <li><a href="galeria.html" class="footer-link">Galería</a></li>
-                        <li><a href="reservas.html" class="footer-link">Reservas</a></li>
-                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-title">Contacto</h3>
-                    <ul class="contact-list">
-                        <li class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad
-                        </li>
-                        <li class="contact-item">
-                            <i class="fas fa-phone"></i> +123 456 7890
-                        </li>
-                        <li class="contact-item">
-                            <i class="fas fa-envelope"></i> info@agelnails.com
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-title">Horario</h3>
-                    <ul class="hours-list">
-                        <li class="hours-item">
-                            <span>Lunes - Viernes:</span>
-                            <span class="hours-value">9:00 AM - 7:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span>Sábado:</span>
-                            <span class="hours-value">9:00 AM - 5:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span>Domingo:</span>
-                            <span class="hours-value">Cerrado</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">&copy; <span id="currentYear"></span> AgelNails. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script src="js/services.js"></script>
+            // Ejecutar una vez al cargar
+            animateOnScroll();
+            
+            // Ejecutar al hacer scroll
+            window.addEventListener("scroll", animateOnScroll);
+        });
+    </script>
 </body>
 </html>
 

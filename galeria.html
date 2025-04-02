@@ -3,458 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - AgelNails</title>
-    <meta name="description" content="Explora nuestra galería de diseños de uñas y encuentra inspiración para tu próxima visita">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/additional-styles.css">
+    <title>Galería - AngelNails</title>
+    <meta name="description" content="Explora nuestra galería de diseños de uñas exclusivos. Inspiración para tu próxima visita a AngelNails.">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mobile-nav.css">
+    <link rel="stylesheet" href="/css/gallery-transitions.css">
+    <link rel="stylesheet" href="/css/responsive-fixes.css">
+    <link rel="stylesheet" href="/css/animations-style.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Precargar imágenes críticas -->
+    <link rel="preload" href="/img/logo_black.webp" as="image">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" class="logo-link">
-                    <img src="img/logo.png" alt="AgelNails Logo" class="logo-image">
+    <main>
+        <!-- Navbar - Estilo SuperWow -->
+        <nav class="navbar" id="main-navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="/index.html" class="logo-link">
+                        <img src="/img/logo_black.webp" alt="AngelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/200x100/ff0099/ffffff?text=AngelNails'">
+                    </a>
+                </div>
+                <div class="desktop-menu">
+                    <ul class="menu-list">
+                        <li><a href="/index.html" class="menu-link">Inicio</a></li>
+                        <li><a href="/servicios.html" class="menu-link">Servicios</a></li>
+                        <li><a href="/galeria.html" class="menu-link active">Galería</a></li>
+                        <li><a href="/reservas.html" class="menu-link">Reservar</a></li>
+                        <li><a href="/index.html#testimonials" class="menu-link">Testimonios</a></li>
+                        <li><a href="/index.html#contact" class="menu-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <button class="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu">
+            <button class="close-menu-button" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="mobile-menu-list">
+                <li><a href="/index.html" class="mobile-menu-link">Inicio</a></li>
+                <li><a href="/servicios.html" class="mobile-menu-link">Servicios</a></li>
+                <li><a href="/galeria.html" class="mobile-menu-link">Galería</a></li>
+                <li><a href="/reservas.html" class="mobile-menu-link">Reservar</a></li>
+                <li><a href="/index.html#testimonials" class="mobile-menu-link">Testimonios</a></li>
+                <li><a href="/index.html#contact" class="mobile-menu-link">Contacto</a></li>
+            </ul>
+            <a href="/reservas.html" class="mobile-cta-button">
+                <i class="fas fa-calendar-check"></i> Reservar Cita
+            </a>
+        </div>
+        <div class="mobile-menu-backdrop"></div>
+        
+        <!-- Barra de navegación móvil tipo app -->
+        <nav class="mobile-nav-bar">
+            <div class="mobile-nav-container">
+                <a href="/index.html" class="mobile-nav-item">
+                    <i class="fas fa-home mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Inicio</span>
+                </a>
+                <a href="/servicios.html" class="mobile-nav-item">
+                    <i class="fas fa-spa mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Servicios</span>
+                </a>
+                <a href="/galeria.html" class="mobile-nav-item active">
+                    <i class="fas fa-images mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Galería</span>
+                </a>
+                <a href="/reservas.html" class="mobile-nav-item">
+                    <i class="fas fa-calendar-check mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Reservar</span>
+                    <span class="notification-indicator"></span>
+                </a>
+                <a href="/index.html#contact" class="mobile-nav-item">
+                    <i class="fas fa-phone mobile-nav-icon"></i>
+                    <span class="mobile-nav-text">Contacto</span>
                 </a>
             </div>
-            <nav class="desktop-menu">
-                <ul class="menu-list">
-                    <li><a href="index.html" class="menu-link">Inicio</a></li>
-                    <li><a href="servicios.html" class="menu-link">Servicios</a></li>
-                    <li><a href="galeria.html" class="menu-link active">Galería</a></li>
-                    <li><a href="reservas.html" class="menu-link">Reservas</a></li>
-                    <li><a href="contacto.html" class="menu-link">Contacto</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+        </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <button class="close-menu-button">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="mobile-menu-list">
-            <li><a href="index.html" class="mobile-menu-link">Inicio</a></li>
-            <li><a href="servicios.html" class="mobile-menu-link">Servicios</a></li>
-            <li><a href="galeria.html" class="mobile-menu-link">Galería</a></li>
-            <li><a href="reservas.html" class="mobile-menu-link">Reservas</a></li>
-            <li><a href="contacto.html" class="mobile-menu-link">Contacto</a></li>
-        </ul>
-        <a href="reservas.html" class="mobile-cta-button">Reservar Cita</a>
-    </div>
-    <div class="mobile-menu-backdrop"></div>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Nuestra Galería</h1>
-            <p>Explora nuestra colección de diseños y encuentra inspiración para tu próxima visita</p>
-        </div>
-    </section>
-
-    <!-- Gallery Tabs -->
-    <section class="gallery-section section-padding">
-        <div class="container">
-            <div class="gallery-tabs">
-                <div class="tabs animate-on-scroll">
-                    <button class="tab-btn active" data-category="acrilicas">Acrílicas</button>
-                    <button class="tab-btn" data-category="semipermanente">Semipermanente</button>
-                    <button class="tab-btn" data-category="tradicional">Tradicional</button>
-                    <button class="tab-btn" data-category="disenos">Diseños Especiales</button>
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title"><i class="fas fa-images"></i> NUESTRA GALERÍA</h2>
+                    <p class="section-description">Explora algunos de nuestros trabajos recientes y diseños exclusivos.</p>
                 </div>
-                
-                <div class="tab-content active" id="acrilicas">
-                    <div class="gallery-grid">
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 1">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 1</p>
-                            </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g010.webp" alt="Diseño Floral" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Diseño Floral</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 2">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 2</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g011.webp" alt="Efecto Mármol" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Efecto Mármol</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 3">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 3</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g012.webp" alt="French Moderna" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">French Moderna</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 4">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 4</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g013.webp" alt="Estilo Geométrico" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Estilo Geométrico</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 5">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 5</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g014.webp" alt="Arte Abstracto" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Arte Abstracto</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 6">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 6</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g015.webp" alt="Glamour y Brillo" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Glamour y Brillo</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 7">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 7</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g016.webp" alt="Estilo Minimalista" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Estilo Minimalista</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 8">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 8</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g017.webp" alt="Efecto Ombré" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Efecto Ombré</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 9">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 9</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g018.webp" alt="Diseño Tropical" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Diseño Tropical</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 10">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 10</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g019.webp" alt="Estilo Vintage" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Estilo Vintage</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 11">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 11</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g020.webp" alt="Diseño Elegante" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Diseño Elegante</h3>
                         </div>
-                        <div class="gallery-item animate-on-scroll">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Acrílicas 12">
-                            <div class="gallery-overlay">
-                                <p>Diseño Acrílicas 12</p>
-                            </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img data-src="/img/gallery/g021.webp" alt="Tendencia Actual" class="gallery-image lazy-image">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Tendencia Actual</h3>
                         </div>
                     </div>
                 </div>
                 
-                <div class="tab-content" id="semipermanente">
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 1">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 1</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 2">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 2</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 3">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 3</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 4">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 4</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 5">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 5</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 6">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 6</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 7">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 7</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 8">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 8</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 9">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 9</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 10">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 10</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 11">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 11</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Semipermanente 12">
-                            <div class="gallery-overlay">
-                                <p>Diseño Semipermanente 12</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-content" id="tradicional">
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 1">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 1</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 2">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 2</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 3">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 3</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 4">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 4</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 5">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 5</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 6">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 6</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 7">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 7</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 8">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 8</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 9">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 9</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 10">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 10</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 11">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 11</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Tradicional 12">
-                            <div class="gallery-overlay">
-                                <p>Diseño Tradicional 12</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-content" id="disenos">
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 1">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 1</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 2">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 2</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 3">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 3</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 4">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 4</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 5">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 5</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 6">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 6</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 7">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 7</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 8">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 8</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 9">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 9</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 10">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 10</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 11">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 11</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Diseño Especial 12">
-                            <div class="gallery-overlay">
-                                <p>Diseño Especial 12</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="section-cta animate-on-scroll" style="text-align: center; margin-top: 3rem;">
+                    <a href="/reservas.html" class="cta-button">Reserva Tu Cita Ahora</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section section-padding bg-light">
-        <div class="container text-center">
-            <h2 class="cta-title animate-on-scroll">¿Te inspira alguno de nuestros diseños?</h2>
-            <p class="cta-description animate-on-scroll">Reserva tu cita ahora y haz realidad el diseño que siempre has querido</p>
-            <a href="reservas.html" class="cta-button animate-on-scroll">Reservar Cita</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <a href="index.html" class="logo-link">
-                        <img src="img/logo.png" alt="AgelNails Logo" class="footer-logo-image">
-                    </a>
-                    <p class="footer-description">Transformamos tus manos en obras de arte</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <a href="/index.html" class="footer-logo">
+                            <img src="/img/logo_white.webp" alt="AngelNails Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/140x70/ff0099/ffffff?text=AngelNails'">
+                        </a>
+                        <p class="footer-description">Transformamos tus manos en obras de arte con los mejores productos y técnicas del mercado.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="/index.html" class="footer-link">Inicio</a></li>
+                            <li><a href="/servicios.html" class="footer-link">Servicios</a></li>
+                            <li><a href="/galeria.html" class="footer-link">Galería</a></li>
+                            <li><a href="/reservas.html" class="footer-link">Reservar</a></li>
+                            <li><a href="/index.html#testimonials" class="footer-link">Testimonios</a></li>
+                            <li><a href="/index.html#contact" class="footer-link">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Contacto</h3>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Calle Principal 123, Ciudad</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+34 600 123 456</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span><a href="/cdn-cgi/l/email-protection#e68f888089a6878881838a88878f8a95c885898b"><span class="__cf_email__" data-cfemail="0c65626a634c6d626b6960626d65607f226f6361">[email&#160;protected]</span></a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Horarios</h3>
+                        <ul class="hours-list">
+                            <li class="hours-item">
+                                Lunes - Viernes: <span class="hours-value">9:00 - 20:00</span>
+                            </li>
+                            <li class="hours-item">
+                                Sábado: <span class="hours-value">9:00 - 18:00</span>
+                            </li>
+                            <li class="hours-item">
+                                Domingo: <span class="hours-value">Cerrado</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div>
-                    <h3 class="footer-title">Enlaces Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html" class="footer-link">Inicio</a></li>
-                        <li><a href="servicios.html" class="footer-link">Servicios</a></li>
-                        <li><a href="galeria.html" class="footer-link">Galería</a></li>
-                        <li><a href="reservas.html" class="footer-link">Reservas</a></li>
-                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-title">Contacto</h3>
-                    <ul class="contact-list">
-                        <li class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad
-                        </li>
-                        <li class="contact-item">
-                            <i class="fas fa-phone"></i> +123 456 7890
-                        </li>
-                        <li class="contact-item">
-                            <i class="fas fa-envelope"></i> info@agelnails.com
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-title">Horario</h3>
-                    <ul class="hours-list">
-                        <li class="hours-item">
-                            <span>Lunes - Viernes:</span>
-                            <span class="hours-value">9:00 AM - 7:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span>Sábado:</span>
-                            <span class="hours-value">9:00 AM - 5:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span>Domingo:</span>
-                            <span class="hours-value">Cerrado</span>
-                        </li>
-                    </ul>
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; <span id="current-year"></span> AngelNails. Todos los derechos reservados.</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p class="copyright">&copy; <span id="currentYear"></span> AgelNails. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/gallery.js"></script>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/3017982897" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </main>
+
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/image-loader.js"></script>
+    <script src="/js/animations.js"></script>
 </body>
 </html>
 

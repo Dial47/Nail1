@@ -1,0 +1,346 @@
+/* Colores mejorados y degradados más vibrantes para AngelNails */
+
+:root {
+  /* Paleta de colores más vibrante */
+  --primary: #ff0099;
+  --primary-light: #ff66cc;
+  --primary-dark: #d4006f;
+  --secondary: #9d4edd;
+  --secondary-light: #c77dff;
+  --secondary-dark: #7b2cbf;
+  --accent: #f72585;
+  --accent-light: #ff85a1;
+  --accent-vibrant: #ff2a6d;
+  --gradient-hot: linear-gradient(45deg, #ff0099, #ff2a6d);
+  --gradient-cool: linear-gradient(45deg, #9d4edd, #7209b7);
+  --gradient-mixed: linear-gradient(45deg, #ff0099, #9d4edd);
+  --gradient-vibrant: linear-gradient(45deg, #ff2a6d, #7209b7);
+  --gradient-neon: linear-gradient(45deg, #ff2a6d, #00f2ff);
+}
+
+/* Navbar con degradado más vibrante */
+.navbar {
+  background: var(--gradient-vibrant);
+  box-shadow: 0 4px 20px rgba(255, 0, 153, 0.5);
+}
+
+.navbar.scrolled {
+  background: var(--gradient-neon);
+  box-shadow: 0 4px 25px rgba(255, 42, 109, 0.6);
+}
+
+/* Botones con efecto de brillo */
+.cta-button {
+  background: var(--gradient-hot);
+  box-shadow: 0 6px 15px rgba(255, 0, 153, 0.5);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: scale(0);
+  transition: transform 0.8s ease;
+  z-index: -1;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 0, 153, 0.7);
+}
+
+.cta-button:hover::before {
+  transform: scale(1);
+  animation: pulse-glow 1.5s infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Carrusel con overlay más vibrante */
+.carousel-overlay {
+  background: linear-gradient(to bottom, rgba(255, 42, 109, 0.4), rgba(157, 78, 221, 0.4));
+}
+
+/* Indicadores de carrusel más llamativos */
+.carousel-indicators .indicator {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carousel-indicators .indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.3);
+}
+
+.carousel-indicators .indicator.active {
+  background-color: var(--accent-vibrant);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(255, 42, 109, 0.7);
+}
+
+/* Botones de carrusel más llamativos */
+.carousel-button {
+  background-color: rgba(255, 42, 109, 0.8);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carousel-button:hover {
+  background-color: var(--accent-vibrant);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenido del hero con efecto de brillo */
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  transition: all 0.5s ease;
+}
+
+.hero-content:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+.hero-title {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-highlight {
+  background: var(--gradient-hot);
+  color: white;
+  padding: 0.3rem 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(255, 0, 153, 0.4);
+}
+
+/* Sección de testimonios más vibrante */
+.testimonials-section {
+  background: linear-gradient(135deg, var(--pink-bg), #f3e7ff);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff0099' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 0, 153, 0.2);
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-mixed);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.testimonial-image-container {
+  border: 3px solid transparent;
+  background: var(--gradient-mixed);
+  padding: 3px;
+}
+
+/* CTA Section más impactante */
+.cta-section {
+  background: var(--gradient-vibrant);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.cta-title {
+  color: white;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.cta-description {
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1.3rem;
+}
+
+.cta-button.white {
+  background: white;
+  color: var(--accent-vibrant);
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-button.white:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  color: var(--primary-dark);
+}
+
+/* Footer más vibrante */
+.footer {
+  background: linear-gradient(to bottom, #1a1a1a, #111111);
+}
+
+.footer-title::after {
+  background: var(--gradient-hot);
+  height: 4px;
+  width: 50px;
+}
+
+.social-link {
+  background: var(--gradient-mixed);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-link:hover {
+  transform: translateY(-5px) rotate(15deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(255, 0, 153, 0.4);
+}
+
+.footer-link:hover {
+  color: var(--accent-vibrant);
+  transform: translateX(8px);
+}
+
+.contact-item i {
+  color: var(--accent-vibrant);
+}
+
+/* WhatsApp button más llamativo */
+.whatsapp-button {
+  background-color: #25d366;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.15) rotate(15deg);
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* Animaciones mejoradas */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 42, 109, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(255, 42, 109, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 42, 109, 0);
+  }
+}
+
+.float-animation {
+  animation: float 5s ease-in-out infinite;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Efectos de hover mejorados */
+.hover-scale {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-scale:hover {
+  transform: scale(1.08);
+}
+
+.hover-glow {
+  transition: box-shadow 0.4s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 42, 109, 0.6);
+}
+
+/* Efectos para la navegación móvil */
+.mobile-nav-bar {
+  background: var(--gradient-vibrant);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav-item.active::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.notification-indicator {
+  animation: pulse 1.5s infinite;
+}
+
