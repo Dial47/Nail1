@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservar Cita - Angel Nails</title>
+<meta name="description" content="Reserva tu cita en Angel Nails. Elige el servicio que deseas y selecciona la fecha y hora que mejor te convenga.">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/page-specific.css">
+<link rel="stylesheet" href="styles/calendly-responsive.css">
+</head>
+<body>
+<!-- Contenedor de partículas brillantes -->
+<div class="glitter-container"></div>
+
+<!-- Social links in top right -->
+<div class="top-social-links">
+  <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<div class="angel-nails-website">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-icon">
+      <div class="nail-polish">
+        <div class="nail-polish-cap"></div>
+        <div class="nail-polish-drip"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="img/logo_white.webp" alt="Angel Nails Logo" class="logo-image" width="180" height="80">
+      </a>
+      
+      <div class="navbar-content">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="index.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-home"></i></span>
+              <span class="menu-text">Inicio</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="servicios.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-spa"></i></span>
+              <span class="menu-text">Servicios</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="galeria.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-images"></i></span>
+              <span class="menu-text">Galería</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="nosotros.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-users"></i></span>
+              <span class="menu-text">Nosotros</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="contacto.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-envelope"></i></span>
+              <span class="menu-text">Contacto</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="citas.html" class="menu-link reserva active">
+              <span class="menu-icon"><i class="fas fa-calendar-check"></i></span>
+              <span class="menu-text">Reservar Cita</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <button class="mobile-menu-button" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="mobile-menu">
+    <button class="close-menu-button" aria-label="Cerrar menú">
+      <i class="fas fa-times"></i>
+    </button>
+    
+    <ul class="mobile-menu-list">
+      <li><a href="index.html" class="mobile-menu-link">Inicio</a></li>
+      <li><a href="servicios.html" class="mobile-menu-link">Servicios</a></li>
+      <li><a href="galeria.html" class="mobile-menu-link">Galería</a></li>
+      <li><a href="nosotros.html" class="mobile-menu-link">Nosotros</a></li>
+      <li><a href="contacto.html" class="mobile-menu-link">Contacto</a></li>
+      <li><a href="citas.html" class="mobile-menu-link active">Reservar Cita</a></li>
+    </ul>
+    
+    <div class="mobile-social-links">
+      <a href="#" class="mobile-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+    <a href="citas.html" class="mobile-cta-button">Reservar Cita</a>
+  </div>
+  <div class="mobile-menu-backdrop"></div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="container">
+      <h1 class="page-title">Reservar Cita</h1>
+      <div class="page-breadcrumb">
+        <a href="index.html">Inicio</a> / <span>Reservar Cita</span>
+      </div>
+    </div>
+    <div class="page-header-decoration">
+      <div class="nail-sparkle"></div>
+      <div class="nail-sparkle"></div>
+      <div class="nail-sparkle"></div>
+    </div>
+  </section>
+
+  <!-- Appointment Section -->
+  <section id="booking" class="section py-20">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Agenda tu Cita</h2>
+        <p class="section-description">Selecciona el servicio que deseas y elige la fecha y hora que mejor te convenga.</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="animate-on-scroll">
+            <div class="service-selection">
+              <h3>Nuestros Servicios</h3>
+              <div class="service-buttons">
+                <button class="calendly-service-button" data-service="manicura" data-url="https://calendly.com/angelnails326/30min">
+                  <i class="fas fa-paint-brush"></i> Manicura
+                </button>
+                
+                <button class="calendly-service-button" data-service="pedicura" data-url="https://calendly.com/angelnails326/manicura-regular-clon">
+                  <i class="fas fa-spa"></i> Pedicura
+                </button>
+                
+                <button class="calendly-service-button" data-service="acrilicas" data-url="https://calendly.com/angelnails326/manicura-semipermanente-clon">
+                  <i class="fas fa-gem"></i> Uñas Acrílicas
+                </button>
+                
+                <button class="calendly-service-button" data-service="gel" data-url="https://calendly.com/angelnails326/gel">
+                  <i class="fas fa-magic"></i> Uñas de Gel
+                </button>
+                
+                <button class="calendly-service-button" data-service="nail-art" data-url="https://calendly.com/angelnails326/nail-art">
+                  <i class="fas fa-star"></i> Nail Art
+                </button>
+                
+                <button class="calendly-service-button" data-service="tratamientos" data-url="https://calendly.com/angelnails326/tratamientos">
+                  <i class="fas fa-heart"></i> Tratamientos
+                </button>
+              </div>
+            </div>
+            
+            <div class="contact-options mt-5">
+              <h3 class="mb-3">¿Prefieres reservar por teléfono?</h3>
+              <p>Llámanos al <a href="tel:+56912345678" class="text-primary">+56 9 1234 5678</a> o envíanos un mensaje por WhatsApp.</p>
+              <a href="https://wa.me/56912345678?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" class="whatsapp-contact-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-8">
+          <div class="animate-on-scroll">
+            <div class="calendly-card">
+              <div id="calendly-container" class="calendly-container">
+                <!-- Calendly inline widget will be loaded here -->
+                <div class="calendly-loading">
+                  <i class="fas fa-spinner fa-spin"></i> Cargando calendario...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Appointment Info Section -->
+  <section class="section bg-light py-20">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Información Importante</h2>
+        <p class="section-description">Algunas cosas que debes saber antes de tu cita</p>
+      </div>
+      
+      <div class="info-cards">
+        <div class="info-card animate-on-scroll">
+          <div class="info-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="info-title">Puntualidad</h3>
+          <p class="info-text">Te recomendamos llegar 5-10 minutos antes de tu cita. Si llegas más de 15 minutos tarde, es posible que tengamos que reprogramar tu cita.</p>
+        </div>
+        
+        <div class="info-card animate-on-scroll">
+          <div class="info-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3 class="info-title">Cancelaciones</h3>
+          <p class="info-text">Si necesitas cancelar o reprogramar tu cita, te pedimos que lo hagas con al menos 24 horas de antelación para evitar cargos.</p>
+        </div>
+        
+        <div class="info-card animate-on-scroll">
+          <div class="info-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3 class="info-title">Pagos</h3>
+          <p class="info-text">Aceptamos pagos en efectivo, tarjetas de crédito/débito y transferencias bancarias. También trabajamos con aplicaciones de pago móvil.</p>
+        </div>
+        
+        <div class="info-card animate-on-scroll">
+          <div class="info-icon">
+            <i class="fas fa-hand-sparkles"></i>
+          </div>
+          <h3 class="info-title">Preparación</h3>
+          <p class="info-text">Para manicuras, evita usar esmalte de uñas el día de tu cita. Para pedicuras, te recomendamos traer sandalias para no dañar el acabado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="section py-20">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-description">Resolvemos tus dudas sobre nuestros servicios y procedimientos de reserva</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item animate-on-scroll">
+          <div class="faq-question">
+            <h3>¿Cómo funciona el sistema de reservas online?</h3>
+            <div class="faq-icon">
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Nuestro sistema de reservas online te permite seleccionar el servicio que deseas, elegir la fecha y hora que mejor te convenga, y confirmar tu cita en pocos clics. Recibirás un correo electrónico de confirmación con los detalles de tu cita y recordatorios automáticos.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item animate-on-scroll">
+          <div class="faq-question">
+            <h3>¿Puedo modificar o cancelar mi cita online?</h3>
+            <div class="faq-icon">
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, puedes modificar o cancelar tu cita a través del enlace que recibirás en tu correo de confirmación. Te pedimos que realices cualquier cambio con al menos 24 horas de antelación para evitar cargos por cancelación tardía.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item animate-on-scroll">
+          <div class="faq-question">
+            <h3>¿Qué sucede si llego tarde a mi cita?</h3>
+            <div class="faq-icon">
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Te recomendamos llegar 5-10 minutos antes de tu cita. Si llegas hasta 15 minutos tarde, haremos lo posible por atenderte, pero es posible que tengamos que reducir el servicio para respetar los horarios de las siguientes clientas. Si llegas más de 15 minutos tarde, es posible que tengamos que reprogramar tu cita.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item animate-on-scroll">
+          <div class="faq-question">
+            <h3>¿Necesito dejar un depósito para reservar?</h3>
+            <div class="faq-icon">
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Para algunos servicios especiales o de larga duración, podemos solicitar un depósito del 30% para confirmar tu reserva. Este depósito se descontará del precio final del servicio. Para servicios regulares, no es necesario dejar un depósito.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item animate-on-scroll">
+          <div class="faq-question">
+            <h3>¿Puedo reservar para un grupo?</h3>
+            <div class="faq-icon">
+              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus"></i>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>¡Por supuesto! Para grupos de 3 o más personas, te recomendamos contactarnos directamente por teléfono o WhatsApp para coordinar las citas y asegurarnos de poder atender a todo el grupo de manera eficiente. Ofrecemos descuentos especiales para grupos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <!-- Separador ondulado para el footer -->
+    <div class="footer-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
+      </svg>
+    </div>
+    
+    <div class="footer-top">
+      <div class="footer-glow"></div>
+      <div class="footer-glow"></div>
+      
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-widget about-widget">
+            <div class="footer-logo">
+              <img src="img/logo_white.webp" alt="Angel Nails Logo" class="footer-logo-image" width="160" height="70">
+            </div>
+            <p class="footer-about-text">
+              En Angel Nails nos dedicamos a crear experiencias únicas de belleza para tus manos y pies, utilizando productos de alta calidad y las técnicas más avanzadas del mercado.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer-widget links-widget">
+            <h3 class="footer-widget-title">Enlaces Rápidos</h3>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Inicio</a></li>
+              <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+              <li><a href="galeria.html" class="footer-link">Galería</a></li>
+              <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
+              <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+              <li><a href="citas.html" class="footer-link">Reservar Cita</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-widget services-widget">
+            <h3 class="footer-widget-title">Nuestros Servicios</h3>
+            <ul class="footer-links">
+              <li><a href="servicios.html#manicura" class="footer-link">Manicura Básica</a></li>
+              <li><a href="servicios.html#gel" class="footer-link">Manicura Gel</a></li>
+              <li><a href="servicios.html#acrilicas" class="footer-link">Uñas Acrílicas</a></li>
+              <li><a href="servicios.html#pedicura" class="footer-link">Pedicura Spa</a></li>
+              <li><a href="servicios.html#nail-art" class="footer-link">Nail Art Avanzado</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-widget contact-widget">
+            <h3 class="footer-widget-title">Contáctanos</h3>
+            <ul class="footer-contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Av. Providencia 1234, Local 5<br>Providencia, Santiago</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span>+56 9 1234 5678</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@angelnails.cl</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span>Lun-Vie: 10:00 - 20:00<br>Sáb: 10:00 - 18:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Línea ondulada para separar footer-top y footer-bottom -->
+    <div class="footer-divider"></div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            &copy; <span id="current-year"></span> Angel Nails. Todos los derechos reservados.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" class="footer-bottom-link">Términos y Condiciones</a>
+            <a href="#" class="footer-bottom-link">Política de Privacidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a 
+    href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" 
+    class="whatsapp-button" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Contactar por WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Appointment Button -->
+  <a 
+    href="citas.html" 
+    class="appointment-button" 
+    aria-label="Reservar cita"
+  >
+    <i class="fas fa-calendar-check"></i>
+  </a>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+</div>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/particle-animations.js"></script>
+<script src="scripts/calendly-direct.js"></script>
+</body>
+</html>

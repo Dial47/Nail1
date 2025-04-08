@@ -1,0 +1,423 @@
+/**
+ * AngelNails - Enhanced Gallery Styles
+ * Version: 1.0
+ */
+
+/* Gallery Grid with Infinite Scroll */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  aspect-ratio: 1 / 1;
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+}
+
+.gallery-item.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(255, 62, 157, 0.2);
+}
+
+.gallery-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f5f0ff; /* Color de fondo mientras carga */
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+.gallery-image.loaded {
+  opacity: 1;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-description {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.gallery-category {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 50px;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Loader */
+.gallery-loader {
+  text-align: center;
+  padding: 2rem 0;
+  display: none;
+}
+
+.gallery-loader.active {
+  display: block;
+}
+
+.loader-spinner {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.gallery-loader p {
+  color: var(--color-gray-600);
+  font-size: 1.1rem;
+}
+
+/* Video Gallery Enhancements */
+.video-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.video-item {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: var(--color-white);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.video-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 62, 157, 0.2);
+}
+
+.video-thumbnail {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.video-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.video-item:hover .video-image {
+  transform: scale(1.1);
+}
+
+.video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.video-play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 62, 157, 0.4);
+}
+
+.video-title {
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.video-description {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--color-gray-600);
+}
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  background-color: var(--color-white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.video-modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: rotate(90deg);
+}
+
+.video-container {
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+}
+
+.video-placeholder-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.video-placeholder-text {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: var(--color-gray-500);
+}
+
+/* Trends Section */
+.trends-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.trends-slider {
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.trends-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.5s ease;
+}
+
+.trend-card {
+  flex: 0 0 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .trend-card {
+    flex: 0 0 calc(33.333% - 1.33rem);
+  }
+}
+
+.trend-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 62, 157, 0.2);
+}
+
+.trend-image-container {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.trend-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trend-card:hover .trend-image {
+  transform: scale(1.1);
+}
+
+.trend-content {
+  padding: 1.5rem;
+}
+
+.trend-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-gray-800);
+}
+
+.trend-description {
+  color: var(--color-gray-600);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.trend-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.trend-nav:hover {
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  color: var(--color-white);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 62, 157, 0.2);
+}
+
+.trend-nav.prev {
+  left: 10px;
+}
+
+.trend-nav.next {
+  right: 10px;
+}
+
+@media (max-width: 767px) {
+  .trend-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+}

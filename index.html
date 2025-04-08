@@ -1,337 +1,705 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AngelNails - Salón de Uñas Profesional | Diseños Exclusivos</title>
-    <meta name="description" content="AngelNails ofrece servicios profesionales de manicura, pedicura y diseño de uñas con los mejores productos y técnicas. ¡Transforma tus uñas en obras de arte!">
-    
-    <!-- CSS Optimizado -->
-    <link rel="stylesheet" href="/css/styles-optimized.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts - Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    
-    <!-- Precargar imágenes críticas -->
-    <link rel="preload" href="/img/logo_black.webp" as="image">
-    <link rel="preload" href="/img/gallery/g001.webp" as="image">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Nails - Salón de Uñas Profesional</title>
+<meta name="description" content="En Angel Nails, creamos diseños exclusivos que reflejan tu estilo único y personalidad.">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="styles/main.css">
+
 </head>
 <body>
-    <main>
-        <!-- Navbar - Estilo SuperWow -->
-        <nav class="navbar" id="main-navbar">
-            <div class="container">
-                <div class="logo">
-                    <a href="/index.html" class="logo-link">
-                        <img src="/img/logo_black.webp" alt="AngelNails Logo" class="logo-image" onerror="this.src='https://placehold.co/200x100/ff0099/ffffff?text=AngelNails'">
-                    </a>
-                </div>
-                <div class="desktop-menu">
-                    <ul class="menu-list">
-                        <li><a href="/index.html" class="menu-link active">Inicio</a></li>
-                        <li><a href="/servicios.html" class="menu-link">Servicios</a></li>
-                        <li><a href="/galeria.html" class="menu-link">Galería</a></li>
-                        <li><a href="/reservas.html" class="menu-link">Reservar</a></li>
-                        <li><a href="#testimonials" class="menu-link">Testimonios</a></li>
-                        <li><a href="#contact" class="menu-link">Contacto</a></li>
-                    </ul>
-                </div>
-                <button class="mobile-menu-button" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
+<!-- Contenedor de partículas brillantes -->
+<div class="glitter-container"></div>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu">
-            <button class="close-menu-button" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-            <ul class="mobile-menu-list">
-                <li><a href="/index.html" class="mobile-menu-link">Inicio</a></li>
-                <li><a href="/servicios.html" class="mobile-menu-link">Servicios</a></li>
-                <li><a href="/galeria.html" class="mobile-menu-link">Galería</a></li>
-                <li><a href="/reservas.html" class="mobile-menu-link">Reservar</a></li>
-                <li><a href="#testimonials" class="mobile-menu-link">Testimonios</a></li>
-                <li><a href="#contact" class="mobile-menu-link">Contacto</a></li>
-            </ul>
-            <a href="/reservas.html" class="mobile-cta-button">
-                <i class="fas fa-calendar-check"></i> Reservar Cita
+<!-- Social links in top right -->
+<div class="top-social-links">
+  <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<div class="angel-nails-website">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-icon">
+      <div class="nail-polish">
+        <div class="nail-polish-cap"></div>
+        <div class="nail-polish-drip"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="img/logo_white.webp" alt="Angel Nails Logo" class="logo-image" width="180" height="80">
+      </a>
+      
+      <div class="navbar-content">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="index.html" class="menu-link active">
+              <span class="menu-icon"><i class="fas fa-home"></i></span>
+              <span class="menu-text">Inicio</span>
             </a>
+          </li>
+          <li class="menu-item">
+            <a href="servicios.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-spa"></i></span>
+              <span class="menu-text">Servicios</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="galeria.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-images"></i></span>
+              <span class="menu-text">Galería</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="nosotros.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-users"></i></span>
+              <span class="menu-text">Nosotros</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="contacto.html" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-envelope"></i></span>
+              <span class="menu-text">Contacto</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="citas.html" class="menu-link reserva">
+              <span class="menu-icon"><i class="fas fa-calendar-check"></i></span>
+              <span class="menu-text">Reservar Cita</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <button class="mobile-menu-button" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="mobile-menu">
+    <button class="close-menu-button" aria-label="Cerrar menú">
+      <i class="fas fa-times"></i>
+    </button>
+    
+    <ul class="mobile-menu-list">
+      <li><a href="index.html" class="mobile-menu-link active">Inicio</a></li>
+      <li><a href="servicios.html" class="mobile-menu-link">Servicios</a></li>
+      <li><a href="galeria.html" class="mobile-menu-link">Galería</a></li>
+      <li><a href="nosotros.html" class="mobile-menu-link">Nosotros</a></li>
+      <li><a href="contacto.html" class="mobile-menu-link">Contacto</a></li>
+      <li><a href="citas.html" class="mobile-menu-link">Reservar Cita</a></li>
+    </ul>
+    
+    <div class="mobile-social-links">
+      <a href="#" class="mobile-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+    <a href="citas.html" class="mobile-cta-button">Reservar Cita</a>
+  </div>
+  <div class="mobile-menu-backdrop"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-particles"></div>
+      <div class="carousel">
+        <div class="carousel-slides">
+          <div class="carousel-slide active" data-id="1">
+            <div class="carousel-image-container">
+              <video id="background-video" autoplay loop muted playsinline>
+                <source src="img/imagenes/VID-20250403-WA0010.mp4" type="video/mp4">
+              </video>
+              <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-slide-content">
+              <div class="carousel-caption modern-caption">
+                <h2 class="carousel-title modern-title">
+                  UÑAS QUE <span class="highlight-text">BRILLAN</span> COMO TÚ
+                </h2>
+                <p class="carousel-text">En AngelNails, creamos diseños exclusivos que reflejan tu estilo único y personalidad.</p>
+                <div class="carousel-buttons">
+                  <a href="citas.html" class="carousel-cta modern-cta">¡RESERVA Y TRANSFORMA TUS UÑAS!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-slide" data-id="2">
+            <div class="carousel-image-container">
+              <img src="img/imagenes/IMG-20250403-WA0004.jpg" alt="Técnicas avanzadas" class="carousel-image">
+              <video id="background-video" autoplay muted loop playsinline poster="/img/gallery/video-thumbnail.webp">
+                <source src="/img/gallery/VID-20250317-WA0004.mp4" type="video/mp4">
+            </video>
+              <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-slide-content">
+              <div class="carousel-caption">
+                <h2 class="carousel-title">Técnicas avanzadas</h2>
+                <p class="carousel-text">Trabajamos con los mejores productos del mercado</p>
+                <div class="carousel-buttons">
+                  <a href="servicios.html" class="carousel-cta">Ver Servicios <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-slide" data-id="3">
+            <div class="carousel-image-container">
+              <img src="img/imagenes/IMG-20250403-WA0005.jpg" alt="Experiencia premium" class="carousel-image">
+              <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-slide-content">
+              <div class="carousel-caption">
+                <h2 class="carousel-title">Experiencia premium</h2>
+                <p class="carousel-text">Relájate mientras transformamos tus uñas</p>
+                <div class="carousel-buttons">
+                  <a href="galeria.html" class="carousel-cta">Ver Galería <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mobile-menu-backdrop"></div>
         
-        <!-- Barra de navegación móvil tipo app -->
-        <nav class="mobile-nav-bar">
-            <div class="mobile-nav-container">
-                <a href="/index.html" class="mobile-nav-item active">
-                    <i class="fas fa-home mobile-nav-icon"></i>
-                    <span class="mobile-nav-text">Inicio</span>
-                </a>
-                <a href="/servicios.html" class="mobile-nav-item">
-                    <i class="fas fa-spa mobile-nav-icon"></i>
-                    <span class="mobile-nav-text">Servicios</span>
-                </a>
-                <a href="/galeria.html" class="mobile-nav-item">
-                    <i class="fas fa-images mobile-nav-icon"></i>
-                    <span class="mobile-nav-text">Galería</span>
-                </a>
-                <a href="/reservas.html" class="mobile-nav-item">
-                    <i class="fas fa-calendar-check mobile-nav-icon"></i>
-                    <span class="mobile-nav-text">Reservar</span>
-                    <span class="notification-indicator"></span>
-                </a>
-                <a href="#contact" class="mobile-nav-item">
-                    <i class="fas fa-phone mobile-nav-icon"></i>
-                    <span class="mobile-nav-text">Contacto</span>
-                </a>
-            </div>
-        </nav>
+        <button class="carousel-button prev" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-button next modern-nav-button" aria-label="Siguiente">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="carousel-indicators">
+          <button class="indicator active" aria-label="Slide 1" data-slide="0"></button>
+          <button class="indicator" aria-label="Slide 2" data-slide="1"></button>
+          <button class="indicator" aria-label="Slide 3" data-slide="2"></button>
+        </div>
+      </div>
+    </section>
 
-        <!-- Hero Section with Carousel and Background Video -->
-        <section id="home" class="hero-section">
-            <div class="carousel">
-                <div class="carousel-slides">
-                    <!-- Slide con Video de Fondo -->
-                    <div class="carousel-slide video-background-slide">
-                        <!-- Video de fondo -->
-                        <div class="video-background">
-                            <video id="background-video" autoplay muted loop playsinline poster="/img/gallery/video-thumbnail.webp">
-                                <source src="/img/gallery/VID-20250317-WA0004.mp4" type="video/mp4">
-                            </video>
-                            <!-- Overlay con gradiente para mejorar la legibilidad del texto -->
-                            <div class="video-overlay"></div>
-                            
-                            <!-- Botón para activar/desactivar sonido -->
-                            <button class="video-sound-toggle" aria-label="Activar/Desactivar sonido">
-                                <i class="fas fa-volume-mute"></i>
-                            </button>
-                        </div>
-                        
-                        <!-- Contenido sobre el video -->
-                        <div class="video-slide-content">
-                            <h2 class="video-title neon-text">✨ Diseños que Enamoran ✨</h2>
-                            <p class="video-description">Cada uña es un lienzo para tu personalidad</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slides de imágenes existentes -->
-                    <div class="carousel-slide">
-                        <img src="/img/gallery/g001.webp" alt="AngelNails manicura profesional" class="carousel-image">
-                        <div class="carousel-overlay"></div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/img/gallery/g002.webp" alt="Diseños exclusivos en uñas" class="carousel-image">
-                        <div class="carousel-overlay"></div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/img/gallery/g003.webp" alt="Tratamientos especiales para uñas" class="carousel-image">
-                        <div class="carousel-overlay"></div>
-                    </div>
-                </div>
-                <button class="carousel-button prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-button next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="carousel-indicators">
-                    <button class="indicator" data-slide="0" aria-label="Go to slide 1"></button>
-                    <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
-                    <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
-                    <button class="indicator" data-slide="3" aria-label="Go to slide 4"></button>
-                </div>
-            </div>
-            <div class="hero-content shimmer-effect">
-                <h1 class="hero-title">Uñas que <span class="hero-highlight neon-text">BRILLAN</span> como TÚ</h1>
-                <p class="hero-description">En AngelNails, creamos diseños exclusivos que reflejan tu estilo único y personalidad.</p>
-                <a href="/reservas.html" class="cta-button">¡Reserva y Transforma tus Uñas!</a>
-            </div>
-        </section>
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill services"></path>
+      </svg>
+    </div>
 
-        <!-- Testimonials Section - Corregido -->
-        <section id="testimonials" class="testimonials-section">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <h2 class="section-title testimonial-title"><i class="fas fa-quote-left"></i> VOCES QUE NOS INSPIRAN</h2>
-                    <p class="section-description testimonial-description">Descubre lo que nuestras clientas dicen sobre su experiencia en AngelNails.</p>
-                </div>
-                <div class="testimonial-slider animate-on-scroll">
-                    <div class="testimonial-slides">
-                        <div class="testimonial-slide active">
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-image-container">
-                                        <img src="https://placehold.co/70x70/ff0099/ffffff?text=MG" alt="María García" class="testimonial-image">
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <h3 class="testimonial-name">María García</h3>
-                                        <div class="testimonial-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="testimonial-text">¡Simplemente espectacular! Cada visita a AngelNails es una experiencia de lujo. El equipo es increíblemente talentoso y mis uñas siempre quedan perfectas. ¡No puedo dejar de recibir cumplidos!</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-image-container">
-                                        <img src="https://placehold.co/70x70/ff0099/ffffff?text=LM" alt="Laura Martínez" class="testimonial-image">
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <h3 class="testimonial-name">Laura Martínez</h3>
-                                        <div class="testimonial-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="testimonial-text">He visitado muchos salones, pero AngelNails está en otro nivel. La creatividad y precisión en cada diseño es impresionante. Además, la durabilidad es excepcional. ¡Ya no puedo ir a ningún otro lugar!</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-image-container">
-                                        <img src="https://placehold.co/70x70/ff0099/ffffff?text=CR" alt="Carmen Rodríguez" class="testimonial-image">
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <h3 class="testimonial-name">Carmen Rodríguez</h3>
-                                        <div class="testimonial-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="testimonial-text">El ambiente es tan acogedor como profesional. Me encanta cómo escuchan mis ideas y las transforman en diseños únicos. Mis amigas siempre me preguntan dónde me hago las uñas. ¡AngelNails es mi secreto de belleza!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-controls">
-                        <button class="testimonial-button prev" aria-label="Previous testimonial">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <div class="testimonial-indicators">
-                            <button class="indicator active" data-slide="0" aria-label="Go to testimonial 1"></button>
-                            <button class="indicator" data-slide="1" aria-label="Go to testimonial 2"></button>
-                            <button class="indicator" data-slide="2" aria-label="Go to testimonial 3"></button>
-                        </div>
-                        <button class="testimonial-button next" aria-label="Next testimonial">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
+    <!-- Services Section -->
+    <section id="servicios" class="services-section section-hidden">
+      <div class="services-decoration">
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestras Técnicas</h2>
+          <p class="section-description">Ofrecemos servicios profesionales con las técnicas más avanzadas y productos de alta calidad para el cuidado de tus uñas.</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card animate-on-scroll">
+            <div class="service-icon">
+              <i class="fas fa-paint-brush"></i>
             </div>
-        </section>
+            <h3 class="service-title">Manicura Básica</h3>
+            <p class="service-description">Incluye limado, pulido, tratamiento de cutículas, exfoliación suave y aplicación de esmalte tradicional con base y top coat para mayor duración.</p>
+            <div class="service-details">
+              <div class="service-time">
+                <i class="far fa-clock"></i>
+                <span>30 minutos</span>
+              </div>
+              <div class="service-products">
+                <span>Productos premium: OPI, Essie</span>
+              </div>
+            </div>
+            <div class="service-footer">
+              <a href="citas.html" class="service-button magnetic-button">Reservar</a>
+            </div>
+          </div>
+          
+          <div class="service-card animate-on-scroll">
+            <div class="service-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3 class="service-title">Manicura Gel</h3>
+            <p class="service-description">Manicura completa con aplicación de esmalte en gel curado con lámpara UV/LED. Acabado brillante y duración de hasta 3 semanas sin descascararse.</p>
+            <div class="service-details">
+              <div class="service-time">
+                <i class="far fa-clock"></i>
+                <span>45 minutos</span>
+              </div>
+              <div class="service-products">
+                <span>Productos premium: Gelish, OPI Gel</span>
+              </div>
+            </div>
+            <div class="service-footer">
+              <a href="citas.html" class="service-button magnetic-button">Reservar</a>
+            </div>
+          </div>
+          
+          <div class="service-card animate-on-scroll">
+            <div class="service-icon">
+              <i class="fas fa-magic"></i>
+            </div>
+            <h3 class="service-title">Uñas Acrílicas</h3>
+            <p class="service-description">Extensiones de uñas con acrílico de alta calidad, moldeadas a la perfección para lograr la longitud y forma deseada. Incluye diseño básico.</p>
+            <div class="service-details">
+              <div class="service-time">
+                <i class="far fa-clock"></i>
+                <span>90 minutos</span>
+              </div>
+              <div class="service-products">
+                <span>Productos premium: NSI, Kupa</span>
+              </div>
+            </div>
+            <div class="service-footer">
+              <a href="citas.html" class="service-button magnetic-button">Reservar</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="services-cta">
+          <a href="servicios.html" class="services-button magnetic-button">
+            <span>Ver todos los servicios</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section id="contact" class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2 class="cta-title animate-on-scroll neon-text">✨ ¡OFERTA ESPECIAL! ✨</h2>
-                    <p class="cta-description animate-on-scroll">Reserva hoy y recibe un BRILLO GLASEADO GRATIS en tu próxima visita</p>
-                    <div class="cta-button-container animate-on-scroll">
-                        <a href="/reservas.html" class="cta-button white">¡Quiero mi Regalo!</a>
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill gallery"></path>
+      </svg>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery-section section-hidden">
+      <div class="gallery-decoration">
+        <div class="dots"></div>
+        <div class="shape"></div>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestra Galería</h2>
+          <p class="section-description">Explora nuestros trabajos más recientes y déjate inspirar para tu próxima visita.</p>
+        </div>
+        
+        <div class="gallery-filter">
+          <button class="filter-button active" data-filter="all">Todos</button>
+          <button class="filter-button" data-filter="gel">Gel</button>
+          <button class="filter-button" data-filter="acrilicas">Acrílicas</button>
+          <button class="filter-button" data-filter="nail-art">Nail Art</button>
+        </div>
+        
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item-animated" data-category="gel">
+            <div class="gallery-image-container">
+              <img src="img/galeria/gel-1.jpg" alt="Gel Rosa Pastel" class="gallery-image">
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Gel Rosa Pastel</h3>
+                <p class="gallery-description">Manicura en gel con acabado brillante y detalles en dorado.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item gallery-item-animated" data-category="acrilicas">
+            <div class="gallery-image-container">
+              <img src="img/galeria/acrilicas-1.jpg" alt="Acrílicas Stiletto" class="gallery-image">
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Acrílicas Stiletto</h3>
+                <p class="gallery-description">Extensiones acrílicas en forma stiletto con efecto mármol.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item gallery-item-animated" data-category="nail-art">
+            <div class="gallery-image-container">
+              <img src="img/galeria/nail-art-1.jpg" alt="Arte Floral" class="gallery-image">
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Arte Floral</h3>
+                <p class="gallery-description">Diseño detallado de flores pintadas a mano con técnica acuarela.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item gallery-item-animated" data-category="gel">
+            <div class="gallery-image-container">
+              <img src="img/galeria/gel-2.jpg" alt="Gel Francés" class="gallery-image">
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Gel Francés</h3>
+                <p class="gallery-description">Manicura francesa moderna con toques de brillo.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item gallery-item-animated" data-category="nail-art">
+            <div class="gallery-image-container">
+              <img src="img/galeria/nail-art-2.jpg" alt="Diseño Geométrico" class="gallery-image">
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Diseño Geométrico</h3>
+                <p class="gallery-description">Patrones modernos con líneas precisas y colores vibrantes.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-item gallery-item-animated" data-category="acrilicas">
+            <div class="gallery-image-container">
+              <img src="img/galeria/acrilicas-2.jpg" alt="Acrílicas Ombré" class="gallery-image">
+              <div class="gallery-overlay">
+                <h3 class="gallery-title">Acrílicas Ombré</h3>
+                <p class="gallery-description">Degradado suave de colores con acabado brillante.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-cta">
+          <a href="galeria.html" class="gallery-button magnetic-button">
+            <span>Ver galería completa</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill testimonials"></path>
+      </svg>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="testimonials-section section-hidden">
+      <div class="testimonials-decoration">
+        <div class="quotes">"</div>
+        <div class="quotes">"</div>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Lo Que Dicen Nuestras Clientas</h2>
+          <p class="section-description">Descubre por qué nuestras clientas confían en nosotras para el cuidado de sus uñas.</p>
+        </div>
+        
+        <div class="testimonials-container">
+          <div class="testimonials-slider">
+            <div class="testimonial-slides">
+              <div class="testimonial-slide active">
+                <div class="testimonial-card animate-on-scroll">
+                  <div class="testimonial-header">
+                    <div class="testimonial-avatar">
+                      <img src="img/testimonios/cliente1.jpg" alt="María Fernández" class="testimonial-image">
                     </div>
+                    <div class="testimonial-info">
+                      <h4 class="testimonial-name">María Fernández</h4>
+                      <p class="testimonial-role">Cliente desde 2023</p>
+                      <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="testimonial-text">Llevo más de un año viniendo a Angel Nails y nunca me han decepcionado. Sus diseños son únicos y la duración es increíble. ¡No cambiaría de salón por nada!</p>
+                    <div class="testimonial-service">Manicura Gel</div>
+                  </div>
                 </div>
+              </div>
+              
+              <div class="testimonial-slide">
+                <div class="testimonial-card animate-on-scroll">
+                  <div class="testimonial-header">
+                    <div class="testimonial-avatar">
+                      <img src="img/testimonios/cliente2.jpg" alt="Carolina Mendoza" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-info">
+                      <h4 class="testimonial-name">Carolina Mendoza</h4>
+                      <p class="testimonial-role">Cliente desde 2024</p>
+                      <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="testimonial-text">La atención es excelente y el ambiente muy relajante. Me encanta que usan productos de alta calidad y siempre están actualizadas con las últimas tendencias.</p>
+                    <div class="testimonial-service">Uñas Acrílicas</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="testimonial-slide">
+                <div class="testimonial-card animate-on-scroll">
+                  <div class="testimonial-header">
+                    <div class="testimonial-avatar">
+                      <img src="img/testimonios/cliente3.jpg" alt="Valentina Torres" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-info">
+                      <h4 class="testimonial-name">Valentina Torres</h4>
+                      <p class="testimonial-role">Cliente desde 2022</p>
+                      <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p class="testimonial-text">Mis uñas estaban muy dañadas y en Angel Nails me recomendaron un tratamiento reparador que ha funcionado de maravilla. Ahora mis uñas están fuertes y saludables.</p>
+                    <div class="testimonial-service">Tratamiento Reparador</div>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <!-- Elementos decorativos flotantes -->
-            <div class="decorative-circle" style="width: 150px; height: 150px; top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
-            <div class="decorative-circle" style="width: 100px; height: 100px; bottom: 30%; right: 15%; animation: float 6s ease-in-out infinite 1s;"></div>
-            <div class="decorative-circle" style="width: 70px; height: 70px; top: 60%; left: 20%; animation: float 7s ease-in-out infinite 0.5s;"></div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-column">
-                        <a href="/index.html" class="footer-logo">
-                            <img src="/img/logo_white.webp" alt="AngelNails Logo" class="footer-logo-image" onerror="this.src='https://placehold.co/140x70/ff0099/ffffff?text=AngelNails'">
-                        </a>
-                        <p class="footer-description">Transformamos tus manos en obras de arte con los mejores productos y técnicas del mercado.</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-column">
-                        <h3 class="footer-title">Enlaces Rápidos</h3>
-                        <ul class="footer-links">
-                            <li><a href="/index.html" class="footer-link">Inicio</a></li>
-                            <li><a href="/servicios.html" class="footer-link">Servicios</a></li>
-                            <li><a href="/galeria.html" class="footer-link">Galería</a></li>
-                            <li><a href="/reservas.html" class="footer-link">Reservar</a></li>
-                            <li><a href="#testimonials" class="footer-link">Testimonios</a></li>
-                            <li><a href="#contact" class="footer-link">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3 class="footer-title">Contacto</h3>
-                        <ul class="contact-list">
-                            <li class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Calle Principal 123, Ciudad</span>
-                            </li>
-                            <li class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+34 600 123 456</span>
-                            </li>
-                            <li class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span><a href="mailto:info@angelnails.com">info@angelnails.com</a></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3 class="footer-title">Horarios</h3>
-                        <ul class="hours-list">
-                            <li class="hours-item">
-                                Lunes - Viernes: <span class="hours-value">9:00 - 20:00</span>
-                            </li>
-                            <li class="hours-item">
-                                Sábado: <span class="hours-value">9:00 - 18:00</span>
-                            </li>
-                            <li class="hours-item">
-                                Domingo: <span class="hours-value">Cerrado</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p class="copyright">&copy; <span id="current-year"></span> AngelNails. Todos los derechos reservados.</p>
-                </div>
+            <button class="testimonial-button prev" aria-label="Testimonio anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="testimonial-button next" aria-label="Testimonio siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="testimonial-dots">
+              <button class="testimonial-dot active" aria-label="Testimonio 1"></button>
+              <button class="testimonial-dot" aria-label="Testimonio 2"></button>
+              <button class="testimonial-dot" aria-label="Testimonio 3"></button>
             </div>
-        </footer>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/3017982897" class="whatsapp-button pulse-animation" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </main>
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill contact"></path>
+      </svg>
+    </div>
 
-    <!-- Scripts Optimizados -->
-    <script src="/js/main-optimized.js"></script>
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section section-hidden">
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contáctanos</h2>
+          <p class="section-description">Estamos aquí para responder tus preguntas y ayudarte a reservar tu cita.</p>
+        </div>
+        
+        <div class="contact-container">
+          <div class="contact-info-compact">
+            <div class="contact-card-row">
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="contact-title">Visítanos</h3>
+                <p class="contact-text">Av. Providencia 1234, Local 5<br>Providencia, Santiago</p>
+              </div>
+              
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="contact-title">Llámanos</h3>
+                <p class="contact-text">+56 9 1234 5678</p>
+                <a href="tel:+56912345678" class="contact-link">Llamar ahora</a>
+              </div>
+              
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="contact-title">Email</h3>
+                <p class="contact-text">info@angelnails.cl</p>
+                <a href="mailto:info@angelnails.cl" class="contact-link">Enviar email</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.8457848952104!2d-70.6095!3d-33.4256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI1JzMyLjIiUyA3MMKwMzYnMzQuMiJX!5e0!3m2!1ses!2scl!4v1617304026548!5m2!1ses!2scl" 
+              width="100%" 
+              height="300" 
+              style="border:0; border-radius: 16px;" 
+              allowfullscreen="" 
+              loading="lazy"
+              title="Ubicación de Angel Nails"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <!-- Separador ondulado para el footer -->
+    <div class="footer-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
+      </svg>
+    </div>
+    
+    <div class="footer-top">
+      <div class="footer-glow"></div>
+      <div class="footer-glow"></div>
+      
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-widget about-widget">
+            <div class="footer-logo">
+              <img src="img/logo_white.webp" alt="Angel Nails Logo" class="footer-logo-image" width="160" height="70">
+            </div>
+            <p class="footer-about-text">
+              En Angel Nails nos dedicamos a crear experiencias únicas de belleza para tus manos y pies, utilizando productos de alta calidad y las técnicas más avanzadas del mercado.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer-widget links-widget">
+            <h3 class="footer-widget-title">Enlaces Rápidos</h3>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Inicio</a></li>
+              <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+              <li><a href="galeria.html" class="footer-link">Galería</a></li>
+              <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
+              <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+              <li><a href="citas.html" class="footer-link">Reservar Cita</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-widget services-widget">
+            <h3 class="footer-widget-title">Nuestros Servicios</h3>
+            <ul class="footer-links">
+              <li><a href="servicios.html#manicura" class="footer-link">Manicura Básica</a></li>
+              <li><a href="servicios.html#gel" class="footer-link">Manicura Gel</a></li>
+              <li><a href="servicios.html#acrilicas" class="footer-link">Uñas Acrílicas</a></li>
+              <li><a href="servicios.html#pedicura" class="footer-link">Pedicura Spa</a></li>
+              <li><a href="servicios.html#nail-art" class="footer-link">Nail Art Avanzado</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-widget contact-widget">
+            <h3 class="footer-widget-title">Contáctanos</h3>
+            <ul class="footer-contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Av. Providencia 1234, Local 5<br>Providencia, Santiago</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span>+56 9 1234 5678</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@angelnails.cl</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span>Lun-Vie: 10:00 - 20:00<br>Sáb: 10:00 - 18:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Línea ondulada para separar footer-top y footer-bottom -->
+    <div class="footer-divider"></div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">
+            &copy; <span id="current-year"></span> Angel Nails. Todos los derechos reservados.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" class="footer-bottom-link">Términos y Condiciones</a>
+            <a href="#" class="footer-bottom-link">Política de Privacidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a 
+    href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" 
+    class="whatsapp-button" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Contactar por WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Appointment Button -->
+  <a 
+    href="citas.html" 
+    class="appointment-button" 
+    aria-label="Reservar cita"
+  >
+    <i class="fas fa-calendar-check"></i>
+  </a>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+</div>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/particle-animations.js"></script>
+<script src="scripts/hero-enhancement.js"></script>
 </body>
 </html>

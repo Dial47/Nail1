@@ -1,0 +1,153 @@
+/* Estilos para el video en el carrusel */
+
+/* Contenedor del video */
+.video-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Thumbnail del video */
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover {
+  transform: scale(1.02);
+}
+
+/* Botón de reproducción */
+.video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 0, 153, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-play-button i {
+  color: white;
+  font-size: 30px;
+  margin-left: 5px; /* Ajuste para centrar visualmente el ícono de play */
+}
+
+.video-play-button:hover {
+  background-color: rgba(255, 0, 153, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 0, 153, 0.5);
+}
+
+/* Contenedor del video cuando está activo */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Botón para cerrar el video */
+.video-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 0, 153, 0.8);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.3s ease;
+}
+
+.video-close-button:hover {
+  background-color: rgba(255, 0, 153, 1);
+  transform: scale(1.1);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .video-play-button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .video-play-button i {
+    font-size: 24px;
+  }
+  
+  .video-close-button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-play-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .video-play-button i {
+    font-size: 20px;
+  }
+}
+
+/* Animación para el botón de reproducción */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 153, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 0, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 153, 0);
+  }
+}
+
+.video-play-button {
+  animation: pulse 2s infinite;
+}
+
+/* Estilos para cuando el video está activo */
+.carousel-slide.video-active .carousel-overlay {
+  opacity: 0;
+}
+
+.carousel-slide.video-active .video-thumbnail {
+  visibility: hidden;
+}
