@@ -13,38 +13,47 @@
 <link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="styles/page-specific.css">
 <link rel="stylesheet" href="styles/gallery-enhanced.css">
+<link rel="stylesheet" href="styles/contact-enhanced.css">
 </head>
 <body>
 <!-- Contenedor de partículas brillantes -->
 <div class="glitter-container"></div>
 
-<!-- Social links in top right -->
-<div class="top-social-links">
-  <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-  <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-</div>
-
 <div class="angel-nails-website">
   <!-- Preloader -->
   <div class="preloader">
-    <div class="preloader-icon">
-      <div class="nail-polish">
-        <div class="nail-polish-cap"></div>
-        <div class="nail-polish-drip"></div>
+    <div class="nail-polish-preloader">
+      <div class="nail-polish-bottle">
+        <div class="bottle-cap"></div>
+        <div class="bottle-body">
+          <div></div>
+        </div>
+        <div class="bottle-brush">
+          <div class="brush-handle"></div>
+          <div class="brush-tip"></div>
+        </div>
       </div>
+      <div class="nail-hand">
+        <div class="nail nail-1"></div>
+        <div class="nail nail-2"></div>
+        <div class="nail nail-3"></div>
+        <div class="nail nail-4"></div>
+        <div class="nail nail-5"></div>
+      </div>
+      <div class="loading-text">Cargando...</div>
     </div>
   </div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="img/logo.png" alt="Angel Nails Logo" class="logo-image" width="180" height="80">
-      </a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="index.html" class="logo">
+          <img src="img/logo_white.webp" alt="Angel Nails Logo" class="logo-image" width="220" height="100">
+        </a>
+      </div>
       
-      <div class="navbar-content">
+      <nav class="main-nav">
         <ul class="menu-list">
           <li class="menu-item">
             <a href="index.html" class="menu-link">
@@ -77,13 +86,26 @@
             </a>
           </li>
         </ul>
+      </nav>
+      
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/3017982897?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
       
       <button class="mobile-menu-button" aria-label="Abrir menú">
         <i class="fas fa-bars"></i>
       </button>
     </div>
-  </nav>
+    
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill-header"></path>
+      </svg>
+    </div>
+  </header>
   
   <div class="mobile-menu">
     <button class="close-menu-button" aria-label="Cerrar menú">
@@ -95,195 +117,259 @@
       <li><a href="servicios.html" class="mobile-menu-link">Servicios</a></li>
       <li><a href="galeria.html" class="mobile-menu-link active">Galería</a></li>
       <li><a href="contacto.html" class="mobile-menu-link">Contacto</a></li>
-      <li><a href="citas.html" class="mobile-menu-link">Reservar Cita</a></li>
+      <li><a href="citas.html" class="mobile-menu-link">Reserva</a></li>
     </ul>
     
     <div class="mobile-social-links">
-      <a href="#" class="mobile-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="mobile-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="mobile-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="#" class="mobile-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="mobile-social-link" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="mobile-social-link" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://wa.me/3017982897?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" class="mobile-social-link" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
     </div>
     
-    <a href="citas.html" class="mobile-cta-button">Reservar Cita</a>
+    <a href="citas.html" class="mobile-cta-button">Reserva Ahora</a>
   </div>
   <div class="mobile-menu-backdrop"></div>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="page-header-overlay"></div>
-    <div class="container">
-      <h1 class="page-title">Nuestra Galería</h1>
-      <div class="page-breadcrumb">
-        <a href="index.html">Inicio</a> / <span>Galería</span>
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
       </div>
-    </div>
-    <div class="page-header-decoration">
-      <div class="nail-sparkle"></div>
-      <div class="nail-sparkle"></div>
-      <div class="nail-sparkle"></div>
-    </div>
-  </section>
+      <div class="container">
+        <h1 class="page-title">Nuestra Galería</h1>
+        <div class="page-breadcrumb">
+          <a href="index.html">Inicio</a> / <span>Galería</span>
+        </div>
+      </div>
+      <div class="page-header-decoration">
+        <div class="nail-sparkle"></div>
+        <div class="nail-sparkle"></div>
+        <div class="nail-sparkle"></div>
+      </div>
+    </section>
 
-  <!-- Gallery Section -->
-  <section id="galeria" class="gallery-section py-20">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Explora Nuestros Trabajos</h2>
-        <p class="section-description">Descubre nuestra colección de diseños y déjate inspirar para tu próxima visita.</p>
-      </div>
-      
-      <div class="gallery-filter">
-        <button class="filter-button active" data-filter="all">Todos</button>
-        <button class="filter-button" data-filter="gel">Gel</button>
-        <button class="filter-button" data-filter="acrilicas">Acrílicas</button>
-        <button class="filter-button" data-filter="nail-art">Nail Art</button>
-        <button class="filter-button" data-filter="pedicura">Pedicura</button>
-        <button class="filter-button" data-filter="temporada">Temporada</button>
-      </div>
-      
-      <div class="gallery-grid" id="gallery-container">
-        <!-- Las imágenes se cargarán dinámicamente aquí -->
-      </div>
-      
-      <div class="gallery-loader">
-        <div class="loader-spinner">
-          <i class="fas fa-spinner fa-spin"></i>
-        </div>
-        <p>Cargando más diseños...</p>
-      </div>
+    <!-- Wave Divider -->
+    <div class="wave-divider wave-divider-enhanced">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill services"></path>
+      </svg>
     </div>
-  </section>
-  
-  <!-- Video Gallery Section -->
-  <section class="video-gallery-section py-20 bg-light">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Videos de Nuestros Trabajos</h2>
-        <p class="section-description">Mira nuestros videos para ver el proceso de creación de nuestros diseños más populares.</p>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery-section section-hidden">
+      <div class="gallery-decoration">
+        <div class="dots"></div>
+        <div class="shape"></div>
       </div>
-      
-      <div class="video-gallery-grid">
-        <div class="video-item animate-on-scroll">
-          <div class="video-thumbnail">
-            <img src="img/videos/thumbnail-1.jpg" alt="Video tutorial de uñas acrílicas" class="video-image">
-            <div class="video-play-button" data-video-id="video-1">
-              <i class="fas fa-play"></i>
-            </div>
-          </div>
-          <h3 class="video-title">Tutorial de Uñas Acrílicas</h3>
-          <p class="video-description">Aprende el proceso paso a paso para crear uñas acrílicas perfectas.</p>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Explora Nuestros Trabajos</h2>
+          <p class="section-description">Descubre nuestra colección de diseños y déjate inspirar para tu próxima visita.</p>
         </div>
         
-        <div class="video-item animate-on-scroll">
-          <div class="video-thumbnail">
-            <img src="img/videos/thumbnail-2.jpg" alt="Diseño de nail art floral" class="video-image">
-            <div class="video-play-button" data-video-id="video-2">
-              <i class="fas fa-play"></i>
-            </div>
-          </div>
-          <h3 class="video-title">Nail Art Floral</h3>
-          <p class="video-description">Técnica de pintura a mano para crear diseños florales detallados.</p>
+        <div class="gallery-filter">
+          <button class="filter-button active" data-filter="all">Todos</button>
+          <button class="filter-button" data-filter="gel">Gel</button>
+          <button class="filter-button" data-filter="acrilicas">Acrílicas</button>
+          <button class="filter-button" data-filter="nail-art">Nail Art</button>
+          <button class="filter-button" data-filter="pedicura">Pedicura</button>
+          <button class="filter-button" data-filter="temporada">Temporada</button>
         </div>
         
-        <div class="video-item animate-on-scroll">
-          <div class="video-thumbnail">
-            <img src="img/videos/thumbnail-3.jpg" alt="Manicura en gel con efecto espejo" class="video-image">
-            <div class="video-play-button" data-video-id="video-3">
-              <i class="fas fa-play"></i>
-            </div>
+        <div class="gallery-grid" id="gallery-container">
+          <!-- Las imágenes se cargarán dinámicamente aquí -->
+          
+        </div>
+        
+        <div class="gallery-loader">
+          <div class="loader-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
           </div>
-          <h3 class="video-title">Efecto Espejo en Gel</h3>
-          <p class="video-description">Cómo lograr el perfecto acabado cromado en uñas de gel.</p>
+          <p>Cargando más diseños...</p>
         </div>
       </div>
       
-      <!-- Video Modal -->
-      <div class="video-modal" id="video-modal">
-        <div class="video-modal-content">
-          <button class="video-modal-close">
-            <i class="fas fa-times"></i>
+      <!-- Wave Divider -->
+      <div class="wave-divider wave-divider-enhanced">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill gallery"></path>
+        </svg>
+      </div>
+    </section>
+    
+    <!-- Video Gallery Section -->
+    <section class="video-gallery-section section-hidden">
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Videos de Nuestros Trabajos</h2>
+          <p class="section-description">Mira nuestros videos para ver el proceso de creación de nuestros diseños más populares.</p>
+        </div>
+        
+        <div class="video-gallery-grid">
+          <div class="video-item animate-on-scroll">
+            <div class="video-thumbnail">
+              <img src="img/gallery/g002.webp" alt="Video tutorial de uñas acrílicas" class="video-image">
+              <div class="video-play-button" data-video-id="video-1">
+                <i class="fas fa-play"></i>
+              </div>
+            </div>
+            <h3 class="video-title">Tutorial de Uñas Acrílicas</h3>
+            <p class="video-description">Aprende el proceso paso a paso para crear uñas acrílicas perfectas.</p>
+          </div>
+          
+          <div class="video-item animate-on-scroll">
+            <div class="video-thumbnail">
+              <img src="img/gallery/g003.webp" alt="Diseño de nail art floral" class="video-image">
+              <div class="video-play-button" data-video-id="video-2">
+                <i class="fas fa-play"></i>
+              </div>
+            </div>
+            <h3 class="video-title">Nail Art Floral</h3>
+            <p class="video-description">Técnica de pintura a mano para crear diseños florales detallados.</p>
+          </div>
+          
+          <div class="video-item animate-on-scroll">
+            <div class="video-thumbnail">
+              <img src="img/gallery/g004.webp" alt="Manicura en gel con efecto espejo" class="video-image">
+              <div class="video-play-button" data-video-id="video-3">
+                <i class="fas fa-play"></i>
+              </div>
+            </div>
+            <h3 class="video-title">Efecto Espejo en Gel</h3>
+            <p class="video-description">Cómo lograr el perfecto acabado cromado en uñas de gel.</p>
+          </div>
+        </div>
+        
+        <!-- Video Modal -->
+        <div class="video-modal" id="video-modal">
+          <div class="video-modal-content">
+            <button class="video-modal-close">
+              <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container" id="video-container"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Wave Divider -->
+      <div class="wave-divider wave-divider-enhanced">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill testimonials"></path>
+        </svg>
+      </div>
+    </section>
+    
+    <!-- Tendencias Section -->
+    <section class="trends-section section-hidden">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Tendencias Actuales</h2>
+          <p class="section-description">Descubre las últimas tendencias en diseño de uñas que están causando sensación.</p>
+        </div>
+        
+        <div class="trends-slider">
+          <div class="trends-track">
+            <div class="trend-card">
+              <div class="trend-image-container">
+                <img src="img/gallery/g004.webp" alt="Tendencia: Efecto Mármol" class="trend-image">
+              </div>
+              <div class="trend-content">
+                <h3 class="trend-title">Efecto Mármol</h3>
+                <p class="trend-description">El efecto mármol sigue siendo una de las tendencias más solicitadas por su elegancia y versatilidad.</p>
+              </div>
+            </div>
+            
+            <div class="trend-card">
+              <div class="trend-image-container">
+                <img src="img/gallery/g005.webp" alt="Tendencia: Diseños Minimalistas" class="trend-image">
+              </div>
+              <div class="trend-content">
+                <h3 class="trend-title">Diseños Minimalistas</h3>
+                <p class="trend-description">Los diseños minimalistas con líneas finas y detalles sutiles están ganando popularidad por su elegancia discreta.</p>
+              </div>
+            </div>
+            
+            <div class="trend-card">
+              <div class="trend-image-container">
+                <img src="img/gallery/g006.webp" alt="Tendencia: Tonos Pastel" class="trend-image">
+              </div>
+              <div class="trend-content">
+                <h3 class="trend-title">Tonos Pastel</h3>
+                <p class="trend-description">Los colores pastel suaves están dominando esta temporada, aportando un toque fresco y romántico.</p>
+              </div>
+            </div>
+            
+            <div class="trend-card">
+              <div class="trend-image-container">
+                <img src="img/gallery/g007.webp" alt="Tendencia: Texturas 3D" class="trend-image">
+              </div>
+              <div class="trend-content">
+                <h3 class="trend-title">Texturas 3D</h3>
+                <p class="trend-description">Las texturas tridimensionales añaden un elemento táctil y visual único a tus uñas.</p>
+              </div>
+            </div>
+          </div>
+          
+          <button class="trend-nav prev">
+            <i class="fas fa-chevron-left"></i>
           </button>
-          <div class="video-container" id="video-container"></div>
+          <button class="trend-nav next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Tendencias Section -->
-  <section class="trends-section py-20">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Tendencias Actuales</h2>
-        <p class="section-description">Descubre las últimas tendencias en diseño de uñas que están causando sensación.</p>
       </div>
       
-      <div class="trends-slider">
-        <div class="trends-track">
-          <div class="trend-card">
-            <div class="trend-image-container">
-              <img src="img/tendencias/tendencia-1.jpg" alt="Tendencia: Efecto Mármol" class="trend-image">
-            </div>
-            <div class="trend-content">
-              <h3 class="trend-title">Efecto Mármol</h3>
-              <p class="trend-description">El efecto mármol sigue siendo una de las tendencias más solicitadas por su elegancia y versatilidad.</p>
-            </div>
-          </div>
-          
-          <div class="trend-card">
-            <div class="trend-image-container">
-              <img src="img/tendencias/tendencia-2.jpg" alt="Tendencia: Diseños Minimalistas" class="trend-image">
-            </div>
-            <div class="trend-content">
-              <h3 class="trend-title">Diseños Minimalistas</h3>
-              <p class="trend-description">Los diseños minimalistas con líneas finas y detalles sutiles están ganando popularidad por su elegancia discreta.</p>
-            </div>
-          </div>
-          
-          <div class="trend-card">
-            <div class="trend-image-container">
-              <img src="img/tendencias/tendencia-3.jpg" alt="Tendencia: Tonos Pastel" class="trend-image">
-            </div>
-            <div class="trend-content">
-              <h3 class="trend-title">Tonos Pastel</h3>
-              <p class="trend-description">Los colores pastel suaves están dominando esta temporada, aportando un toque fresco y romántico.</p>
-            </div>
-          </div>
-          
-          <div class="trend-card">
-            <div class="trend-image-container">
-              <img src="img/tendencias/tendencia-4.jpg" alt="Tendencia: Texturas 3D" class="trend-image">
-            </div>
-            <div class="trend-content">
-              <h3 class="trend-title">Texturas 3D</h3>
-              <p class="trend-description">Las texturas tridimensionales añaden un elemento táctil y visual único a tus uñas.</p>
-            </div>
-          </div>
+      <!-- Wave Divider -->
+      <div class="wave-divider wave-divider-enhanced">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill contact"></path>
+        </svg>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-header">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="section-title">¿Te ha inspirado nuestra galería?</h2><br>
+          <p class="section-description">Reserva tu cita ahora y haz realidad el diseño de tus sueños</p><br>
+          <a href="citas.html" class="appointment-hero-button">
+            <i class="fas fa-calendar-check"></i> Reserva tu cita
+          </a>
         </div>
-        
-        <button class="trend-nav prev">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="trend-nav next">
-          <i class="fas fa-chevron-right"></i>
-        </button>
       </div>
-    </div>
-  </section>
-  
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">¿Te ha inspirado nuestra galería?</h2>
-        <p class="cta-text">Reserva tu cita ahora y haz realidad el diseño de tus sueños</p>
-        <a href="citas.html" class="cta-button">
-          <i class="fas fa-calendar-check"></i>
-          <span>Reservar Cita</span>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -295,9 +381,6 @@
     </div>
     
     <div class="footer-top">
-      <div class="footer-glow"></div>
-      <div class="footer-glow"></div>
-      
       <div class="container">
         <div class="footer-grid">
           <div class="footer-widget about-widget">
@@ -317,7 +400,7 @@
               <a href="#" class="footer-social-link" aria-label="TikTok">
                 <i class="fab fa-tiktok"></i>
               </a>
-              <a href="#" class="footer-social-link" aria-label="WhatsApp">
+              <a href="https://wa.me/3017982897?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" class="footer-social-link" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
               </a>
             </div>
@@ -326,22 +409,23 @@
           <div class="footer-widget links-widget">
             <h3 class="footer-widget-title">Enlaces Rápidos</h3>
             <ul class="footer-links">
-              <li><a href="index.html" class="footer-link">Inicio</a></li>
-              <li><a href="servicios.html" class="footer-link">Servicios</a></li>
-              <li><a href="galeria.html" class="footer-link">Galería</a></li>
-              <li><a href="contacto.html" class="footer-link">Contacto</a></li>
-              <li><a href="citas.html" class="footer-link">Reservar Cita</a></li>
+              <li><a href="index.html" class="footer-link-simple">Inicio</a></li>
+              <li><a href="servicios.html" class="footer-link-simple">Servicios</a></li>
+              <li><a href="galeria.html" class="footer-link-simple">Galería</a></li>
+              <li><a href="contacto.html" class="footer-link-simple">Contacto</a></li>
+              <li><a href="citas.html" class="footer-link-simple">Reservas</a></li>
             </ul>
           </div>
           
           <div class="footer-widget services-widget">
             <h3 class="footer-widget-title">Nuestros Servicios</h3>
             <ul class="footer-links">
-              <li><a href="servicios.html#manicura" class="footer-link">Manicura Básica</a></li>
-              <li><a href="servicios.html#gel" class="footer-link">Manicura Gel</a></li>
-              <li><a href="servicios.html#acrilicas" class="footer-link">Uñas Acrílicas</a></li>
-              <li><a href="servicios.html#pedicura" class="footer-link">Pedicura Spa</a></li>
-              <li><a href="servicios.html#nail-art" class="footer-link">Nail Art Avanzado</a></li>
+              <li><a href="servicios.html#manicura" class="footer-link-simple">Manicura Básica</a></li>
+              <li><a href="servicios.html#gel" class="footer-link-simple">Manicura Gel</a></li>
+              <li><a href="servicios.html#acrilicas" class="footer-link-simple">Uñas Acrílicas</a></li>
+              <li><a href="servicios.html#pedicura" class="footer-link-simple">Pedicura Spa</a></li>
+              <li><a href="servicios.html#nail-art" class="footer-link-simple">Nail Art Avanzado</a></li>
+              <li><a href="servicios.html#tratamientos" class="footer-link-simple">Tratamientos Reparadores</a></li>
             </ul>
           </div>
           
@@ -350,19 +434,20 @@
             <ul class="footer-contact-info">
               <li>
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Av. Providencia 1234, Local 5<br>Providencia, Santiago</span>
+                <span>Calle 57 - Carrera 37D #58 Manantiales/Rionegro</span>
               </li>
               <li>
                 <i class="fas fa-phone-alt"></i>
-                <span>+56 9 1234 5678</span>
+                <span>3017982897</span>
               </li>
               <li>
                 <i class="fas fa-envelope"></i>
-                <span>info@angelnails.cl</span>
+                <span>angelnails326@gmail.com
+                </span>
               </li>
               <li>
                 <i class="fas fa-clock"></i>
-                <span>Lun-Vie: 10:00 - 20:00<br>Sáb: 10:00 - 18:00</span>
+                <span>Lun-Vie: 08:00 - 06:00<br>Sáb: 10:00 - 05:00</span>
               </li>
             </ul>
           </div>
@@ -390,7 +475,7 @@
 
   <!-- WhatsApp Button -->
   <a 
-    href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" 
+    href="https://wa.me/3017982897?text=Hola,%20me%20gustaría%20reservar%20una%20cita%20para%20un%20servicio%20de%20manicura" 
     class="whatsapp-button" 
     target="_blank" 
     rel="noopener noreferrer" 

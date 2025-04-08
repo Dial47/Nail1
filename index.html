@@ -11,39 +11,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="styles/main.css">
-<link rel="stylesheet" href="styles/video-background.css">
 </head>
 <body>
 <!-- Contenedor de partículas brillantes -->
 <div class="glitter-container"></div>
 
-<!-- Social links in top right -->
-<div class="top-social-links">
-  <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-  <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-</div>
-
 <div class="angel-nails-website">
   <!-- Preloader -->
   <div class="preloader">
-    <div class="preloader-icon">
-      <div class="nail-polish">
-        <div class="nail-polish-cap"></div>
-        <div class="nail-polish-drip"></div>
+    <div class="nail-polish-preloader">
+      <div class="nail-polish-bottle">
+        <div class="bottle-cap"></div>
+        <div class="bottle-body">
+          <div></div>
+        </div>
+        <div class="bottle-brush">
+          <div class="brush-handle"></div>
+          <div class="brush-tip"></div>
+        </div>
       </div>
+      <div class="nail-hand">
+        <div class="nail nail-1"></div>
+        <div class="nail nail-2"></div>
+        <div class="nail nail-3"></div>
+        <div class="nail nail-4"></div>
+        <div class="nail nail-5"></div>
+      </div>
+      <div class="loading-text">Cargando...</div>
     </div>
   </div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="img/logo_white.webp" alt="Angel Nails Logo" class="logo-image" width="180" height="80">
-      </a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="index.html" class="logo">
+          <img src="img/logo_white.webp" alt="Angel Nails Logo" class="logo-image" width="220" height="100">
+        </a>
+      </div>
       
-      <div class="navbar-content">
+      <nav class="main-nav">
         <ul class="menu-list">
           <li class="menu-item">
             <a href="index.html" class="menu-link active">
@@ -76,13 +83,26 @@
             </a>
           </li>
         </ul>
+      </nav>
+      
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
       
       <button class="mobile-menu-button" aria-label="Abrir menú">
         <i class="fas fa-bars"></i>
       </button>
     </div>
-  </nav>
+    
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill-header"></path>
+      </svg>
+    </div>
+  </header>
   
   <div class="mobile-menu">
     <button class="close-menu-button" aria-label="Cerrar menú">
@@ -90,21 +110,29 @@
     </button>
     
     <ul class="mobile-menu-list">
-      <li><a href="index.html" class="mobile-menu-link active">Inicio</a></li>
+      <li><a href="index.html" class="mobile-menu-link">Inicio</a></li>
       <li><a href="servicios.html" class="mobile-menu-link">Servicios</a></li>
       <li><a href="galeria.html" class="mobile-menu-link">Galería</a></li>
       <li><a href="contacto.html" class="mobile-menu-link">Contacto</a></li>
-      <li><a href="citas.html" class="mobile-menu-link">Reservar Cita</a></li>
+      <li><a href="reserva.html" class="mobile-menu-link">Reserva</a></li>
     </ul>
     
     <div class="mobile-social-links">
-      <a href="#" class="mobile-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="mobile-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="mobile-social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="#" class="mobile-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="mobile-social-link" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="mobile-social-link" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="mobile-social-link" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="#" class="mobile-social-link" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
     </div>
     
-    <a href="citas.html" class="mobile-cta-button">Reservar Cita</a>
+    <a href="reserva.html" class="mobile-cta-button">Reserva Ahora</a>
   </div>
   <div class="mobile-menu-backdrop"></div>
 
@@ -112,18 +140,29 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero-section">
       <div class="hero-particles"></div>
+      <div class="bubbles hero-bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
       <div class="carousel">
         <div class="carousel-slides">
           <div class="carousel-slide active" data-id="1">
             <div class="carousel-image-container">
-              <img src="img/imagenes/hero-nails.jpg" alt="Uñas que brillan como tú" class="carousel-image">
+              <img src="img/imagenes/IMG-20250403-WA0008.jpg" alt="UÑAS QUE BRILLAN COMO TÚ" class="carousel-image">
+              
               <div class="carousel-overlay"></div>
             </div>
             <div class="carousel-slide-content">
               <div class="carousel-caption modern-caption">
-                <h2 class="carousel-title modern-title">
-                  UÑAS QUE <span class="highlight-text">BRILLAN</span> COMO TÚ
-                </h2>
+                <h2 class="carousel-title modern-title">UÑAS QUE <span class="highlight-text">BRILLAN</span> COMO TÚ</h2>
                 <p class="carousel-text">En AngelNails, creamos diseños exclusivos que reflejan tu estilo único y personalidad.</p>
                 <div class="carousel-buttons">
                   <a href="citas.html" class="carousel-cta modern-cta">¡RESERVA Y TRANSFORMA TUS UÑAS!</a>
@@ -133,40 +172,36 @@
           </div>
           
           <div class="carousel-slide" data-id="2">
-            <div class="carousel-image-container">
-              <video autoplay muted loop class="carousel-video">
-                <source src="img/gallery/VID-20250317-WA0004.mp4" type="video/mp4">
+            <div class="video-background">
+              <video id="background-video" autoplay loop muted playsinline>
+                <source src="img/imagenes/VID-20250403-WA0007.mp4" type="video/mp4">
               </video>
-              <div class="carousel-overlay"></div>
+              <div class="video-overlay"></div>
             </div>
             <div class="carousel-slide-content">
               <div class="carousel-caption modern-caption">
-                <h2 class="carousel-title modern-title">
-                  TÉCNICAS <span class="highlight-text">AVANZADAS</span>
-                </h2>
+                <h2 class="carousel-title modern-title">TÉCNICAS <span class="highlight-text">AVANZADAS</span></h2>
                 <p class="carousel-text">Trabajamos con los mejores productos del mercado</p>
                 <div class="carousel-buttons">
-                  <a href="servicios.html" class="carousel-cta modern-cta">VER NUESTROS SERVICIOS</a>
+                  <a href="galeria.html" class="carousel-cta modern-cta">VER NUESTROS SERVICIOS</a>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="carousel-slide" data-id="3">
-            <div class="carousel-image-container">
-              <video autoplay muted loop class="carousel-video">
-                <source src="videos/nail-art-video2.mp4" type="video/mp4">
+            <div class="video-background">
+              <video autoplay loop muted playsinline>
+                <source src="img/imagenes/VID-20250403-WA0009.mp4" type="video/mp4">
               </video>
-              <div class="carousel-overlay"></div>
+              <div class="video-overlay"></div>
             </div>
             <div class="carousel-slide-content">
               <div class="carousel-caption modern-caption">
-                <h2 class="carousel-title modern-title">
-                  EXPERIENCIA <span class="highlight-text">PREMIUM</span>
-                </h2>
+                <h2 class="carousel-title modern-title">EXPERIENCIA <span class="highlight-text">PREMIUM</span></h2>
                 <p class="carousel-text">Relájate mientras transformamos tus uñas</p>
                 <div class="carousel-buttons">
-                  <a href="galeria.html" class="carousel-cta modern-cta">EXPLORA NUESTRA GALERÍA</a>
+                  <a href="servicios.html" class="carousel-cta modern-cta">EXPLORA NUESTRA GALERÍA</a>
                 </div>
               </div>
             </div>
@@ -188,8 +223,8 @@
       </div>
     </section>
 
-    <!-- Wave Divider -->
-    <div class="wave-divider">
+    <!-- Separador ondulado -->
+    <div class="wave-divider wave-divider-enhanced">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill services"></path>
       </svg>
@@ -208,7 +243,7 @@
         </div>
         
         <div class="services-grid">
-          <div class="service-card animate-on-scroll">
+          <div class="service-card animate-on-scroll animate-float-slow">
             <div class="service-icon">
               <i class="fas fa-paint-brush"></i>
             </div>
@@ -228,7 +263,7 @@
             </div>
           </div>
           
-          <div class="service-card animate-on-scroll">
+          <div class="service-card animate-on-scroll animate-float-medium">
             <div class="service-icon">
               <i class="fas fa-gem"></i>
             </div>
@@ -248,7 +283,7 @@
             </div>
           </div>
           
-          <div class="service-card animate-on-scroll">
+          <div class="service-card animate-on-scroll animate-float-fast">
             <div class="service-icon">
               <i class="fas fa-magic"></i>
             </div>
@@ -264,7 +299,7 @@
               </div>
             </div>
             <div class="service-footer">
-              <a href="citas.html" class="service-button magnetic-button">Reservar</a>
+              <a href="reserva.html" class="service-button magnetic-button">Reservar</a>
             </div>
           </div>
         </div>
@@ -276,14 +311,14 @@
           </a>
         </div>
       </div>
+      
+      <!-- Separador ondulado -->
+      <div class="wave-divider wave-divider-enhanced">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill gallery"></path>
+        </svg>
+      </div>
     </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill gallery"></path>
-      </svg>
-    </div>
 
     <!-- Gallery Section -->
     <section id="galeria" class="gallery-section section-hidden">
@@ -305,7 +340,7 @@
         </div>
         
         <div class="gallery-grid">
-          <div class="gallery-item gallery-item-animated" data-category="gel">
+          <div class="gallery-item animate-on-scroll" data-category="gel">
             <div class="gallery-image-container">
               <img src="img/galeria/gel-1.jpg" alt="Gel Rosa Pastel" class="gallery-image">
               <div class="gallery-overlay">
@@ -315,7 +350,7 @@
             </div>
           </div>
           
-          <div class="gallery-item gallery-item-animated" data-category="acrilicas">
+          <div class="gallery-item animate-on-scroll" data-category="acrilicas">
             <div class="gallery-image-container">
               <img src="img/galeria/acrilicas-1.jpg" alt="Acrílicas Stiletto" class="gallery-image">
               <div class="gallery-overlay">
@@ -325,7 +360,7 @@
             </div>
           </div>
           
-          <div class="gallery-item gallery-item-animated" data-category="nail-art">
+          <div class="gallery-item animate-on-scroll" data-category="nail-art">
             <div class="gallery-image-container">
               <img src="img/galeria/nail-art-1.jpg" alt="Arte Floral" class="gallery-image">
               <div class="gallery-overlay">
@@ -335,7 +370,7 @@
             </div>
           </div>
           
-          <div class="gallery-item gallery-item-animated" data-category="gel">
+          <div class="gallery-item animate-on-scroll" data-category="gel">
             <div class="gallery-image-container">
               <img src="img/galeria/gel-2.jpg" alt="Gel Francés" class="gallery-image">
               <div class="gallery-overlay">
@@ -345,7 +380,7 @@
             </div>
           </div>
           
-          <div class="gallery-item gallery-item-animated" data-category="nail-art">
+          <div class="gallery-item animate-on-scroll" data-category="nail-art">
             <div class="gallery-image-container">
               <img src="img/galeria/nail-art-2.jpg" alt="Diseño Geométrico" class="gallery-image">
               <div class="gallery-overlay">
@@ -355,7 +390,7 @@
             </div>
           </div>
           
-          <div class="gallery-item gallery-item-animated" data-category="acrilicas">
+          <div class="gallery-item animate-on-scroll" data-category="acrilicas">
             <div class="gallery-image-container">
               <img src="img/galeria/acrilicas-2.jpg" alt="Acrílicas Ombré" class="gallery-image">
               <div class="gallery-overlay">
@@ -373,14 +408,14 @@
           </a>
         </div>
       </div>
+      
+      <!-- Separador ondulado -->
+      <div class="wave-divider wave-divider-enhanced">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill testimonials"></path>
+        </svg>
+      </div>
     </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill testimonials"></path>
-      </svg>
-    </div>
 
     <!-- Testimonials Section -->
     <section id="testimonios" class="testimonials-section section-hidden">
@@ -401,6 +436,7 @@
                 <div class="testimonial-card animate-on-scroll">
                   <div class="testimonial-header">
                     <div class="testimonial-avatar">
+                      <div class="avatar-overlay"></div>
                       <img src="img/testimonios/cliente1.jpg" alt="María Fernández" class="testimonial-image">
                     </div>
                     <div class="testimonial-info">
@@ -426,6 +462,7 @@
                 <div class="testimonial-card animate-on-scroll">
                   <div class="testimonial-header">
                     <div class="testimonial-avatar">
+                      <div class="avatar-overlay"></div>
                       <img src="img/testimonios/cliente2.jpg" alt="Carolina Mendoza" class="testimonial-image">
                     </div>
                     <div class="testimonial-info">
@@ -451,6 +488,7 @@
                 <div class="testimonial-card animate-on-scroll">
                   <div class="testimonial-header">
                     <div class="testimonial-avatar">
+                      <div class="avatar-overlay"></div>
                       <img src="img/testimonios/cliente3.jpg" alt="Valentina Torres" class="testimonial-image">
                     </div>
                     <div class="testimonial-info">
@@ -488,19 +526,18 @@
           </div>
         </div>
       </div>
+      
+      <!-- Separador ondulado -->
+      <div class="wave-divider wave-divider-enhanced">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill contact"></path>
+        </svg>
+      </div>
     </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="wave-fill contact"></path>
-      </svg>
-    </div>
 
     <!-- Contact Section -->
     <section id="contacto" class="contact-section section-hidden">
       <div class="bubbles">
-        <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -525,7 +562,10 @@
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3 class="contact-title">Visítanos</h3>
-                <p class="contact-text">Av. Providencia 1234, Local 5<br>Providencia, Santiago</p>
+                <p class="contact-text">
+                  Av. Providencia 1234, Local 5<br>
+                  Providencia, Santiago
+                </p>
               </div>
               
               <div class="contact-card">
@@ -542,15 +582,15 @@
                   <i class="fas fa-envelope"></i>
                 </div>
                 <h3 class="contact-title">Email</h3>
-                <p class="contact-text">info@angelnails.cl</p>
-                <a href="mailto:info@angelnails.cl" class="contact-link">Enviar email</a>
+                <p class="contact-text">info@angelnails.com</p>
+                <a href="mailto:info@angelnails.com" class="contact-link">Enviar email</a>
               </div>
             </div>
           </div>
           
           <div class="contact-map">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.8457848952104!2d-70.6095!3d-33.4256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI1JzMyLjIiUyA3MMKwMzYnMzQuMiJX!5e0!3m2!1ses!2scl!4v1617304026548!5m2!1ses!2scl" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.405735191844!2d-75.36231109027631!3d6.155999329590837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e469f8c54a42a91%3A0xc9f31abb055549af!2sServitableros!5e0!3m2!1ses!2sco!4v1744145000962!5m2!1ses!2sco" 
               width="100%" 
               height="300" 
               style="border:0; border-radius: 16px;" 
@@ -574,9 +614,6 @@
     </div>
     
     <div class="footer-top">
-      <div class="footer-glow"></div>
-      <div class="footer-glow"></div>
-      
       <div class="container">
         <div class="footer-grid">
           <div class="footer-widget about-widget">
@@ -605,22 +642,23 @@
           <div class="footer-widget links-widget">
             <h3 class="footer-widget-title">Enlaces Rápidos</h3>
             <ul class="footer-links">
-              <li><a href="index.html" class="footer-link">Inicio</a></li>
-              <li><a href="servicios.html" class="footer-link">Servicios</a></li>
-              <li><a href="galeria.html" class="footer-link">Galería</a></li>
-              <li><a href="contacto.html" class="footer-link">Contacto</a></li>
-              <li><a href="citas.html" class="footer-link">Reservar Cita</a></li>
+              <li><a href="index.html" class="footer-link-simple">Inicio</a></li>
+              <li><a href="servicios.html" class="footer-link-simple">Servicios</a></li>
+              <li><a href="galeria.html" class="footer-link-simple">Galería</a></li>
+              <li><a href="contacto.html" class="footer-link-simple">Contacto</a></li>
+              <li><a href="citas.html" class="footer-link-simple">Reservas</a></li>
             </ul>
           </div>
           
           <div class="footer-widget services-widget">
             <h3 class="footer-widget-title">Nuestros Servicios</h3>
             <ul class="footer-links">
-              <li><a href="servicios.html#manicura" class="footer-link">Manicura Básica</a></li>
-              <li><a href="servicios.html#gel" class="footer-link">Manicura Gel</a></li>
-              <li><a href="servicios.html#acrilicas" class="footer-link">Uñas Acrílicas</a></li>
-              <li><a href="servicios.html#pedicura" class="footer-link">Pedicura Spa</a></li>
-              <li><a href="servicios.html#nail-art" class="footer-link">Nail Art Avanzado</a></li>
+              <li><a href="servicios.html#manicura" class="footer-link-simple">Manicura Básica</a></li>
+              <li><a href="servicios.html#gel" class="footer-link-simple">Manicura Gel</a></li>
+              <li><a href="servicios.html#acrilicas" class="footer-link-simple">Uñas Acrílicas</a></li>
+              <li><a href="servicios.html#pedicura" class="footer-link-simple">Pedicura Spa</a></li>
+              <li><a href="servicios.html#nail-art" class="footer-link-simple">Nail Art Avanzado</a></li>
+              <li><a href="servicios.html#tratamientos" class="footer-link-simple">Tratamientos Reparadores</a></li>
             </ul>
           </div>
           
@@ -629,19 +667,20 @@
             <ul class="footer-contact-info">
               <li>
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Av. Providencia 1234, Local 5<br>Providencia, Santiago</span>
+                <span>Calle 57 - Carrera 37D #58 Manantiales/Rionegro</span>
               </li>
               <li>
                 <i class="fas fa-phone-alt"></i>
-                <span>+56 9 1234 5678</span>
+                <span>3017982897</span>
               </li>
               <li>
                 <i class="fas fa-envelope"></i>
-                <span>info@angelnails.cl</span>
+                <span>angelnails326@gmail.com
+                </span>
               </li>
               <li>
                 <i class="fas fa-clock"></i>
-                <span>Lun-Vie: 10:00 - 20:00<br>Sáb: 10:00 - 18:00</span>
+                <span>Lun-Vie: 08:00 - 06:00<br>Sáb: 10:00 - 05:00</span>
               </li>
             </ul>
           </div>
@@ -680,7 +719,7 @@
 
   <!-- Appointment Button -->
   <a 
-    href="citas.html" 
+    href="reserva.html" 
     class="appointment-button" 
     aria-label="Reservar cita"
   >
@@ -694,6 +733,5 @@
 </div>
 
 <script src="scripts/main.js"></script>
-<script src="scripts/particle-animations.js"></script>
 </body>
 </html>

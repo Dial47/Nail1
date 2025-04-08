@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: 1,
       category: "gel",
-      image: "img/imagenes/IMG-20250403-WA0114.jpg",
+      image: "img/imagenes/IMG-20250403-WA0004.jpg",
       title: "Gel Rosa Pastel",
       description: "Manicura en gel con acabado brillante y detalles en dorado.",
     },

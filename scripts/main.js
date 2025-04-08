@@ -1,643 +1,513 @@
-// Wait for DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', function() {
+  'use strict';
+
   // Set current year in footer
-  document.getElementById("current-year").textContent = new Date().getFullYear()
+  document.getElementById('current-year').textContent = new Date().getFullYear();
 
   // Preloader
-  const preloader = document.querySelector(".preloader")
+  const preloader = document.querySelector('.preloader');
   if (preloader) {
     setTimeout(() => {
-      preloader.classList.add("hidden")
-    }, 1500)
+      preloader.classList.add('hidden');
+    }, 1500);
   }
 
   // Mobile Menu Toggle
-  const mobileMenuButton = document.querySelector(".mobile-menu-button")
-  const closeMenuButton = document.querySelector(".close-menu-button")
-  const mobileMenu = document.querySelector(".mobile-menu")
-  const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop")
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const closeMenuButton = document.querySelector('.close-menu-button');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuBackdrop = document.querySelector('.mobile-menu-backdrop');
 
   if (mobileMenuButton && closeMenuButton && mobileMenu && mobileMenuBackdrop) {
-    mobileMenuButton.addEventListener("click", () => {
-      mobileMenu.classList.add("active")
-      mobileMenuBackdrop.classList.add("active")
-      document.body.style.overflow = "hidden"
-    })
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    closeMenuButton.addEventListener('click', toggleMobileMenu);
+    mobileMenuBackdrop.addEventListener('click', toggleMobileMenu);
 
-    closeMenuButton.addEventListener("click", () => {
-      mobileMenu.classList.remove("active")
-      mobileMenuBackdrop.classList.remove("active")
-      document.body.style.overflow = ""
-    })
-
-    mobileMenuBackdrop.addEventListener("click", () => {
-      mobileMenu.classList.remove("active")
-      mobileMenuBackdrop.classList.remove("active")
-      document.body.style.overflow = ""
-    })
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('active');
+      mobileMenuBackdrop.classList.toggle('active');
+      
+      if (mobileMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
 
     // Close mobile menu on window resize
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 991 && mobileMenu.classList.contains("active")) {
-        mobileMenu.classList.remove("active")
-        mobileMenuBackdrop.classList.remove("active")
-        document.body.style.overflow = ""
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 991 && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        mobileMenuBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
       }
-    })
+    });
   }
 
-  // Hero Particles
-  const heroParticles = document.querySelector(".hero-particles")
-  if (heroParticles) {
-    for (let i = 0; i < 20; i++) {
-      const particle = document.createElement("div")
-      particle.classList.add("hero-particle")
+  // Hero Carousel
+  const carouselSlides = document.querySelectorAll('.carousel-slide');
+  const carouselIndicators = document.querySelectorAll('.carousel-indicators .indicator');
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+  let currentSlide = 0;
+  let isAnimating = false;
+  let autoplayInterval;
 
-      // Random size between 5px and 20px
-      const size = Math.random() * 15 + 5
-      particle.style.width = `${size}px`
-      particle.style.height = `${size}px`
+  function showSlide(index) {
+    if (isAnimating) return;
+    isAnimating = true;
 
-      // Random position
-      particle.style.top = `${Math.random() * 100}%`
-      particle.style.left = `${Math.random() * 100}%`
+    // Hide current slide
+    carouselSlides[currentSlide].classList.remove('active');
+    carouselIndicators[currentSlide].classList.remove('active');
 
-      // Random animation duration and delay
-      const duration = Math.random() * 10 + 10
-      const delay = Math.random() * 5
-      particle.style.animationDuration = `${duration}s`
-      particle.style.animationDelay = `${delay}s`
+    // Show new slide
+    currentSlide = index;
+    carouselSlides[currentSlide].classList.add('active');
+    carouselIndicators[currentSlide].classList.add('active');
 
-      heroParticles.appendChild(particle)
-    }
+    // Reset animation flag after transition
+    setTimeout(() => {
+      isAnimating = false;
+    }, 1500);
   }
 
-  // Hero Carousel - Enhanced
-  initCarousel(
-    ".carousel",
-    ".carousel-slide",
-    ".carousel-button.prev",
-    ".carousel-button.next",
-    ".carousel-indicators .indicator",
-  )
-
-  // Function to initialize a carousel
-  function initCarousel(carouselSelector, slideSelector, prevButtonSelector, nextButtonSelector, indicatorSelector) {
-    const carousel = document.querySelector(carouselSelector)
-    if (!carousel) return
-
-    const slides = carousel.querySelectorAll(slideSelector)
-    const prevButton = carousel.querySelector(prevButtonSelector)
-    const nextButton = carousel.querySelector(nextButtonSelector)
-    const indicators = carousel.querySelectorAll(indicatorSelector)
-
-    if (!slides.length) return
-
-    let currentSlide = 0
-    let isAnimating = false
-    let autoplayInterval
-
-    // Function to show a specific slide
-    function showSlide(index) {
-      if (isAnimating) return
-      isAnimating = true
-
-      // Hide current slide
-      slides[currentSlide].classList.remove("active")
-      if (indicators.length) indicators[currentSlide].classList.remove("active")
-
-      // Show new slide
-      currentSlide = index
-      slides[currentSlide].classList.add("active")
-
-      if (indicators.length) indicators[currentSlide].classList.add("active")
-
-      // Reset animation flag after transition
-      setTimeout(() => {
-        isAnimating = false
-      }, 1500) // Aumentado a 1500ms para coincidir con la transición CSS
+  function nextSlide() {
+    let nextIndex = currentSlide + 1;
+    if (nextIndex >= carouselSlides.length) {
+      nextIndex = 0;
     }
+    showSlide(nextIndex);
+  }
 
-    // Function to show next slide
-    function nextSlide() {
-      let nextIndex = currentSlide + 1
-      if (nextIndex >= slides.length) {
-        nextIndex = 0
-      }
-      showSlide(nextIndex)
+  function prevSlide() {
+    let prevIndex = currentSlide - 1;
+    if (prevIndex < 0) {
+      prevIndex = carouselSlides.length - 1;
     }
+    showSlide(prevIndex);
+  }
 
-    // Function to show previous slide
-    function prevSlide() {
-      let prevIndex = currentSlide - 1
-      if (prevIndex < 0) {
-        prevIndex = slides.length - 1
-      }
-      showSlide(prevIndex)
-    }
+  // Initialize carousel
+  if (carouselSlides.length > 0 && carouselIndicators.length > 0) {
+    // Set up click events for indicators
+    carouselIndicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        clearInterval(autoplayInterval);
+        showSlide(index);
+        startAutoplay();
+      });
+    });
 
-    // Set up event listeners for controls
-    if (prevButton) {
-      prevButton.addEventListener("click", () => {
-        clearInterval(autoplayInterval)
-        prevSlide()
-        startAutoplay()
-      })
-    }
+    // Set up click events for prev/next buttons
+    if (prevButton && nextButton) {
+      prevButton.addEventListener('click', () => {
+        clearInterval(autoplayInterval);
+        prevSlide();
+        startAutoplay();
+      });
 
-    if (nextButton) {
-      nextButton.addEventListener("click", () => {
-        clearInterval(autoplayInterval)
-        nextSlide()
-        startAutoplay()
-      })
-    }
-
-    // Set up event listeners for indicators
-    if (indicators.length) {
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener("click", () => {
-          clearInterval(autoplayInterval)
-          showSlide(index)
-          startAutoplay()
-        })
-      })
+      nextButton.addEventListener('click', () => {
+        clearInterval(autoplayInterval);
+        nextSlide();
+        startAutoplay();
+      });
     }
 
     // Start autoplay
     function startAutoplay() {
-      autoplayInterval = setInterval(nextSlide, 8000) // Aumentado a 8000ms para un cambio más lento
+      autoplayInterval = setInterval(nextSlide, 8000);
     }
 
-    // Initialize carousel
-    showSlide(0)
-    startAutoplay()
+    startAutoplay();
 
     // Pause autoplay on hover
-    carousel.addEventListener("mouseenter", () => {
-      clearInterval(autoplayInterval)
-    })
+    const carousel = document.querySelector('.carousel');
+    if (carousel) {
+      carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+      });
 
-    carousel.addEventListener("mouseleave", () => {
-      startAutoplay()
-    })
+      carousel.addEventListener('mouseleave', () => {
+        startAutoplay();
+      });
+    }
 
-    // Touch support for mobile
-    let touchStartX = 0
-    let touchEndX = 0
+    // Handle swipe for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-    carousel.addEventListener(
-      "touchstart",
-      (e) => {
-        touchStartX = e.changedTouches[0].screenX
-      },
-      { passive: true },
-    )
+    if (carousel) {
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
 
-    carousel.addEventListener(
-      "touchend",
-      (e) => {
-        touchEndX = e.changedTouches[0].screenX
-        handleSwipe()
-      },
-      { passive: true },
-    )
+      carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+      });
+    }
 
     function handleSwipe() {
-      const swipeThreshold = 50
+      const swipeThreshold = 50;
       if (touchEndX < touchStartX - swipeThreshold) {
         // Swipe left, go to next slide
-        clearInterval(autoplayInterval)
-        nextSlide()
-        startAutoplay()
+        clearInterval(autoplayInterval);
+        nextSlide();
+        startAutoplay();
       } else if (touchEndX > touchStartX + swipeThreshold) {
         // Swipe right, go to previous slide
-        clearInterval(autoplayInterval)
-        prevSlide()
-        startAutoplay()
+        clearInterval(autoplayInterval);
+        prevSlide();
+        startAutoplay();
       }
     }
   }
 
-  // Gallery Filter - Enhanced with animations
-  initGalleryFilter()
+  // Testimonials Slider
+  const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+  const testimonialDots = document.querySelectorAll('.testimonial-dot');
+  const testimonialPrevButton = document.querySelector('.testimonial-button.prev');
+  const testimonialNextButton = document.querySelector('.testimonial-button.next');
+  let currentTestimonial = 0;
+  let isTestimonialAnimating = false;
+  let testimonialAutoplayInterval;
 
-  function initGalleryFilter() {
-    const filterButtons = document.querySelectorAll(".filter-button")
-    const galleryItems = document.querySelectorAll(".gallery-item")
+  function showTestimonial(index) {
+    if (isTestimonialAnimating) return;
+    isTestimonialAnimating = true;
 
-    if (!filterButtons.length || !galleryItems.length) return
+    // Hide current testimonial
+    testimonialSlides[currentTestimonial].classList.remove('active');
+    testimonialDots[currentTestimonial].classList.remove('active');
 
-    // Add initial animation to gallery items
-    galleryItems.forEach((item, index) => {
-      item.style.animationDelay = `${index * 0.1}s`
-      item.classList.add("gallery-item-animated")
-    })
+    // Show new testimonial
+    currentTestimonial = index;
+    testimonialSlides[currentTestimonial].classList.add('active');
+    testimonialDots[currentTestimonial].classList.add('active');
 
-    // Event listeners for filter buttons
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        // Remove active class from all buttons
-        filterButtons.forEach((btn) => btn.classList.remove("active"))
-
-        // Add active class to clicked button
-        this.classList.add("active")
-
-        // Get filter value
-        const filterValue = this.getAttribute("data-filter")
-
-        // Filter items with animation
-        galleryItems.forEach((item, index) => {
-          // Reset animation delay for staggered effect
-          item.style.transitionDelay = `${index * 0.05}s`
-
-          if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
-            item.style.display = "block"
-            setTimeout(() => {
-              item.style.opacity = "1"
-              item.style.transform = "scale(1) translateY(0)"
-            }, 50)
-          } else {
-            item.style.opacity = "0"
-            item.style.transform = "scale(0.8) translateY(20px)"
-            setTimeout(() => {
-              item.style.display = "none"
-            }, 300)
-          }
-        })
-      })
-    })
-
-    // Add hover effect for gallery items
-    galleryItems.forEach((item) => {
-      item.addEventListener("mouseenter", function () {
-        // Add sparkle effect on hover
-        addSparkleEffect(this)
-      })
-    })
-
-    function addSparkleEffect(element) {
-      for (let i = 0; i < 5; i++) {
-        const sparkle = document.createElement("div")
-        sparkle.classList.add("gallery-sparkle")
-
-        // Random position around the element
-        const posX = Math.random() * 100
-        const posY = Math.random() * 100
-
-        sparkle.style.left = `${posX}%`
-        sparkle.style.top = `${posY}%`
-
-        // Random size
-        const size = Math.random() * 10 + 5
-        sparkle.style.width = `${size}px`
-        sparkle.style.height = `${size}px`
-
-        // Random animation duration
-        sparkle.style.animationDuration = `${Math.random() * 1 + 0.5}s`
-
-        element.appendChild(sparkle)
-
-        // Remove sparkle after animation
-        setTimeout(() => {
-          sparkle.remove()
-        }, 1500)
-      }
-    }
+    // Reset animation flag after transition
+    setTimeout(() => {
+      isTestimonialAnimating = false;
+    }, 500);
   }
 
-  // Testimonials Slider - Enhanced
-  initTestimonialsSlider()
-
-  function initTestimonialsSlider() {
-    const slides = document.querySelectorAll(".testimonial-slide")
-    const dots = document.querySelectorAll(".testimonial-dot")
-    const prevButton = document.querySelector(".testimonial-button.prev")
-    const nextButton = document.querySelector(".testimonial-button.next")
-
-    if (!slides.length) return
-
-    let currentSlide = 0
-    let isAnimating = false
-    let autoplayInterval
-
-    // Function to show slide
-    function showSlide(index) {
-      if (isAnimating) return
-      isAnimating = true
-
-      // Hide all slides
-      slides.forEach((slide) => {
-        slide.classList.remove("active")
-      })
-
-      // Remove active from all dots
-      if (dots.length) {
-        dots.forEach((dot) => dot.classList.remove("active"))
-      }
-
-      // Show current slide
-      slides[index].classList.add("active")
-
-      // Activate current dot
-      if (dots.length) {
-        dots[index].classList.add("active")
-      }
-
-      // Update current index
-      currentSlide = index
-
-      // Reset animation flag after transition
-      setTimeout(() => {
-        isAnimating = false
-      }, 500)
+  function nextTestimonial() {
+    let nextIndex = currentTestimonial + 1;
+    if (nextIndex >= testimonialSlides.length) {
+      nextIndex = 0;
     }
+    showTestimonial(nextIndex);
+  }
 
-    // Event listeners for dots
-    if (dots.length) {
-      dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          clearInterval(autoplayInterval)
-          showSlide(index)
-          startAutoplay()
-        })
-      })
+  function prevTestimonial() {
+    let prevIndex = currentTestimonial - 1;
+    if (prevIndex < 0) {
+      prevIndex = testimonialSlides.length - 1;
     }
+    showTestimonial(prevIndex);
+  }
 
-    // Event listeners for prev/next buttons
-    if (prevButton && nextButton) {
-      prevButton.addEventListener("click", () => {
-        clearInterval(autoplayInterval)
-        let index = currentSlide - 1
-        if (index < 0) index = slides.length - 1
-        showSlide(index)
-        startAutoplay()
-      })
+  // Initialize testimonials slider
+  if (testimonialSlides.length > 0 && testimonialDots.length > 0) {
+    // Set up click events for dots
+    testimonialDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        clearInterval(testimonialAutoplayInterval);
+        showTestimonial(index);
+        startTestimonialAutoplay();
+      });
+    });
 
-      nextButton.addEventListener("click", () => {
-        clearInterval(autoplayInterval)
-        let index = currentSlide + 1
-        if (index >= slides.length) index = 0
-        showSlide(index)
-        startAutoplay()
-      })
+    // Set up click events for prev/next buttons
+    if (testimonialPrevButton && testimonialNextButton) {
+      testimonialPrevButton.addEventListener('click', () => {
+        clearInterval(testimonialAutoplayInterval);
+        prevTestimonial();
+        startTestimonialAutoplay();
+      });
+
+      testimonialNextButton.addEventListener('click', () => {
+        clearInterval(testimonialAutoplayInterval);
+        nextTestimonial();
+        startTestimonialAutoplay();
+      });
     }
 
     // Start autoplay
-    function startAutoplay() {
-      autoplayInterval = setInterval(() => {
-        let index = currentSlide + 1
-        if (index >= slides.length) index = 0
-        showSlide(index)
-      }, 5000)
+    function startTestimonialAutoplay() {
+      testimonialAutoplayInterval = setInterval(nextTestimonial, 5000);
     }
 
-    // Initialize slider
-    showSlide(0)
-    startAutoplay()
+    startTestimonialAutoplay();
 
     // Pause autoplay on hover
-    const testimonialSlider = document.querySelector(".testimonials-slider")
+    const testimonialSlider = document.querySelector('.testimonials-slider');
     if (testimonialSlider) {
-      testimonialSlider.addEventListener("mouseenter", () => {
-        clearInterval(autoplayInterval)
-      })
+      testimonialSlider.addEventListener('mouseenter', () => {
+        clearInterval(testimonialAutoplayInterval);
+      });
 
-      testimonialSlider.addEventListener("mouseleave", () => {
-        startAutoplay()
-      })
+      testimonialSlider.addEventListener('mouseleave', () => {
+        startTestimonialAutoplay();
+      });
     }
   }
 
-  // Glitter particles
-  const glitterContainer = document.querySelector(".glitter-container")
+  // Gallery Filter
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const galleryItems = document.querySelectorAll('.gallery-item');
 
+  if (filterButtons.length > 0 && galleryItems.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Get filter value
+        const filterValue = button.getAttribute('data-filter');
+        
+        // Filter gallery items
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0) scale(1)';
+            }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px) scale(0.9)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
+
+  // Scroll to Top Button
+  const scrollToTopButton = document.querySelector('.scroll-to-top');
+  if (scrollToTopButton) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopButton.classList.add('active');
+      } else {
+        scrollToTopButton.classList.remove('active');
+      }
+    });
+
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // Reveal Sections on Scroll
+  const sections = document.querySelectorAll('.section-hidden');
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0 &&
+      rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right >= 0
+    );
+  }
+
+  function revealOnScroll() {
+    sections.forEach(section => {
+      if (isInViewport(section)) {
+        section.classList.add('section-revealed');
+      }
+    });
+
+    animateElements.forEach(element => {
+      if (isInViewport(element)) {
+        element.classList.add('animated');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+  window.addEventListener('resize', revealOnScroll);
+
+  // Create Hero Particles
+  const heroParticles = document.querySelector('.hero-particles');
+  if (heroParticles) {
+    for (let i = 0; i < 20; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('hero-particle');
+
+      // Random size between 5px and 20px
+      const size = Math.random() * 15 + 5;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+
+      // Random position
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.left = `${Math.random() * 100}%`;
+
+      // Random animation duration and delay
+      const duration = Math.random() * 10 + 10;
+      const delay = Math.random() * 5;
+      particle.style.animationDuration = `${duration}s`;
+      particle.style.animationDelay = `${delay}s`;
+
+      heroParticles.appendChild(particle);
+    }
+  }
+
+  // Create Bubbles for Hero and Contact Section
+  const bubbleContainers = document.querySelectorAll('.bubbles');
+  if (bubbleContainers.length > 0) {
+    bubbleContainers.forEach(container => {
+      for (let i = 0; i < 10; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+
+        // Random size
+        const size = [40, 20, 50, 80, 35, 45, 25, 80, 15, 50][i];
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+
+        // Random position
+        bubble.style.left = `${[10, 20, 35, 50, 55, 65, 75, 80, 70, 85][i]}%`;
+
+        // Random animation duration and delay
+        bubble.style.animation = `rise ${[12, 8, 10, 14, 9, 11, 10, 15, 8, 13][i]}s infinite ease-in ${[0, 1, 2, 0, 1, 3, 2, 2, 1, 4][i]}s`;
+
+        container.appendChild(bubble);
+      }
+    });
+  }
+
+  // Glitter Effect
+  const glitterContainer = document.querySelector('.glitter-container');
   if (glitterContainer) {
     // Create glitter particles on mouse move
-    document.addEventListener("mousemove", (e) => {
-      createGlitterParticle(e.clientX, e.clientY)
-    })
+    document.addEventListener('mousemove', (e) => {
+      createGlitterParticle(e.clientX, e.clientY);
+    });
 
     // Create glitter particles on touch move
-    document.addEventListener("touchmove", (e) => {
-      createGlitterParticle(e.touches[0].clientX, e.touches[0].clientY)
-    })
+    document.addEventListener('touchmove', (e) => {
+      createGlitterParticle(e.touches[0].clientX, e.touches[0].clientY);
+    });
 
     // Function to create a glitter particle
     function createGlitterParticle(x, y) {
       // Limit the rate of particle creation
-      if (Math.random() > 0.3) return
+      if (Math.random() > 0.3) return;
 
-      const particle = document.createElement("div")
-      particle.classList.add("glitter-particle")
+      const particle = document.createElement('div');
+      particle.classList.add('glitter-particle');
 
       // Random size between 3px and 8px
-      const size = Math.random() * 5 + 3
-      particle.style.width = `${size}px`
-      particle.style.height = `${size}px`
+      const size = Math.random() * 5 + 3;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
 
       // Position at mouse/touch position with slight random offset
-      const offsetX = (Math.random() - 0.5) * 20
-      const offsetY = (Math.random() - 0.5) * 20
-      particle.style.left = `${x + offsetX}px`
-      particle.style.top = `${y + offsetY}px`
+      const offsetX = (Math.random() - 0.5) * 20;
+      const offsetY = (Math.random() - 0.5) * 20;
+      particle.style.left = `${x + offsetX}px`;
+      particle.style.top = `${y + offsetY}px`;
 
       // Random color from our theme
-      const colors = ["#ff3e9d", "#a742ff", "#4158ff", "#ffde59"]
-      const randomColor = colors[Math.floor(Math.random() * colors.length)]
-      particle.style.backgroundColor = randomColor
+      const colors = ['#ff3e9d', '#a742ff', '#4158ff', '#ffde59'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.backgroundColor = randomColor;
 
       // Add to container
-      glitterContainer.appendChild(particle)
+      glitterContainer.appendChild(particle);
 
       // Remove after animation completes
       setTimeout(() => {
-        particle.remove()
-      }, 3000)
+        particle.remove();
+      }, 3000);
     }
 
     // Create random particles periodically
     setInterval(() => {
       if (Math.random() > 0.7) {
-        const x = Math.random() * window.innerWidth
-        const y = Math.random() * window.innerHeight
-        createGlitterParticle(x, y)
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        createGlitterParticle(x, y);
       }
-    }, 200)
+    }, 200);
   }
 
-  // Reveal animations for sections
-  const sections = document.querySelectorAll("section.section-hidden")
+  // Add sparkle effect to gallery items
+  const galleryImageContainers = document.querySelectorAll('.gallery-image-container');
+  galleryImageContainers.forEach(container => {
+    container.addEventListener('mouseenter', () => {
+      addSparkleEffect(container);
+    });
+  });
 
-  const revealSection = (entries, observer) => {
-    const [entry] = entries
+  function addSparkleEffect(element) {
+    for (let i = 0; i < 5; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('gallery-sparkle');
 
-    if (!entry.isIntersecting) return
+      // Random position
+      const posX = Math.random() * 100;
+      const posY = Math.random() * 100;
 
-    entry.target.classList.add("section-revealed")
-    observer.unobserve(entry.target)
+      sparkle.style.left = `${posX}%`;
+      sparkle.style.top = `${posY}%`;
+
+      // Random size
+      const size = Math.random() * 10 + 5;
+      sparkle.style.width = `${size}px`;
+      sparkle.style.height = `${size}px`;
+
+      // Random animation duration
+      sparkle.style.animationDuration = `${Math.random() * 1 + 0.5}s`;
+
+      element.appendChild(sparkle);
+
+      // Remove after animation
+      setTimeout(() => {
+        sparkle.remove();
+      }, 1500);
+    }
   }
 
-  const sectionObserver = new IntersectionObserver(revealSection, {
-    root: null,
-    threshold: 0.15,
-  })
+  // Magnetic Button Effect
+  const magneticButtons = document.querySelectorAll('.magnetic-button');
+  magneticButtons.forEach(button => {
+    button.addEventListener('mousemove', (e) => {
+      if (window.innerWidth <= 991) return;
 
-  sections.forEach((section) => {
-    sectionObserver.observe(section)
-  })
+      const rect = button.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-  // Animate on scroll elements
-  const animateElements = document.querySelectorAll(".animate-on-scroll")
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
 
-  function checkIfInView() {
-    const windowHeight = window.innerHeight
-    const windowTopPosition = window.scrollY
-    const windowBottomPosition = windowTopPosition + windowHeight
+      const moveX = (x - centerX) / 5;
+      const moveY = (y - centerY) / 5;
 
-    animateElements.forEach((element) => {
-      const elementHeight = element.offsetHeight
-      const elementTopPosition = element.getBoundingClientRect().top + windowTopPosition
-      const elementBottomPosition = elementTopPosition + elementHeight
+      button.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
 
-      if (elementBottomPosition >= windowTopPosition && elementTopPosition <= windowBottomPosition) {
-        element.classList.add("animated")
-      }
-    })
-  }
+    button.addEventListener('mouseleave', () => {
+      button.style.transform = '';
+    });
+  });
 
-  // Check elements on load, scroll and resize
-  window.addEventListener("scroll", checkIfInView)
-  window.addEventListener("resize", checkIfInView)
-  window.addEventListener("load", checkIfInView)
-
-  // Initial check
-  checkIfInView()
-
-  // Magnetic buttons effect
-  const magneticButtons = document.querySelectorAll(".magnetic-button")
-
-  magneticButtons.forEach((button) => {
-    button.addEventListener("mousemove", function (e) {
-      if (window.innerWidth <= 991) return
-
-      const rect = this.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
-
-      const centerX = rect.width / 2
-      const centerY = rect.height / 2
-
-      const moveX = (x - centerX) / 5
-      const moveY = (y - centerY) / 5
-
-      this.style.transform = `translate(${moveX}px, ${moveY}px)`
-    })
-
-    button.addEventListener("mouseleave", function () {
-      this.style.transform = ""
-    })
-  })
-
-  // Scroll to Top Button
-  const scrollToTopButton = document.querySelector(".scroll-to-top")
-
-  if (scrollToTopButton) {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        scrollToTopButton.classList.add("active")
-      } else {
-        scrollToTopButton.classList.remove("active")
-      }
-    })
-
-    scrollToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      })
-    })
-  }
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault()
-
-      const targetId = this.getAttribute("href")
-      if (targetId === "#") return
-
-      const targetElement = document.querySelector(targetId)
-      if (!targetElement) return
-
-      const headerOffset = 100
-      const elementPosition = targetElement.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      })
-    })
-  })
-
-  // Navbar scroll effect
-  const navbar = document.querySelector(".navbar")
-
-  if (navbar) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.style.padding = "0.5rem 0"
-        navbar.style.background = "rgba(255, 255, 255, 0.95)"
-        navbar.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)"
-      } else {
-        navbar.style.padding = "0.75rem 0"
-        navbar.style.background = "var(--color-navbar-bg)"
-        navbar.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)"
-      }
-    })
-  }
-
-  // Gallery masonry layout effect
-  const galleryGrid = document.querySelector(".gallery-grid")
-  if (galleryGrid) {
-    // Add random heights to gallery items for masonry effect
-    const galleryItems = galleryGrid.querySelectorAll(".gallery-item")
-    galleryItems.forEach((item) => {
-      // Random aspect ratio between 0.8 and 1.2
-      const aspectRatio = 0.8 + Math.random() * 0.4
-      item.style.aspectRatio = aspectRatio.toString()
-    })
-  }
-
-  // Add 3D tilt effect to service cards
-  const serviceCards = document.querySelectorAll(".service-card")
-  serviceCards.forEach((card) => {
-    card.addEventListener("mousemove", function (e) {
-      if (window.innerWidth <= 991) return
-
-      const rect = this.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
-
-      const centerX = rect.width / 2
-      const centerY = rect.height / 2
-
-      const tiltX = (y - centerY) / 10
-      const tiltY = (centerX - x) / 10
-
-      this.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-15px)`
-    })
-
-    card.addEventListener("mouseleave", function () {
-      this.style.transform = ""
-    })
-  })
-
-  // Add floating animation to social icons in header
-  const socialIcons = document.querySelectorAll(".social-top-link")
-  socialIcons.forEach((icon, index) => {
-    icon.style.animationDelay = `${index * 0.2}s`
-    icon.classList.add("animate-float-medium")
-  })
-})
+  // Initialize all animations and effects
+  revealOnScroll();
+});
