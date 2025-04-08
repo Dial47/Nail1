@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="styles/main.css">
-
+<link rel="stylesheet" href="styles/video-background.css">
 </head>
 <body>
 <!-- Contenedor de partículas brillantes -->
@@ -64,12 +64,6 @@
             </a>
           </li>
           <li class="menu-item">
-            <a href="nosotros.html" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-users"></i></span>
-              <span class="menu-text">Nosotros</span>
-            </a>
-          </li>
-          <li class="menu-item">
             <a href="contacto.html" class="menu-link">
               <span class="menu-icon"><i class="fas fa-envelope"></i></span>
               <span class="menu-text">Contacto</span>
@@ -99,7 +93,6 @@
       <li><a href="index.html" class="mobile-menu-link active">Inicio</a></li>
       <li><a href="servicios.html" class="mobile-menu-link">Servicios</a></li>
       <li><a href="galeria.html" class="mobile-menu-link">Galería</a></li>
-      <li><a href="nosotros.html" class="mobile-menu-link">Nosotros</a></li>
       <li><a href="contacto.html" class="mobile-menu-link">Contacto</a></li>
       <li><a href="citas.html" class="mobile-menu-link">Reservar Cita</a></li>
     </ul>
@@ -123,9 +116,7 @@
         <div class="carousel-slides">
           <div class="carousel-slide active" data-id="1">
             <div class="carousel-image-container">
-              <video id="background-video" autoplay loop muted playsinline>
-                <source src="img/imagenes/VID-20250403-WA0010.mp4" type="video/mp4">
-              </video>
+              <img src="img/imagenes/hero-nails.jpg" alt="Uñas que brillan como tú" class="carousel-image">
               <div class="carousel-overlay"></div>
             </div>
             <div class="carousel-slide-content">
@@ -143,18 +134,19 @@
           
           <div class="carousel-slide" data-id="2">
             <div class="carousel-image-container">
-              <img src="img/imagenes/IMG-20250403-WA0004.jpg" alt="Técnicas avanzadas" class="carousel-image">
-              <video id="background-video" autoplay muted loop playsinline poster="/img/gallery/video-thumbnail.webp">
-                <source src="/img/gallery/VID-20250317-WA0004.mp4" type="video/mp4">
-            </video>
+              <video autoplay muted loop class="carousel-video">
+                <source src="img/gallery/VID-20250317-WA0004.mp4" type="video/mp4">
+              </video>
               <div class="carousel-overlay"></div>
             </div>
             <div class="carousel-slide-content">
-              <div class="carousel-caption">
-                <h2 class="carousel-title">Técnicas avanzadas</h2>
+              <div class="carousel-caption modern-caption">
+                <h2 class="carousel-title modern-title">
+                  TÉCNICAS <span class="highlight-text">AVANZADAS</span>
+                </h2>
                 <p class="carousel-text">Trabajamos con los mejores productos del mercado</p>
                 <div class="carousel-buttons">
-                  <a href="servicios.html" class="carousel-cta">Ver Servicios <i class="fas fa-arrow-right"></i></a>
+                  <a href="servicios.html" class="carousel-cta modern-cta">VER NUESTROS SERVICIOS</a>
                 </div>
               </div>
             </div>
@@ -162,15 +154,19 @@
           
           <div class="carousel-slide" data-id="3">
             <div class="carousel-image-container">
-              <img src="img/imagenes/IMG-20250403-WA0005.jpg" alt="Experiencia premium" class="carousel-image">
+              <video autoplay muted loop class="carousel-video">
+                <source src="videos/nail-art-video2.mp4" type="video/mp4">
+              </video>
               <div class="carousel-overlay"></div>
             </div>
             <div class="carousel-slide-content">
-              <div class="carousel-caption">
-                <h2 class="carousel-title">Experiencia premium</h2>
+              <div class="carousel-caption modern-caption">
+                <h2 class="carousel-title modern-title">
+                  EXPERIENCIA <span class="highlight-text">PREMIUM</span>
+                </h2>
                 <p class="carousel-text">Relájate mientras transformamos tus uñas</p>
                 <div class="carousel-buttons">
-                  <a href="galeria.html" class="carousel-cta">Ver Galería <i class="fas fa-arrow-right"></i></a>
+                  <a href="galeria.html" class="carousel-cta modern-cta">EXPLORA NUESTRA GALERÍA</a>
                 </div>
               </div>
             </div>
@@ -612,7 +608,6 @@
               <li><a href="index.html" class="footer-link">Inicio</a></li>
               <li><a href="servicios.html" class="footer-link">Servicios</a></li>
               <li><a href="galeria.html" class="footer-link">Galería</a></li>
-              <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
               <li><a href="contacto.html" class="footer-link">Contacto</a></li>
               <li><a href="citas.html" class="footer-link">Reservar Cita</a></li>
             </ul>
@@ -700,6 +695,5 @@
 
 <script src="scripts/main.js"></script>
 <script src="scripts/particle-animations.js"></script>
-<script src="scripts/hero-enhancement.js"></script>
 </body>
 </html>

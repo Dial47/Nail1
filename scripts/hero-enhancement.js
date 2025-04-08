@@ -30,7 +30,7 @@ function enhanceHeroSection() {
     setInterval(addGlowEffect, 3000)
 
     // Aplicar efecto inicial después de un retraso
-    setTimeout(addGlowEffect, 2000)
+    setTimeout(addGlowEffect, 1500)
   })
 
   // Mejorar la transición entre slides

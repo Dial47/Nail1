@@ -1,0 +1,64 @@
+/**
+ * AngelNails - Video Background Styles
+ * Version: 1.0
+ */
+
+/* Estilos para videos de fondo en el carrusel */
+.carousel-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transform: scale(1.01); /* Ligero aumento para evitar bordes blancos */
+}
+
+/* Ajustar overlay para videos */
+.carousel-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+/* Mejorar contraste para textos sobre videos */
+.carousel-caption {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Mejorar visibilidad de textos */
+.carousel-text {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Mejorar botones */
+.modern-cta {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  padding: 1.2rem 2.5rem;
+  box-shadow: 0 10px 25px rgba(255, 62, 157, 0.5);
+  background: linear-gradient(to right, var(--color-hero-pink), #ff6eb5);
+}
+
+.modern-cta:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 30px rgba(255, 62, 157, 0.7);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .carousel-video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

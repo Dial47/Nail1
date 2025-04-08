@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reset animation flag after transition
       setTimeout(() => {
         isAnimating = false
-      }, 1000) // Match this with your CSS transition time
+      }, 1500) // Aumentado a 1500ms para coincidir con la transición CSS
     }
 
     // Function to show next slide
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Start autoplay
     function startAutoplay() {
-      autoplayInterval = setInterval(nextSlide, 6000)
+      autoplayInterval = setInterval(nextSlide, 8000) // Aumentado a 8000ms para un cambio más lento
     }
 
     // Initialize carousel
@@ -641,4 +641,3 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.classList.add("animate-float-medium")
   })
 })
-
