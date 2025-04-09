@@ -1,0 +1,293 @@
+/* Color Picker Styles */
+.color-picker-section {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff9f0;
+}
+
+.color-picker-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 992px) {
+  .color-picker-container {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.hand-model {
+  background-color: var(--color-white);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.hand-model:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 62, 157, 0.15);
+}
+
+.hand-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 2rem;
+}
+
+.hand-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.nail {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50% 50% 0 0;
+  transition: all 0.5s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nail-1 {
+  width: 12%;
+  height: 8%;
+  top: 10%;
+  left: 15%;
+  transform-origin: bottom center;
+}
+
+.nail-2 {
+  width: 12%;
+  height: 10%;
+  top: 5%;
+  left: 32%;
+  transform-origin: bottom center;
+}
+
+.nail-3 {
+  width: 12%;
+  height: 12%;
+  top: 2%;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+.nail-4 {
+  width: 12%;
+  height: 10%;
+  top: 5%;
+  left: 68%;
+  transform-origin: bottom center;
+}
+
+.nail-5 {
+  width: 12%;
+  height: 8%;
+  top: 10%;
+  left: 85%;
+  transform-origin: bottom center;
+}
+
+.color-name-display {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.color-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.color-brand,
+.color-finish,
+.color-durability {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+}
+
+.color-brand span,
+.color-finish span,
+.color-durability span {
+  display: block;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-top: 0.25rem;
+}
+
+.color-palette {
+  background-color: var(--color-white);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.color-category {
+  margin-bottom: 2rem;
+}
+
+.color-category-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-gray-800);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.color-category-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  border-radius: 2px;
+}
+
+.color-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 1rem;
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.color-swatch:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.color-swatch.active::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.color-swatch.active::before {
+  content: "✓";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--color-primary);
+  z-index: 1;
+}
+
+.color-swatch.metallic {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.5), transparent, rgba(255, 255, 255, 0.5));
+}
+
+.color-swatch.glitter {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+  background-size: 5px 5px;
+}
+
+.color-swatch.pearl {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.7), transparent);
+}
+
+.color-swatch.chrome {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.9)
+  );
+}
+
+.color-swatch.matte {
+  opacity: 0.8;
+}
+
+.color-swatch.gel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+  z-index: 1;
+}
+
+.random-color-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  color: var(--color-white);
+  font-weight: 600;
+  border-radius: 50px;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(255, 62, 157, 0.2);
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+.random-color-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(255, 62, 157, 0.3);
+}
+
+/* Animation for nail color change */
+@keyframes colorChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nail.changing-color {
+  animation: colorChange 0.5s ease;
+}

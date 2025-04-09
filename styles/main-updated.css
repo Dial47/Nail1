@@ -1,0 +1,100 @@
+/* Import base styles */
+@import "main.css";
+
+/* Import new component styles */
+@import "preloader.css";
+@import "header.css";
+
+/* Additional styles to enhance the website */
+:root {
+  /* Enhanced color palette */
+  --color-primary: #ff3e9d;
+  --color-primary-light: #ff6eb5;
+  --color-primary-dark: #e01e7d;
+  --color-secondary: #a742ff;
+  --color-secondary-light: #c47aff;
+  --color-secondary-dark: #8a2ed0;
+  --color-tertiary: #4158ff;
+  --color-accent: #ffde59;
+  --color-accent-light: #ffe8a3;
+
+  /* Z-index variables */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-55: 55;
+  --z-60: 60;
+  --z-70: 70;
+  --z-80: 80;
+  --z-90: 90;
+  --z-100: 100;
+}
+
+/* Enhanced animations */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Enhanced hover effects */
+.enhanced-hover {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.enhanced-hover:hover::after {
+  opacity: 1;
+}
+
+/* Ajustes para el espaciado del contenido principal */
+main {
+  padding-top: 70px; /* Ajustar según la altura del header */
+}
+
+@media (max-width: 767px) {
+  main {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 55px;
+  }
+}
+
+/* Estilos para el hero section */
+.hero-section {
+  margin-top: 0;
+}

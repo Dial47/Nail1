@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="styles/page-specific.css">
 <link rel="stylesheet" href="styles/premium-services.css">
+<link rel="stylesheet" href="styles/color-picker.css">
 
 </head>
 <body>
@@ -23,24 +24,22 @@
   <!-- Preloader -->
   <div class="preloader">
     <div class="nail-polish-preloader">
-      <div class="nail-polish-bottle">
-        <div class="bottle-cap"></div>
-        <div class="bottle-body">
-          <div></div>
-        </div>
-        <div class="bottle-brush">
-          <div class="brush-handle"></div>
-          <div class="brush-tip"></div>
-        </div>
+      <div class="preloader-logo">
+        <img src="img/logo_white.webp" alt="Angel Nails Logo" width="220" height="100">
       </div>
-      <div class="nail-hand">
-        <div class="nail nail-1"></div>
-        <div class="nail nail-2"></div>
-        <div class="nail nail-3"></div>
-        <div class="nail nail-4"></div>
-        <div class="nail nail-5"></div>
+
+      <div class="loading-text">
+        <span>A</span>
+        <span>n</span>
+        <span>g</span>
+        <span>e</span>
+        <span>l</span>
+        <span>N</span>
+        <span>a</span>
+        <span>i</span>
+        <span>l</span>
+        <span>s</span>
       </div>
-      <div class="loading-text">Cargando...</div>
     </div>
   </div>
 
@@ -428,80 +427,80 @@
         </svg>
       </div>
     </section><br><br>
-
-    <!-- Color Picker Section -->
-    <section id="colores" class="color-picker-section section-hidden">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Encuentra Tu Color Perfecto</h2>
-          <p class="section-description">Explora nuestra amplia gama de colores premium y visualiza cómo lucirán en tus uñas antes de tu cita.</p>
+<!-- Color Picker Section HTML -->
+<section id="colores" class="color-picker-section section-hidden">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Encuentra Tu Color Perfecto</h2>
+      <p class="section-description">Explora nuestra amplia gama de colores premium y visualiza cómo lucirán en tus uñas antes de tu cita.</p>
+    </div>
+    
+    <div class="color-picker-container">
+      <div class="hand-model animate-on-scroll">
+        <div class="hand-image-container">
+          <img src="img/hand.jpg" alt="Modelo de mano" class="hand-image">
+          <div class="nail nail-1"></div>
+          <div class="nail nail-2"></div>
+          <div class="nail nail-3"></div>
+          <div class="nail nail-4"></div>
+          <div class="nail nail-5"></div>
         </div>
-        
-        <div class="color-picker-container">
-          <div class="hand-model animate-on-scroll">
-            <div class="hand-image-container">
-              <img src="img/hand.jpg" alt="Modelo de mano" class="hand-image">
-              <div class="nail nail-1"></div>
-              <div class="nail nail-2"></div>
-              <div class="nail nail-3"></div>
-              <div class="nail nail-4"></div>
-              <div class="nail nail-5"></div>
-            </div>
-            <div class="color-name-display">Selecciona un color</div>
-            <div class="color-details">
-              <div class="color-brand">Marca: <span id="color-brand">-</span></div>
-              <div class="color-finish">Acabado: <span id="color-finish">-</span></div>
-              <div class="color-durability">Duración: <span id="color-durability">-</span></div>
-            </div>
-          </div>
-          
-          <div class="color-palette animate-on-scroll">
-            <div class="color-category">
-              <h3 class="color-category-title">Colores Clásicos</h3>
-              <div class="color-swatches">
-                <div class="color-swatch" style="background-color: #FF0000;" data-name="Rojo Pasión" data-brand="OPI" data-finish="Crema" data-durability="7-10 días"></div>
-                <div class="color-swatch" style="background-color: #FF69B4;" data-name="Rosa Chicle" data-brand="Essie" data-finish="Crema" data-durability="7-10 días"></div>
-                <div class="color-swatch" style="background-color: #800080;" data-name="Púrpura Real" data-brand="CND" data-finish="Crema" data-durability="7-10 días"></div>
-                <div class="color-swatch" style="background-color: #0000FF;" data-name="Azul Eléctrico" data-brand="OPI" data-finish="Crema" data-durability="7-10 días"></div>
-                <div class="color-swatch" style="background-color: #008000;" data-name="Verde Esmeralda" data-brand="Essie" data-finish="Crema" data-durability="7-10 días"></div>
-                <div class="color-swatch" style="background-color: #000000;" data-name="Negro Intenso" data-brand="CND" data-finish="Crema" data-durability="7-10 días"></div>
-                <div class="color-swatch" style="background-color: #FFFFFF;" data-name="Blanco Puro" data-brand="OPI" data-finish="Crema" data-durability="7-10 días"></div>
-              </div>
-            </div>
-            
-            <div class="color-category">
-              <h3 class="color-category-title">Acabados Especiales</h3>
-              <div class="color-swatches">
-                <div class="color-swatch metallic" style="background-color: #C0C0C0;" data-name="Plata Metálico" data-brand="OPI" data-finish="Metálico" data-durability="5-7 días"></div>
-                <div class="color-swatch metallic" style="background-color: #FFD700;" data-name="Oro Metálico" data-brand="Essie" data-finish="Metálico" data-durability="5-7 días"></div>
-                <div class="color-swatch glitter" style="background-color: #FF1493;" data-name="Rosa Glitter" data-brand="CND" data-finish="Glitter" data-durability="7-14 días"></div>
-                <div class="color-swatch glitter" style="background-color: #00FFFF;" data-name="Turquesa Glitter" data-brand="OPI" data-finish="Glitter" data-durability="7-14 días"></div>
-                <div class="color-swatch pearl" style="background-color: #FFC0CB;" data-name="Rosa Perlado" data-brand="Essie" data-finish="Perlado" data-durability="7-10 días"></div>
-                <div class="color-swatch chrome" style="background-color: #C0C0C0;" data-name="Efecto Espejo" data-brand="CND" data-finish="Cromo" data-durability="3-5 días"></div>
-                <div class="color-swatch matte" style="background-color: #800000;" data-name="Burdeos Mate" data-brand="OPI" data-finish="Mate" data-durability="5-7 días"></div>
-              </div>
-            </div>
-            
-            <div class="color-category">
-              <h3 class="color-category-title">Gel y Semipermanentes</h3>
-              <div class="color-swatches">
-                <div class="color-swatch gel" style="background-color: #FF0000;" data-name="Rojo Gel" data-brand="Gelish" data-finish="Gel" data-durability="2-3 semanas"></div>
-                <div class="color-swatch gel" style="background-color: #FF69B4;" data-name="Rosa Gel" data-brand="OPI Gel" data-finish="Gel" data-durability="2-3 semanas"></div>
-                <div class="color-swatch gel" style="background-color: #800080;" data-name="Púrpura Gel" data-brand="CND Shellac" data-finish="Gel" data-durability="2-3 semanas"></div>
-                <div class="color-swatch gel" style="background-color: #0000FF;" data-name="Azul Gel" data-brand="Gelish" data-finish="Gel" data-durability="2-3 semanas"></div>
-                <div class="color-swatch gel" style="background-color: #008000;" data-name="Verde Gel" data-brand="OPI Gel" data-finish="Gel" data-durability="2-3 semanas"></div>
-                <div class="color-swatch gel" style="background-color: #000000;" data-name="Negro Gel" data-brand="CND Shellac" data-finish="Gel" data-durability="2-3 semanas"></div>
-                <div class="color-swatch gel" style="background-color: #FFFFFF;" data-name="Blanco Gel" data-brand="Gelish" data-finish="Gel" data-durability="2-3 semanas"></div>
-              </div>
-            </div>
-            
-            <button class="random-color-button">
-              <i class="fas fa-random"></i> Sorpréndeme con un color
-            </button>
-          </div>
+        <div class="color-name-display">Selecciona un color</div>
+        <div class="color-details">
+          <div class="color-brand">Marca: <span id="color-brand">-</span></div>
+          <div class="color-finish">Acabado: <span id="color-finish">-</span></div>
+          <div class="color-durability">Duración: <span id="color-durability">-</span></div>
         </div>
       </div>
       
+      <div class="color-palette animate-on-scroll">
+        <div class="color-category">
+          <h3 class="color-category-title">Colores Clásicos</h3>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background-color: #FF0000;" data-name="Rojo Pasión" data-brand="OPI" data-finish="Crema" data-durability="7-10 días"></div>
+            <div class="color-swatch" style="background-color: #FF69B4;" data-name="Rosa Chicle" data-brand="Essie" data-finish="Crema" data-durability="7-10 días"></div>
+            <div class="color-swatch" style="background-color: #800080;" data-name="Púrpura Real" data-brand="CND" data-finish="Crema" data-durability="7-10 días"></div>
+            <div class="color-swatch" style="background-color: #0000FF;" data-name="Azul Eléctrico" data-brand="OPI" data-finish="Crema" data-durability="7-10 días"></div>
+            <div class="color-swatch" style="background-color: #008000;" data-name="Verde Esmeralda" data-brand="Essie" data-finish="Crema" data-durability="7-10 días"></div>
+            <div class="color-swatch" style="background-color: #000000;" data-name="Negro Intenso" data-brand="CND" data-finish="Crema" data-durability="7-10 días"></div>
+            <div class="color-swatch" style="background-color: #FFFFFF;" data-name="Blanco Puro" data-brand="OPI" data-finish="Crema" data-durability="7-10 días"></div>
+          </div>
+        </div>
+        
+        <div class="color-category">
+          <h3 class="color-category-title">Acabados Especiales</h3>
+          <div class="color-swatches">
+            <div class="color-swatch metallic" style="background-color: #C0C0C0;" data-name="Plata Metálico" data-brand="OPI" data-finish="Metálico" data-durability="5-7 días"></div>
+            <div class="color-swatch metallic" style="background-color: #FFD700;" data-name="Oro Metálico" data-brand="Essie" data-finish="Metálico" data-durability="5-7 días"></div>
+            <div class="color-swatch glitter" style="background-color: #FF1493;" data-name="Rosa Glitter" data-brand="CND" data-finish="Glitter" data-durability="7-14 días"></div>
+            <div class="color-swatch glitter" style="background-color: #00FFFF;" data-name="Turquesa Glitter" data-brand="OPI" data-finish="Glitter" data-durability="7-14 días"></div>
+            <div class="color-swatch pearl" style="background-color: #FFC0CB;" data-name="Rosa Perlado" data-brand="Essie" data-finish="Perlado" data-durability="7-10 días"></div>
+            <div class="color-swatch chrome" style="background-color: #C0C0C0;" data-name="Efecto Espejo" data-brand="CND" data-finish="Cromo" data-durability="3-5 días"></div>
+            <div class="color-swatch matte" style="background-color: #800000;" data-name="Burdeos Mate" data-brand="OPI" data-finish="Mate" data-durability="5-7 días"></div>
+          </div>
+        </div>
+        
+        <div class="color-category">
+          <h3 class="color-category-title">Gel y Semipermanentes</h3>
+          <div class="color-swatches">
+            <div class="color-swatch gel" style="background-color: #FF0000;" data-name="Rojo Gel" data-brand="Gelish" data-finish="Gel" data-durability="2-3 semanas"></div>
+            <div class="color-swatch gel" style="background-color: #FF69B4;" data-name="Rosa Gel" data-brand="OPI Gel" data-finish="Gel" data-durability="2-3 semanas"></div>
+            <div class="color-swatch gel" style="background-color: #800080;" data-name="Púrpura Gel" data-brand="CND Shellac" data-finish="Gel" data-durability="2-3 semanas"></div>
+            <div class="color-swatch gel" style="background-color: #0000FF;" data-name="Azul Gel" data-brand="Gelish" data-finish="Gel" data-durability="2-3 semanas"></div>
+            <div class="color-swatch gel" style="background-color: #008000;" data-name="Verde Gel" data-brand="OPI Gel" data-finish="Gel" data-durability="2-3 semanas"></div>
+            <div class="color-swatch gel" style="background-color: #000000;" data-name="Negro Gel" data-brand="CND Shellac" data-finish="Gel" data-durability="2-3 semanas"></div>
+            <div class="color-swatch gel" style="background-color: #FFFFFF;" data-name="Blanco Gel" data-brand="Gelish" data-finish="Gel" data-durability="2-3 semanas"></div>
+          </div>
+        </div>
+        
+        <button class="random-color-button">
+          <i class="fas fa-random"></i> Sorpréndeme con un color
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+  
       <!-- Wave Divider -->
       <div class="wave-divider wave-divider-enhanced">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -865,5 +864,6 @@
 <script src="scripts/main.js"></script>
 <script src="scripts/particle-animations.js"></script>
 <script src="scripts/manicurist-interactions.js"></script>
+<script src="scripts/color-picker.js"></script>
 </body>
 </html>

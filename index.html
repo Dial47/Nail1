@@ -10,26 +10,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="styles/main.css">
-<link rel="stylesheet" href="styles/preloader">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="styles/main-updated.css">
+
+</head>
 </head>
 <body>
 <!-- Contenedor de partículas brillantes -->
 <div class="glitter-container"></div>
 
 <div class="angel-nails-website">
-  <!-- Preloader -->
+  <!-- Preloader Simplificado -->
   <div class="preloader">
     <div class="nail-polish-preloader">
-      <div class="nail-polish-bottle">
-        <div class="bottle-cap"></div>
-        <div class="bottle-body">
-          <div></div>
-        </div>
-        <div class="bottle-brush">
-          <div class="brush-handle"></div>
-          <div class="brush-tip"></div>
-        </div>
+      <div class="preloader-logo">
+        <img src="img/logo_white.webp" alt="Angel Nails Logo" width="220" height="100">
       </div>
       <div class="nail-hand">
         <div class="nail nail-1"></div>
@@ -38,16 +33,27 @@
         <div class="nail nail-4"></div>
         <div class="nail nail-5"></div>
       </div>
-      <div class="loading-text">Cargando...</div>
+      <div class="loading-text">
+        <span>A</span>
+        <span>n</span>
+        <span>g</span>
+        <span>e</span>
+        <span>l</span>
+        <span>N</span>
+        <span>a</span>
+        <span>i</span>
+        <span>l</span>
+        <span>s</span>
+      </div>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header Actualizado  -->
   <header class="site-header">
     <div class="header-container">
       <div class="logo-container">
         <a href="index.html" class="logo">
-          <img src="img/logo_white.webp" alt="Angel Nails Logo" class="logo-image" width="220" height="100">
+          <img src="/img/logo_white.webp" alt="Angel Nails Logo" class="logo-image" width="80" height="80">
         </a>
       </div>
       
@@ -77,14 +83,14 @@
               <span class="menu-text">Contacto</span>
             </a>
           </li>
-          <li class="menu-item">
-            <a href="citas.html" class="menu-link reserva">
-              <span class="menu-icon"><i class="fas fa-calendar-check"></i></span>
-              <span class="menu-text">Reservar Cita</span>
-            </a>
-          </li>
         </ul>
       </nav>
+      
+      <div class="cta-button-container">
+        <a href="citas.html" class="reservar-cita-btn">
+          Reservar Cita
+        </a>
+      </div>
       
       <div class="social-links">
         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -733,5 +739,6 @@
 </div>
 
 <script src="scripts/main.js"></script>
+<script src="scripts/main-updated.js"></script>
 </body>
 </html>

@@ -4,12 +4,187 @@ document.addEventListener('DOMContentLoaded', function() {
   // Set current year in footer
   document.getElementById('current-year').textContent = new Date().getFullYear();
 
-  // Preloader
+  // Preloader Mejorado
   const preloader = document.querySelector('.preloader');
   if (preloader) {
+    // Añadir efecto de partículas al preloader
+    createPreloaderParticles();
+
+    // Ocultar preloader después de cargar la página
     setTimeout(() => {
       preloader.classList.add('hidden');
-    }, 1500);
+      
+      // Eliminar completamente el preloader después de la transición
+      setTimeout(() => {
+        preloader.remove();
+      }, 800);
+    }, 2500);
+  }
+
+  // Función para crear partículas en el preloader
+  function createPreloaderParticles() {
+    const preloaderContainer = document.querySelector('.nail-polish-preloader');
+    
+    if (!preloaderContainer) return;
+
+    for (let i = 0; i < 15; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('preloader-particle');
+
+      // Estilos para las partículas
+      particle.style.position = 'absolute';
+      particle.style.width = `${Math.random() * 8 + 3}px`;
+      particle.style.height = particle.style.width;
+      particle.style.borderRadius = '50%';
+      particle.style.backgroundColor = getRandomColor();
+      particle.style.opacity = '0.7';
+      particle.style.boxShadow = `0 0 10px ${getRandomColor()}`;
+
+      // Posición aleatoria
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.left = `${Math.random() * 100}%`;
+
+      // Animación
+      particle.style.animation = `floatParticle ${Math.random() * 3 + 2}s infinite ease-in-out`;
+
+      // Añadir al contenedor
+      preloaderContainer.appendChild(particle);
+    }
+
+    // Añadir keyframes para la animación
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes floatParticle {
+        0%, 100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px) scale(1.2);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // Función para obtener un color aleatorio
+  function getRandomColor() {
+    const colors = ['#ff3e9d', '#a742ff', '#4158ff', '#ffde59', '#ff6eb5'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  // Header Mejorado
+  const header = document.querySelector('.site-header');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  // Cambiar estilo del header al hacer scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Efecto hover avanzado para los enlaces del menú
+  menuLinks.forEach(link => {
+    link.addEventListener('mouseenter', (e) => {
+      if (window.innerWidth <= 991) return;
+
+      // Crear efecto de brillo
+      const glow = document.createElement('div');
+      glow.classList.add('menu-link-glow');
+
+      // Estilos para el brillo
+      glow.style.position = 'absolute';
+      glow.style.width = '30px';
+      glow.style.height = '30px';
+      glow.style.borderRadius = '50%';
+      glow.style.background = 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)';
+      glow.style.pointerEvents = 'none';
+      glow.style.zIndex = '0';
+      glow.style.opacity = '0';
+      glow.style.transition = 'opacity 0.3s ease';
+
+      // Añadir al enlace
+      link.appendChild(glow);
+
+      // Mostrar el brillo
+      setTimeout(() => {
+        glow.style.opacity = '1';
+      }, 10);
+
+      // Mover el brillo con el ratón
+      link.addEventListener('mousemove', moveGlow);
+
+      function moveGlow(e) {
+        const rect = link.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        glow.style.left = `${x - 15}px`;
+        glow.style.top = `${y - 15}px`;
+      }
+
+      // Eliminar el brillo al salir
+      link.addEventListener('mouseleave', () => {
+        glow.style.opacity = '0';
+        link.removeEventListener('mousemove', moveGlow);
+
+        setTimeout(() => {
+          if (glow.parentNode === link) {
+            link.removeChild(glow);
+          }
+        }, 300);
+      });
+    });
+  });
+
+  // Añadir efecto de partículas al header
+  createHeaderParticles();
+
+  function createHeaderParticles() {
+    const headerContainer = document.querySelector('.header-container');
+    
+    if (!headerContainer) return;
+
+    for (let i = 0; i < 8; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('header-particle');
+
+      // Estilos para las partículas
+      particle.style.position = 'absolute';
+      particle.style.width = `${Math.random() * 6 + 2}px`;
+      particle.style.height = particle.style.width;
+      particle.style.borderRadius = '50%';
+      particle.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+      particle.style.pointerEvents = 'none';
+
+      // Posición aleatoria
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.left = `${Math.random() * 100}%`;
+
+      // Animación
+      particle.style.animation = `floatHeaderParticle ${Math.random() * 5 + 3}s infinite ease-in-out`;
+
+      // Añadir al contenedor
+      headerContainer.appendChild(particle);
+    }
+
+    // Añadir keyframes para la animación
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes floatHeaderParticle {
+        0%, 100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 20 - 10}px) scale(1.5);
+          opacity: 0.7;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   }
 
   // Mobile Menu Toggle
