@@ -386,7 +386,7 @@ p {
   transition: transform 0.3s ease;
 }
 
-.logo:hover .logo-image {
+.logo:hover .logo-image  {
   transform: scale(1.05) translateY(-3px);
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
 }
@@ -1878,11 +1878,14 @@ p {
 }
 
 .footer-logo-image {
-  height: 70px;
+  height: 150px;
   width: auto;
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
 }
-
+.footer-logo-image:hover  {
+  transform: scale(1.05);
+}
 .footer-about-text {
   margin-bottom: 1.5rem;
   line-height: 1.7;
