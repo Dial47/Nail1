@@ -1,6 +1,6 @@
 /**
  * AngelNails - Galería y Videos Unificados
- * Version: 2.0
+ * Version: 2.1
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryFilter()
   initVideoPlayers()
   initGalleryLoader()
+  initVideoLoader()
   initTrendsSlider()
 })
 
@@ -67,24 +68,82 @@ function initVideoPlayers() {
   const videoSources = {
     "video-1": {
       title: "Tutorial de Uñas Acrílicas",
-      src: "img/gallery/VID-20250317-WA0004.mp4",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
       type: "video/mp4",
       poster: "img/gallery/g002.webp",
     },
     "video-2": {
       title: "Diseño de Nail Art Floral",
-      src: "img/imagenes/VID-20250403-WA0005.mp4",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
       type: "video/mp4",
       poster: "img/gallery/g003.webp",
     },
     "video-3": {
       title: "Efecto Espejo en Gel",
-      src: "img/imagenes/VID-20250403-WA0011.mp4",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
       type: "video/mp4",
       poster: "img/gallery/g004.webp",
     },
+    "video-4": {
+      title: "Decoración con Pedrería",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g005.webp",
+    },
+    "video-5": {
+      title: "Técnica de Degradado",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g006.webp",
+    },
+    "video-6": {
+      title: "Uñas de Temporada",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g007.webp",
+    },
+    "video-7": {
+      title: "Manicura Francesa Moderna",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g001.webp",
+    },
+    "video-8": {
+      title: "Técnicas de Nail Art Avanzado",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g002.webp",
+    },
+    "video-9": {
+      title: "Cuidados para Uñas Naturales",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g003.webp",
+    },
+    "video-7": {
+      title: "Manicura Francesa Moderna",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g001.webp",
+    },
+    "video-8": {
+      title: "Técnicas de Nail Art Avanzado",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g002.webp",
+    },
+    "video-9": {
+      title: "Cuidados para Uñas Naturales",
+      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      type: "video/mp4",
+      poster: "img/gallery/g003.webp",
+    },
   }
 
+  setupVideoPlayers(videoItems, videoSources)
+}
+
+function setupVideoPlayers(videoItems, videoSources) {
   videoItems.forEach((item) => {
     const playButton = item.querySelector(".video-play-button")
     const thumbnail = item.querySelector(".video-thumbnail")
@@ -226,88 +285,46 @@ function initGalleryLoader() {
       description: "Motivos festivos para celebrar la temporada",
     },
     {
-      id: 1,
-      title: "Manicura Francesa Elegante",
+      id: 7,
+      title: "Uñas Stiletto",
+      category: "acrilicas",
+      image: "img/gallery/g007.webp",
+      description: "Diseño elegante y estilizado para ocasiones especiales",
+    },
+    {
+      id: 8,
+      title: "Manicura Minimalista",
       category: "gel",
       image: "img/gallery/g001.webp",
-      description: "Diseño clásico y elegante para cualquier ocasión",
+      description: "Diseños simples pero sofisticados para el día a día",
     },
     {
-      id: 2,
-      title: "Uñas Acrílicas con Pedrería",
-      category: "acrilicas",
-      image: "img/gallery/g002.webp",
-      description: "Diseño sofisticado con aplicaciones de cristales",
-    },
-    {
-      id: 3,
-      title: "Nail Art Floral",
+      id: 9,
+      title: "Nail Art Geométrico",
       category: "nail-art",
-      image: "img/gallery/g003.webp",
-      description: "Delicados diseños florales pintados a mano",
-    },
-    {
-      id: 4,
-      title: "Efecto Espejo",
-      category: "gel",
-      image: "img/gallery/g004.webp",
-      description: "Acabado cromado de alta duración",
-    },
-    {
-      id: 5,
-      title: "Pedicura Spa Completa",
-      category: "pedicura",
-      image: "img/gallery/g005.webp",
-      description: "Tratamiento completo con exfoliación e hidratación",
-    },
-    {
-      id: 6,
-      title: "Diseño Navideño",
-      category: "temporada",
-      image: "img/gallery/g006.webp",
-      description: "Motivos festivos para celebrar la temporada",
-    },
-    {
-      id: 1,
-      title: "Manicura Francesa Elegante",
-      category: "gel",
-      image: "img/gallery/g001.webp",
-      description: "Diseño clásico y elegante para cualquier ocasión",
-    },
-    {
-      id: 2,
-      title: "Uñas Acrílicas con Pedrería",
-      category: "acrilicas",
       image: "img/gallery/g002.webp",
-      description: "Diseño sofisticado con aplicaciones de cristales",
+      description: "Patrones geométricos modernos y elegantes",
     },
     {
-      id: 3,
-      title: "Nail Art Floral",
-      category: "nail-art",
-      image: "img/gallery/g003.webp",
-      description: "Delicados diseños florales pintados a mano",
-    },
-    {
-      id: 4,
-      title: "Efecto Espejo",
-      category: "gel",
-      image: "img/gallery/g004.webp",
-      description: "Acabado cromado de alta duración",
-    },
-    {
-      id: 5,
-      title: "Pedicura Spa Completa",
+      id: 10,
+      title: "Pedicura con Diseño",
       category: "pedicura",
-      image: "img/gallery/g005.webp",
-      description: "Tratamiento completo con exfoliación e hidratación",
+      image: "img/gallery/g003.webp",
+      description: "Pedicura completa con diseños exclusivos",
     },
     {
-      id: 6,
-      title: "Diseño Navideño",
+      id: 11,
+      title: "Diseño Primaveral",
       category: "temporada",
-      image: "img/gallery/g006.webp",
-      description: "Motivos festivos para celebrar la temporada",
+      image: "img/gallery/g004.webp",
+      description: "Motivos florales y colores vibrantes para primavera",
+    },
+    {
+      id: 12,
+      title: "Uñas de Gel con Glitter",
+      category: "gel",
+      image: "img/gallery/g005.webp",
+      description: "Acabado brillante con partículas de glitter",
     },
   ]
 
@@ -387,6 +404,125 @@ function initGalleryLoader() {
   }
 }
 
+// ===== CARGA DE VIDEOS =====
+function initVideoLoader() {
+  const videoContainer = document.querySelector(".video-gallery-grid")
+  const loadMoreVideosButton = document.getElementById("load-more-videos-button")
+  const videoLoader = document.querySelector(".video-loader")
+
+  if (!videoContainer || !loadMoreVideosButton) return
+
+  // Datos de ejemplo para videos adicionales (en un entorno real, vendrían de una API)
+  const videoData = [
+    {
+      id: "video-4",
+      title: "Decoración con Pedrería",
+      description: "Aprende a aplicar y fijar pedrería en tus diseños de uñas.",
+      image: "img/gallery/g005.webp",
+    },
+    {
+      id: "video-5",
+      title: "Técnica de Degradado",
+      description: "Cómo crear efectos de degradado perfectos en tus uñas.",
+      image: "img/gallery/g006.webp",
+    },
+    {
+      id: "video-6",
+      title: "Uñas de Temporada",
+      description: "Diseños especiales para cada temporada del año.",
+      image: "img/gallery/g007.webp",
+    },
+    {
+      id: "video-7",
+      title: "Manicura Francesa Moderna",
+      description: "Versiones modernas y creativas de la clásica manicura francesa.",
+      image: "img/gallery/g001.webp",
+    },
+    {
+      id: "video-8",
+      title: "Técnicas de Nail Art Avanzado",
+      description: "Técnicas profesionales para crear diseños complejos y detallados.",
+      image: "img/gallery/g002.webp",
+    },
+    {
+      id: "video-9",
+      title: "Cuidados para Uñas Naturales",
+      description: "Consejos para mantener tus uñas naturales fuertes y saludables.",
+      image: "img/gallery/g003.webp",
+    },
+  ]
+
+  let currentVideoPage = 0
+  const videosPerPage = 3
+
+  // Configurar botón de cargar más videos
+  loadMoreVideosButton.addEventListener("click", () => {
+    currentVideoPage++
+
+    // Mostrar loader
+    videoLoader.classList.add("active")
+
+    // Simular carga (en un entorno real, sería una llamada a API)
+    setTimeout(() => {
+      loadVideoItems(currentVideoPage)
+      videoLoader.classList.remove("active")
+
+      // Ocultar botón si no hay más páginas
+      if ((currentVideoPage + 1) * videosPerPage >= videoData.length) {
+        loadMoreVideosButton.style.display = "none"
+      }
+    }, 1000)
+  })
+
+  function loadVideoItems(page) {
+    const startIndex = page * videosPerPage
+    const endIndex = Math.min(startIndex + videosPerPage, videoData.length)
+
+    // Obtener elementos para esta página
+    const pageItems = videoData.slice(startIndex, endIndex)
+
+    // Crear y añadir elementos a la galería de videos
+    pageItems.forEach((item, index) => {
+      const videoItem = createVideoItem(item, index)
+      videoContainer.appendChild(videoItem)
+    })
+
+    // Inicializar los nuevos reproductores de video
+    const newVideoItems = document.querySelectorAll(".video-item:not(.initialized)")
+    setupVideoPlayers(newVideoItems, {})
+
+    // Marcar como inicializados
+    newVideoItems.forEach((item, index) => {
+      item.classList.add("initialized")
+
+      // Animar con retraso escalonado
+      setTimeout(() => {
+        item.classList.add("animated")
+      }, index * 100)
+    })
+  }
+
+  function createVideoItem(item, index) {
+    const videoItem = document.createElement("div")
+    videoItem.className = "video-item animate-on-scroll"
+    videoItem.style.opacity = "0"
+    videoItem.style.transform = "translateY(30px)"
+
+    videoItem.innerHTML = `
+      <div class="video-thumbnail">
+        <img src="${item.image}" alt="${item.title}" class="video-image">
+        <div class="video-play-button" data-video-id="${item.id}">
+          <i class="fas fa-play"></i>
+        </div>
+      </div>
+      <h3 class="video-title">${item.title}</h3>
+      <p class="video-description">${item.description}</p>
+    `
+
+    return videoItem
+  }
+}
+
 function initGalleryAnimations() {
   const galleryItems = document.querySelectorAll(".gallery-item:not(.animated)")
 
@@ -440,6 +576,7 @@ function addSparkleEffect(element) {
 
 // ===== SLIDER DE TENDENCIAS =====
 function initTrendsSlider() {
+  const trendsSlider = document.querySelector(".trends-slider")
   const trendsTrack = document.querySelector(".trends-track")
   const trendCards = document.querySelectorAll(".trend-card")
   const prevButton = document.querySelector(".trend-nav.prev")
@@ -499,7 +636,7 @@ function initTrendsSlider() {
   }
 
   function getVisibleCards() {
-    const containerWidth = trendsTrack.parentElement.offsetWidth
+    const containerWidth = trendsSlider.offsetWidth
     return Math.floor(containerWidth / (cardWidth + gap))
   }
 }

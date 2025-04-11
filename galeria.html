@@ -238,7 +238,7 @@
         </div>
         
         <div class="video-gallery-grid">
-          <div class="video-item animate-on-scroll">
+          <div class="video-item animate-on-scroll initialized">
             <div class="video-thumbnail">
               <img src="img/gallery/g002.webp" alt="Video tutorial de uñas acrílicas" class="video-image">
               <div class="video-play-button" data-video-id="video-1">
@@ -249,7 +249,7 @@
             <p class="video-description">Aprende el proceso paso a paso para crear uñas acrílicas perfectas.</p>
           </div>
           
-          <div class="video-item animate-on-scroll">
+          <div class="video-item animate-on-scroll initialized">
             <div class="video-thumbnail">
               <img src="img/gallery/g003.webp" alt="Diseño de nail art floral" class="video-image">
               <div class="video-play-button" data-video-id="video-2">
@@ -260,7 +260,7 @@
             <p class="video-description">Técnica de pintura a mano para crear diseños florales detallados.</p>
           </div>
           
-          <div class="video-item animate-on-scroll">
+          <div class="video-item animate-on-scroll initialized">
             <div class="video-thumbnail">
               <img src="img/gallery/g004.webp" alt="Manicura en gel con efecto espejo" class="video-image">
               <div class="video-play-button" data-video-id="video-3">
@@ -270,6 +270,19 @@
             <h3 class="video-title">Efecto Espejo en Gel</h3>
             <p class="video-description">Cómo lograr el perfecto acabado cromado en uñas de gel.</p>
           </div>
+        </div>
+        
+        <div class="load-more-container">
+          <button id="load-more-videos-button" class="load-more-videos-button">
+            <i class="fas fa-plus-circle"></i> Cargar más videos
+          </button>
+        </div>
+        
+        <div class="video-loader">
+          <div class="loader-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+          <p>Cargando más videos...</p>
         </div>
       </div>
       
@@ -290,6 +303,10 @@
         </div>
         
         <div class="trends-slider">
+          <button class="trend-nav prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
           <div class="trends-track">
             <div class="trend-card">
               <div class="trend-image-container">
@@ -332,9 +349,6 @@
             </div>
           </div>
           
-          <button class="trend-nav prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
           <button class="trend-nav next">
             <i class="fas fa-chevron-right"></i>
           </button>

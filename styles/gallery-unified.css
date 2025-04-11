@@ -1,6 +1,6 @@
 /**
  * AngelNails - Estilos Unificados de Galería y Videos
- * Version: 2.0
+ * Version: 2.1
  */
 
 /* ===== ESTILOS DE GALERÍA ===== */
@@ -195,7 +195,8 @@
   margin-bottom: 3rem;
 }
 
-.load-more-button {
+.load-more-button,
+.load-more-videos-button {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -213,27 +214,32 @@
   cursor: pointer;
 }
 
-.load-more-button:hover {
+.load-more-button:hover,
+.load-more-videos-button:hover {
   transform: translateY(-5px) scale(1.05) rotate(2deg);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-.load-more-button i {
+.load-more-button i,
+.load-more-videos-button i {
   transition: transform 0.3s ease;
 }
 
-.load-more-button:hover i {
+.load-more-button:hover i,
+.load-more-videos-button:hover i {
   transform: translateY(-3px);
 }
 
 /* Loader */
-.gallery-loader {
+.gallery-loader,
+.video-loader {
   text-align: center;
   padding: 2rem 0;
   display: none;
 }
 
-.gallery-loader.active {
+.gallery-loader.active,
+.video-loader.active {
   display: block;
 }
 
@@ -243,7 +249,8 @@
   margin-bottom: 1rem;
 }
 
-.gallery-loader p {
+.gallery-loader p,
+.video-loader p {
   color: var(--color-gray-600);
   font-size: 1.1rem;
 }
@@ -399,6 +406,7 @@
   position: relative;
   padding: 2rem 0;
   overflow: hidden;
+  margin: 0 50px; /* Espacio para los botones de navegación */
 }
 
 .trends-track {
@@ -493,11 +501,11 @@
 }
 
 .trend-nav.prev {
-  left: 10px;
+  left: 0;
 }
 
 .trend-nav.next {
-  right: 10px;
+  right: 0;
 }
 
 /* ===== RESPONSIVE ===== */
