@@ -36,32 +36,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeMenuButton = document.querySelector(".close-menu-button")
   const mobileMenu = document.querySelector(".mobile-menu")
   const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop")
+  function openMobileMenu() {
+    console.log("Opening mobile menu")
+    mobileMenu.classList.add("active")
+    mobileMenuBackdrop.classList.add("active")
+    document.body.style.overflow = "hidden"
+  }
 
-  if (mobileMenuButton && closeMenuButton && mobileMenu && mobileMenuBackdrop) {
-    mobileMenuButton.addEventListener("click", toggleMobileMenu)
-    closeMenuButton.addEventListener("click", toggleMobileMenu)
-    mobileMenuBackdrop.addEventListener("click", toggleMobileMenu)
+  // Función simple para cerrar el menú
+  function closeMobileMenu() {
+    console.log("Closing mobile menu")
+    mobileMenu.classList.remove("active")
+    mobileMenuBackdrop.classList.remove("active")
+    document.body.style.overflow = ""
+  }
 
-    function toggleMobileMenu() {
-      mobileMenu.classList.toggle("active")
-      mobileMenuBackdrop.classList.toggle("active")
-
-      if (mobileMenu.classList.contains("active")) {
-        document.body.style.overflow = "hidden"
-      } else {
-        document.body.style.overflow = ""
-      }
-    }
-
-    // Close mobile menu on window resize
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 991 && mobileMenu.classList.contains("active")) {
-        mobileMenu.classList.remove("active")
-        mobileMenuBackdrop.classList.remove("active")
-        document.body.style.overflow = ""
-      }
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener("click", (e) => {
+      e.preventDefault()
+      openMobileMenu()
     })
   }
+
+  if (closeMenuButton) {
+    closeMenuButton.addEventListener("click", (e) => {
+      e.preventDefault()
+      closeMobileMenu()
+    })
+  }
+
+  if (mobileMenuBackdrop) {
+    mobileMenuBackdrop.addEventListener("click", () => {
+      closeMobileMenu()
+    })
+  }
+
+  // Cerrar menú con tecla ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu && mobileMenu.classList.contains("active")) {
+      closeMobileMenu()
+    }
+  })
+
+  // Forzar la inicialización del menú móvil
+  console.log("Mobile menu initialized")
+
 
   // Hero Carousel
   const carouselSlides = document.querySelectorAll(".carousel-slide")
