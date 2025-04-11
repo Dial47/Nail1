@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="styles/page-specific.css">
-<link rel="stylesheet" href="styles/gallery-enhanced.css">
+<link rel="stylesheet" href="styles/gallery-unified.css">
 </head>
 <body>
 <!-- Contenedor de partículas brillantes -->
@@ -194,7 +194,12 @@
         
         <div class="gallery-grid" id="gallery-container">
           <!-- Las imágenes se cargarán dinámicamente aquí -->
-          
+        </div>
+        
+        <div class="load-more-container">
+          <button id="load-more-button" class="load-more-button">
+            <i class="fas fa-plus-circle"></i> Cargar más diseños
+          </button>
         </div>
         
         <div class="gallery-loader">
@@ -264,16 +269,6 @@
             </div>
             <h3 class="video-title">Efecto Espejo en Gel</h3>
             <p class="video-description">Cómo lograr el perfecto acabado cromado en uñas de gel.</p>
-          </div>
-        </div>
-        
-        <!-- Video Modal -->
-        <div class="video-modal" id="video-modal">
-          <div class="video-modal-content">
-            <button class="video-modal-close">
-              <i class="fas fa-times"></i>
-            </button>
-            <div class="video-container" id="video-container"></div>
           </div>
         </div>
       </div>
@@ -498,6 +493,6 @@
 
 <script src="scripts/main.js"></script>
 <script src="scripts/particle-animations.js"></script>
-<script src="scripts/gallery-enhanced.js"></script>
+<script src="scripts/gallery-unified.js"></script>
 </body>
 </html>
